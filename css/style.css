@@ -21,7 +21,7 @@ body {
   font-family: "Open Sans", helvetica, arial, sans-serif;
   bottom: 20px;
   right: 0;
-  background-color: #1ab394;
+  background-color: #e4e9e5;
   padding: 20px;
   border-radius: 12px;
   width: 300px;
@@ -97,7 +97,12 @@ body {
 .barras {
   border-radius: 7px;
   width: 270px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgb(255, 255, 255);
+  background-color: black;
+}
+
+.barras::placeholder {
+  color: #ffffff;
 }
 
 .button {
@@ -105,8 +110,8 @@ body {
   width: 270px;
   margin-top: 15px;
   padding: 10px;
-  background-color: #676a6c;
-  color: black;
+  background-color: #1ab394;
+  color: #ffffff;
   border: 5px;
   border-radius: 10px;
   cursor: pointer;
@@ -116,7 +121,7 @@ body {
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #1b816d;
 }
 
 #suporte {
