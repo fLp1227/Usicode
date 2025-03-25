@@ -48,7 +48,7 @@ body {
 
 #hidebtn {
   position: fixed;
-  top: 710px;
+  top: 650px;
   right: 310px;
   background-color: #1ab394;
   color: white;
@@ -99,10 +99,7 @@ body {
   width: 270px;
   box-shadow: 0 0 8px rgb(255, 255, 255);
   background-color: black;
-}
-
-.barras::placeholder {
-  color: #ffffff;
+  color: #ffff;
 }
 
 .button {
@@ -111,7 +108,7 @@ body {
   margin-top: 15px;
   padding: 10px;
   background-color: #1ab394;
-  color: #ffffff;
+  color: #072044;
   border: 5px;
   border-radius: 10px;
   cursor: pointer;
@@ -126,11 +123,16 @@ body {
 
 #suporte {
   background-color: #072044;
+  text-align: center;
+}
+
+.setas {
+  padding: 15px 20px 15px 20px;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; 
   padding: 10px;
   text-align: left;
 }
@@ -530,6 +532,7 @@ li.pricing-title {
 .features .big-icon {
   color: #1ab394;
 }
+
 /* Buttons - only primary custom button
 ------------------------- */
 .btn-primary.btn-outline:hover,

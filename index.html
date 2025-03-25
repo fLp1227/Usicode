@@ -54,8 +54,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="page-scroll" href="#quemSomos">Quem Somos</a></li>
                         <li><a class="page-scroll" href="#features">Nosso sistema</a></li>
-                        <li><a class="page-scroll" href="#contact">Contato</a></li>
-                        <li><a class="page-scroll" href="#suporte">Suporte</a></li>
+                        <li><a class="page-scroll" href="#contact" >Contato</a></li>
+                        <li><img src="img/Setas.png" alt="setas" class="setas"></li>  
                     </ul>
                 </div>
             </div>
@@ -127,21 +127,21 @@
         
             <form id="formulario">
                 <label for="nome" class="demonstração">Nome: *</label>
-                <input type="text" id="nome" name="name" class="barras" required>
+                <input type="text" id="nome" name="name" class="barras">
     
-                <label for="email" class="demonstração">E-mail:</label>
+                <label for="email" class="demonstração">E-mail: *</label>
                 <input type="email" id="email" name="email" class="barras">
     
-                <label for="telefone" class="demonstração">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone"  class="barras">
+                <label for="telefone" class="demonstração">Telefone: *</label>
+                <input type="tel" id="telefone" name="telefone"  class="barras" oninput="formatarTelefone(event)">
     
                 <label for="empresa" class="demonstração">Empresa:</label>
-                <input type="text" id="empresa" name="empresa"  class="barras">
+                <input type="text" id="empresa" name="empresa"  class="barras" >
     
                 <label for="setor-empresarial" class="demonstração">Setor empresarial:</label>
                 <input type="text" id="setor-empresarial" name="setor-empresarial" class="barras">
     
-                <button type="submit" class="button"><strong>QUERO UMA DEMONSTRAÇÃO</strong><img src="img/whatsappwhite.png"> </button>
+                <button type="submit" class="button" onclick="redirectToWhatsapp(event)"><strong>QUERO UMA DEMONSTRAÇÃO</strong></button>
             </form>
 
         <section id="features" class="container services">
@@ -262,6 +262,27 @@
             </div>
         </section>
 
+        <section id="contact" class="services">
+            <div class="container">
+                <div class="row m-b-sm">
+                    <div class="col-lg-12 text-center">
+                        <h1><span class="navy">CONTATO</span></h1>
+                    </div>
+                </div>
+                <div class="navy-line"></div>
+                <div>
+                    <div class="row m-t-md">
+                        <div class="col-lg-12 text-center">
+                            <h1>Nossos <span class="navy">telefones</span></h1>
+                            <!--<p>Entre em contato através de nossos telefones</p>-->
+                            <address>
+                                <a href="tel:11970861268">(11) 97086-1268 </a><img src="img/whatsapp.png" /><br />
+                                
+                            </address>
+                        </div>
+                    </div>
+                </section>
+
         <section id="suporte" class="gray-section suporte">
             <div class="container">
                 <div class="row">
@@ -293,26 +314,7 @@
                 </div>
             </div>
         </section>
-        <section id="contact" class="services">
-                <div class="container">
-                    <div class="row m-b-sm">
-                        <div class="col-lg-12 text-center">
-                            <h1><span class="navy">CONTATO</span></h1>
-                        </div>
-                    </div>
-                    <div class="navy-line"></div>
-                    <div>
-                        <div class="row m-t-md">
-                            <div class="col-lg-12 text-center">
-                                <h1>Nossos <span class="navy">telefones</span></h1>
-                                <!--<p>Entre em contato através de nossos telefones</p>-->
-                                <address>
-                                    <a href="tel:11970861268">(11) 97086-1268 </a><img src="img/whatsapp.png" /><br />
-                                    
-                                </address>
-                            </div>
-                        </div>
-                        
+        
                         <div class="row">
                             <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
                                 <img src="img/LogoCinza.png">
@@ -322,9 +324,7 @@
                         </div>
                     </div>
                 </div>
-            
-        </section>
-        <script src="js/Formulario.js"></script>
+        <script src="js/melhorias.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/jquery-2.1.1.js"></script>
         <script src="js/bootstrap.min.js"></script>
