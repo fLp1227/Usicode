@@ -52,60 +52,40 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="#home">Home</a></li>
                         <li><a class="page-scroll" href="#quemSomos">Quem Somos</a></li>
                         <li><a class="page-scroll" href="#features">Nosso sistema</a></li>
                         <li><a class="page-scroll" href="#contact" >Contato</a></li>
-                        <li><img src="img/Setas.png" alt="setas" class="setas"></li>  
+                        <li><a class="page-scroll" href="#acess">Acesso ao sistema</a></li> 
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#inSlider" data-slide-to="0" class="active"></li>
-            <li data-target="#inSlider" data-slide-to="1"></li>
-        </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>
+                        <h1 class="carousel-top">
                             <br />
-                            Sistema de Gestão<br />
-                            para sua empresa de móveis<br />
-                            planejados e convencionais
+                            Transforme sua gestão com o <br />
+                            Usicode, um sistema completo<br />
+                            para o mercado moveleiro!
                         </h1>
-                        <p>
-                            <a class="page-scroll btn btn-lg btn-primary" href="#features" role="button">Saiba mais!</a>
-                            <a class="caption-link" href="#" role="button"></a>
+                        <p class="text-md">
+                            Sabemos como é complexo o gerenciamento de móveis<br/>
+                            planejados e convencionais. É necessário integração entre<br/>
+                            equipes, gestão de pedidos para que o fluxo seja<br/>
+                            orgânico, e um controle financeiro impecável para que<br/>
+                            suas vendas sejam lucrativas.
                         </p>
-                    </div>
-                    <div class="carousel-image wow zoomIn">
-                        <img src="img/laptop.png" alt="laptop" />
+                        <img src = "img/carousel.png" class="men">
                     </div>
                 </div>
                 <!-- Set background for slide in css -->
                 <div class="header-back one"></div>
             </div>
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-caption blank">
-                        <h1>Tenha o controle da sua empresa <br /> na palma da mão.</h1>
-                        <p>Usando o aplicativo da Usicode, você tem total acesso à suas vendas</p>
-                    </div>
-                </div>
-                <!-- Set background for slide in css -->
-                <div class="header-back two"></div>
-            </div>
-            <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
         <div class="m-t-lg"></div>
         <section id="quemSomos" class="container services ">
@@ -133,7 +113,7 @@
                 <input type="email" id="email" name="email" class="barras">
     
                 <label for="telefone" class="demonstração">Telefone: *</label>
-                <input type="tel" id="telefone" name="telefone"  class="barras" oninput="formatarTelefone(event)">
+                <input type="tel" id="telefone" name="telefone"  class="barras" oninput="formatarTelefone(event)" pattern="\(\d{2}\) \d{4,5}-\d{4}">
     
                 <label for="empresa" class="demonstração">Empresa:</label>
                 <input type="text" id="empresa" name="empresa"  class="barras" >
@@ -331,6 +311,8 @@
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/sweetalert.min.js"></script>
+    </div>
+</div>
 </body>
 </html>
 
