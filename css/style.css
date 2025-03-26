@@ -10,6 +10,7 @@
 body {
   background-color: #072044;
   font-family: "Open Sans", helvetica, arial, sans-serif;
+  transition: background-color 0.2s linear;
 }
 
 .servicesMenor {
@@ -128,6 +129,30 @@ body {
 
 .setas {
   padding: 15px 20px 15px 20px;
+}
+
+.col-md-2 {
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.font-titulo {
+  color: #ffff;
+}
+
+.zap {
+  width: 25px !important;
+  height: 25px !important;
+  display: inline-block;
+}
+
+.navy-bd {
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  color: #1ab394;
 }
 
 th,
@@ -262,7 +287,6 @@ address a {
   height: auto;
   display: block;
   font-size: 14px;
-  background: #072044;
   padding: 15px 20px 15px 20px;
   border-radius: 0 0px 5px 5px;
   font-weight: 700;
@@ -306,7 +330,7 @@ address a {
   width: 100%;
 }
 .header-back.one {
-  background: url("../img/header_one.jpg") 50% 0 no-repeat;
+  background-color: #3c6a9b;
 }
 .header-back.two {
   background: url("../img/header_two.jpg") 50% 0 no-repeat;
@@ -861,7 +885,7 @@ fieldset[disabled] .btn-primary.active {
 .m-r-n-xl {
   margin-right: -40px;
 }
-.m-b-none {
+.-none {
   margin-bottom: 0;
 }
 .m-b-xxs {

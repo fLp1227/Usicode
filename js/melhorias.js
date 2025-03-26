@@ -67,3 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
     telefoneInput.addEventListener("input", formatarTelefone);
   }
 });
+
+document.addEventListener("scroll", function(){
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
+  let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  let maxScroll = scrollHeight * 0.1;
+  let scrollFraction = Math.min(scrollTop / maxScroll, 1);
+
+  let startColor = [60, 106, 155];
+  let endColor = [7, 32, 68];
+
+  let newColor = startColor.map((start, i) =>
+  Math.round(start +  (endColor[i] - start) * scrollFraction));
+
+document.body.style.backgroundColor = `rgb(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
+})
