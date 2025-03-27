@@ -13,8 +13,11 @@ function esconderFormulario() {
     event.preventDefault();
 
     var nomeCliente = document.getElementById('nome').value.trim();
-    var emailCliente = document.getElementById('email').value.trim()
-    var telefoneCliente = document.getElementById('telefone').value.trim()
+    var emailCliente = document.getElementById('email').value.trim();
+    var telefoneCliente = document.getElementById('telefone').value.trim();
+    var empresaCliente = document.getElementById('empresa') ? document.getElementById('empresa').value.trim() : '';
+    var setorCliente = document.getElementById('setor') ? document.getElementById('setor').value.trim() : '';
+
 
     if (!nomeCliente) {
       alert("Por favor, preencha seu nome antes de continuar.");
@@ -27,17 +30,37 @@ function esconderFormulario() {
       return;
     }
 
-    if (!telefoneCliente || !telefoneCliente < 14) {
-
-      alert("Por favor, preencha seu telefone corretamente antes de continuar.");
-      return;
-    }
+     if (!telefoneCliente || telefoneCliente.replace(/\D/g, '').length < 10) {
+    alert("Por favor, preencha seu telefone corretamente antes de continuar.");
+    return;
+  }
     
+  var dadosCliente = {
+    nome: nomeCliente,
+    email: emailCliente,
+    telefone: telefoneCliente,
+    empresa: empresaCliente,
+    setor: setorCliente
+  };
+
+  // Envia os dados para o backend usando fetch
+  fetch('http://localhost:3000/solicitacao', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dadosCliente)
+  })
+  .then(response => response.json())
+  .then(result => {
+    console.log(result.mensagem);
+    // Após salvar, redireciona para o WhatsApp
     var mensagem = "Ol%C3%A1,%20meu%20nome%20%C3%A9%20" + encodeURIComponent(nomeCliente) + "%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sistema%20da%20Usicode.";
-
     var urlWhatsapp = "https://wa.me/5511970861268?text=" + mensagem;
-
     window.open(urlWhatsapp, '_blank');
+  })
+  .catch(error => {
+    console.error('Erro ao enviar dados:', error);
+    alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
+  });
 }
 
 function formatarTelefone(event) {
