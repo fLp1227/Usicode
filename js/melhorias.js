@@ -71,17 +71,19 @@ function formatarTelefone(event) {
     telefone = telefone.slice(0, 11);
   }
 
-  if (telefone.length >= 11) {
-    input.value = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
-  } else if (telefone.length >= 6) {
-    input.value = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
-  } else if (telefone.length >= 3) {
-    input.value = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
-  } else if (telefone.length >= 2) {
-    input.value = `(${telefone})`;
+  let formato = telefone; 
+  if (telefone.length > 10) {
+    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
+  } else if (telefone.length > 6) {
+    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
+  } else if (telefone.length > 2) {
+    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
+  } else if (telefone.length > 0) {
+    formato = `(${telefone})`;
   } else {
-    input.value = telefone;
+    formato = "";
   }
+  input.value = formato;
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -127,10 +127,6 @@ body {
   text-align: center;
 }
 
-.setas {
-  padding: 15px 20px 15px 20px;
-}
-
 .col-md-2 {
   margin-right: 100px;
   display: flex;
@@ -147,6 +143,12 @@ body {
   width: 25px !important;
   height: 25px !important;
   display: inline-block;
+}
+
+#navbar {
+  margin-top: 10px;
+  margin-right: 100px;
+  padding: 15px;
 }
 
 .navy-bd {
@@ -221,6 +223,18 @@ address a {
   color: #ffffff !important;
 }
 
+.men {
+  margin-left: 700px;
+  width: 500px;
+  margin-top: -405px;
+}
+
+.text-md {
+  font-size: 18px !important;
+  color: #072044;
+  margin-top: 20px;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 .navbar-wrapper {
@@ -285,6 +299,7 @@ address a {
 .navbar-default .navbar-brand {
   color: #fff;
   height: auto;
+  width: auto;
   display: block;
   font-size: 14px;
   padding: 15px 20px 15px 20px;
@@ -333,14 +348,21 @@ address a {
   background-color: #3c6a9b;
 }
 .header-back.two {
-  background: url("../img/header_two.jpg") 50% 0 no-repeat;
+  background-color: #3c6a9b;
 }
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
+
 .carousel {
   height: 470px;
 }
+
+.carousel-top {
+  font-family: "REM", sans-serif;
+  word-spacing: 5px;
+}
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
@@ -678,12 +700,13 @@ fieldset[disabled] .btn-primary.active {
   .navbar-nav > li > a {
     padding: 20px 10px;
   }
-  .navbar .navbar-brand {
+  .navbar-brand {
     margin-top: 6px;
     border-radius: 5px;
     font-size: 12px;
     padding: 10px;
-    height: auto;
+    height: 300px;
+    width: 300px;
   }
   .navbar-wrapper .navbar {
     padding-left: 15px;
