@@ -43,7 +43,7 @@ function esconderFormulario() {
     setor: setorCliente
   };
 
-  // Envia os dados para o backend usando fetch
+  
   fetch('http://localhost:3000/solicitacao', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -52,7 +52,7 @@ function esconderFormulario() {
   .then(response => response.json())
   .then(result => {
     console.log(result.mensagem);
-    // Após salvar, redireciona para o WhatsApp
+    
     var mensagem = "Ol%C3%A1,%20meu%20nome%20%C3%A9%20" + encodeURIComponent(nomeCliente) + "%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sistema%20da%20Usicode.";
     var urlWhatsapp = "https://wa.me/5511970861268?text=" + mensagem;
     window.open(urlWhatsapp, '_blank');
@@ -63,35 +63,7 @@ function esconderFormulario() {
   });
 }
 
-function formatarTelefone(event) {
-  var input = event.target;
-  var telefone = input.value.replace(/\D/g, "");
 
-  if (telefone.length > 11) {
-    telefone = telefone.slice(0, 11);
-  }
-
-  let formato = telefone; 
-  if (telefone.length > 10) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
-  } else if (telefone.length > 6) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
-  } else if (telefone.length > 2) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
-  } else if (telefone.length > 0) {
-    formato = `(${telefone})`;
-  } else {
-    formato = "";
-  }
-  input.value = formato;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  var telefoneInput = document.getElementById("telefone");
-  if (telefoneInput) {
-    telefoneInput.addEventListener("input", formatarTelefone);
-  }
-});
 
 document.addEventListener("scroll", function(){
   let scrollTop = window.scrollY || document.documentElement.scrollTop;

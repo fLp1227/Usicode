@@ -1,5 +1,5 @@
 require('dotenv').config({ path: 'C:/Users/User/Documents/GitHub/Usicode/.env' });
- // Carregar variáveis de ambiente
+
 console.log('DB_USER:', process.env.DB_USER);
 const express = require('express');
 const app = express();
@@ -11,7 +11,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-// Conexão com MySQL segura
+
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -23,16 +23,16 @@ const db = mysql.createPool({
   queueLimit: 0
 });
 
-// Endpoint para receber solicitação
+
 app.post('/solicitacao', (req, res) => {
   const { nome, telefone, email, empresa, setor } = req.body;
 
-  if (!nome || !telefone || !email || !empresa || !setor) {
-    return res.status(400).json({ mensagem: 'Todos os campos são obrigatórios.' });
+  if (!nome || !telefone || !email) {   
+    return res.status(400).json({ mensagem: 'Por favor preencha os campos obrigatórios.' });
   }
 
   const query = 'INSERT INTO solicitacoes (nome, telefone, email, empresa, setor) VALUES (?, ?, ?, ?, ?)';
-  db.query(query, [nome, telefone, email, empresa, setor], (err, result) => {
+  db.query(query, [nome, telefone, email,  empresa || null, setor || null], (err, result) => {
     if (err) {
       console.error('Erro ao inserir dados:', err);
       return res.status(500).json({ mensagem: 'Erro ao salvar os dados.' });
@@ -43,7 +43,7 @@ app.post('/solicitacao', (req, res) => {
   });
 });
 
-// Função para enviar email
+
 function enviarEmailNotificacao(dados) {
   let transporter = nodemailer.createTransport({
     service: 'Locaweb',
