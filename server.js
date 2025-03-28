@@ -1,41 +1,36 @@
+require('dotenv').config({ path: 'C:/Users/User/Documents/GitHub/Usicode/.env' });
+ // Carregar variáveis de ambiente
+console.log('DB_USER:', process.env.DB_USER);
 const express = require('express');
 const app = express();
 const port = 3000;
 const nodemailer = require('nodemailer');
 const mysql = require('mysql2');
-
-// Middleware para interpretar JSON
-app.use(express.json());
-
 const cors = require('cors');
+
+app.use(express.json());
 app.use(cors());
 
-// Conexão com o MySQL (ajuste os parâmetros conforme sua configuração)
-const db = mysql.createConnection({
-  host: 'localhost3306',
-  user: 'root',
-  password: 'P!nkCerebro5693%',
-  database: 'prosp_db'
+// Conexão com MySQL segura
+const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar ao MySQL:', err);
-    return;
-  }
-  console.log('Conectado ao MySQL');
-});
-
-// Endpoint para receber os dados da solicitação
+// Endpoint para receber solicitação
 app.post('/solicitacao', (req, res) => {
   const { nome, telefone, email, empresa, setor } = req.body;
 
-  // Validação simples
   if (!nome || !telefone || !email || !empresa || !setor) {
     return res.status(400).json({ mensagem: 'Todos os campos são obrigatórios.' });
   }
 
-  // Insere os dados na tabela 'solicitacoes'
   const query = 'INSERT INTO solicitacoes (nome, telefone, email, empresa, setor) VALUES (?, ?, ?, ?, ?)';
   db.query(query, [nome, telefone, email, empresa, setor], (err, result) => {
     if (err) {
@@ -43,26 +38,26 @@ app.post('/solicitacao', (req, res) => {
       return res.status(500).json({ mensagem: 'Erro ao salvar os dados.' });
     }
 
-    // Após salvar, envia a notificação por email
     enviarEmailNotificacao({ nome, telefone, email, empresa, setor });
     res.json({ mensagem: 'Solicitação enviada com sucesso!' });
   });
 });
 
-// Função para enviar email de notificação
+// Função para enviar email
 function enviarEmailNotificacao(dados) {
-  // Configure o transporte de email (exemplo com Gmail)
   let transporter = nodemailer.createTransport({
-    service: 'usicode',
+    service: 'Locaweb',
+    host: 'email-ssl.com.br',
+    port: 465,
     auth: {
-      user: 'lucas@usicode.com.br',
-      pass: 'master' // Use variáveis de ambiente em produção!
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD
     }
   });
 
   let mailOptions = {
-    from: 'lucas@usicode.com.br',
-    to: 'lucas@usicode.com.br', // Altere para seu email de destino
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
     subject: 'Nova Solicitação de Demonstração',
     text: `Nova solicitação recebida:
 Nome: ${dados.nome}
@@ -82,4 +77,8 @@ Setor: ${dados.setor}`
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
+});
+
+app.get('/', (req, res) => {
+  res.send('Servidor rodando com sucesso!');
 });
