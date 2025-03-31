@@ -1,4 +1,5 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en");
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
 /*
  *
  *   INSPINIA Landing Page - Responsive Admin Theme
@@ -49,7 +50,7 @@ body {
 
 #hidebtn {
   position: fixed;
-  top: 650px;
+  top: 575px;
   right: 310px;
   background-color: #1ab394;
   color: white;
@@ -224,17 +225,57 @@ address a {
   color: #ffffff !important;
 }
 
-.men {
-  margin-left: 700px;
-  width: 500px;
-  margin-top: -405px;
+/* Container */
+
+.topics-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 80px; 
+  padding: 20px;
 }
 
-.text-md {
-  font-size: 18px !important;
-  color: #072044;
-  margin-top: 20px;
+.topic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  width: 100%;
 }
+
+.content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.topic img {
+  max-width: 300px;
+  height: auto;
+}
+
+.content h1 {
+  border-radius: 5px;
+  padding: 9px 38px;
+  background-color: #1ab394;
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 0.5;
+  color: #072044;
+}
+
+.content .content-p {
+  padding: 9px 60px; 
+  line-height: 0.5;
+}
+
+.content p {
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #3c6a9b;
+
+}
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -362,11 +403,41 @@ address a {
 .carousel-top {
   font-family: "REM", sans-serif;
   word-spacing: 5px;
+  font-size: 30px !important;
+  gap: 20px;
 }
 
-/* Since positioning the image, we need to help out the caption */
+.carousel-kd {
+  flex-direction: column;
+  margin-top: 20px;
+  display: flex;
+}
+
 .carousel-caption {
-  z-index: 10;
+  flex-direction: row-reverse;
+  height: 200px;
+  display: flex;
+  gap: 20px; 
+  padding-left: 80px; 
+}
+
+.men {
+  margin-top: 0 auto;
+  width: 450px;
+  height: 350px;
+  vertical-align: middle !important;
+  justify-content: center;
+  display: flex;
+}
+
+.text-md {
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  font-size: 16px !important;
+  line-height: 1.5;
+  text-align: left;
+  word-spacing: 2px;
+  color: #072044;
 }
 /* Declare heights because of positioning of img element */
 .carousel .item {
@@ -422,14 +493,6 @@ address a {
   right: auto;
   text-align: left;
 }
-.carousel-caption {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  bottom: auto;
-  right: auto;
-  text-align: left;
-}
 .carousel-caption.blank {
   top: 140px;
 }
@@ -442,15 +505,12 @@ address a {
   /*padding-right: 60px;*/
 }
 .carousel-caption h1 {
-  font-weight: 700;
-  font-size: 38px;
-  text-transform: uppercase;
+  font-weight: 900;
   text-shadow: none;
-  letter-spacing: -1.5px;
+  letter-spacing: 1.5px;
 }
 .carousel-caption p {
   font-weight: 700;
-  text-transform: uppercase;
   text-shadow: none;
 }
 .caption-link {

@@ -63,20 +63,27 @@ function esconderFormulario() {
   });
 }
 
+if (telefone.length > 11) {
+    telefone = telefone.slice(0, 11);
+  }
 
-
-document.addEventListener("scroll", function(){
-  let scrollTop = window.scrollY || document.documentElement.scrollTop;
-  let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-  let maxScroll = scrollHeight * 0.1;
-  let scrollFraction = Math.min(scrollTop / maxScroll, 1);
-
-  let startColor = [60, 106, 155];
-  let endColor = [7, 32, 68];
-
-  let newColor = startColor.map((start, i) =>
-  Math.round(start +  (endColor[i] - start) * scrollFraction));
-
-document.body.style.backgroundColor = `rgb(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
-})
+  let formato = telefone; 
+  if (telefone.length > 10) {
+    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
+  } else if (telefone.length > 6) {
+    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
+  } else if (telefone.length > 2) {
+    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
+  } else if (telefone.length > 0) {
+    formato = `(${telefone})`;
+  } else {
+    formato = "";
+  }
+  input.value = formato;
+  
+document.addEventListener("DOMContentLoaded", function () {
+  var telefoneInput = document.getElementById("telefone");
+  if (telefoneInput) {
+    telefoneInput.addEventListener("input", formatarTelefone);
+  }
+});
