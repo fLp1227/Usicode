@@ -50,7 +50,7 @@ body {
 
 #hidebtn {
   position: fixed;
-  top: 575px;
+  top: 650px;
   right: 310px;
   background-color: #1ab394;
   color: white;
@@ -276,6 +276,159 @@ address a {
 
 }
 
+/* Topic cell phone */
+
+.topic-cell {
+  background-color: #3c6a9b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -500px;
+}
+
+.topic-cellphone {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 500px;
+}
+
+.cellphone-md {
+  height: 400px;
+  margin-top: -60px;
+
+}
+
+.content-app {
+  color: #fff;
+}
+
+.content-list {
+  list-style: none !important;
+  font-size: 24px;
+  line-height: 1.5;
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  padding: 0;
+}
+
+.content-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 2;
+}
+
+.arrow {
+  height: 40px;
+  width: 40px;
+  line-height: 0.5;
+  color: #3c6a9b;
+  background-color: #072044;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  
+}
+
+.content-md {
+  margin-top: 100px;
+  font-family: "REM", sans-serif;
+  background-color: #072044;
+  font-weight: 900;
+  font-size: 35px;
+  margin-right: -280px;
+  line-height: 0.5;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.content-tittle {
+  font-family: "REM" ,sans-serif;
+  font-weight: 900;
+  font-size: 35px;
+  line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+.androidIos {
+  color: #072044;
+  font-weight: 900;list-style: none;
+  color: #072044;
+}
+
+/* Tópico Vantagens */
+
+.advantages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.content-advantages {
+  max-width: 800px;
+}
+
+.content-advantages h1 {
+  color: #1ab394;
+  font-weight: 900;
+  margin-right: -500px;
+}
+
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 25px; 
+  list-style: none; 
+  padding: 30px;
+}
+
+.advantages-list li {
+  background-color: #1ab394;
+  font-family: "REM", sans-serif;
+  padding: 5px 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 2px 2px 10px rgba(252, 251, 251, 0.541);
+  color: #072044;
+  line-height: 1.2;
+  word-spacing: 1px;
+}
+
+.advantages-click {
+  height: 25px;
+  width: 25px;
+  line-height: 1;
+  font-weight: 900;
+  color: #3c6a9b;
+  background-color: #072044;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .advantages-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -396,38 +549,64 @@ address a {
 -------------------------------------------------- */
 /* Carousel base class */
 
-.carousel {
-  height: 470px;
-}
-
-.carousel-top {
-  font-family: "REM", sans-serif;
-  word-spacing: 5px;
-  font-size: 30px !important;
-  gap: 20px;
-}
-
-.carousel-kd {
-  flex-direction: column;
-  margin-top: 20px;
-  display: flex;
-}
-
 .carousel-caption {
-  flex-direction: row-reverse;
-  height: 200px;
   display: flex;
-  gap: 20px; 
-  padding-left: 80px; 
+  flex-direction: row-reverse; 
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; 
+  padding: 20px;
+  height: auto; 
+  text-align: left;
 }
 
 .men {
-  margin-top: 0 auto;
   width: 450px;
-  height: 350px;
-  vertical-align: middle !important;
+  height: auto; 
+  max-width: 40%;
+}
+
+.carousel-kd {
+  display: flex; 
+  flex-direction: column;
+  max-width: 50%;
   justify-content: center;
-  display: flex;
+  font-family: "REM", sans-serif;
+  text-align: left;
+  margin-right: 60px;
+}
+
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    flex-direction: column !important; 
+    align-items: center; 
+    text-align: center; 
+    gap: 30px;
+  }
+
+  .men {
+    max-width: 80%;
+  }
+
+  .carousel-kd {
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+/* MEDIA QUERY PARA TELAS GRANDES */
+@media (min-width: 769px) {
+  .carousel-caption {
+    flex-direction: row-reverse !important; /* Volta ao layout lado a lado */
+    justify-content: center;
+    text-align: left;
+  }
+
+  .carousel-kd {
+    max-width: 50%;
+  }
 }
 
 .text-md {
@@ -435,10 +614,12 @@ address a {
   font-weight: 900;
   font-size: 16px !important;
   line-height: 1.5;
-  text-align: left;
   word-spacing: 2px;
   color: #072044;
+  text-align: left;
 }
+
+
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 470px;
