@@ -140,9 +140,10 @@ body {
 }
 
 .zap {
-  width: 25px !important;
-  height: 25px !important;
+  width: 23px !important;
+  height: 23px !important;
   display: inline-block;
+  margin-bottom: 3px;
 }
 
 #navbar {
