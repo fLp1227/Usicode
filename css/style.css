@@ -577,6 +577,7 @@ address a {
   margin-right: 60px;
 }
 
+ /* MEDIA QUERY PARA TELAS PEQUENAS */
 
 @media (max-width: 768px) {
   .carousel-caption {
@@ -899,11 +900,7 @@ fieldset[disabled] .btn-primary.active {
     font-size: 50px;
   }
 }
-@media (max-width: 992px) {
-  .carousel-image {
-    display: none;
-  }
-}
+
 @media (max-width: 768px) {
   .carousel-caption,
   .carousel-caption.blank {
@@ -1502,3 +1499,5 @@ section.comments {
 .form-control.error {
   border: 1px solid #cc5965;
 }
+
+

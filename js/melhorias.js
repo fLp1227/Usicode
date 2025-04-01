@@ -67,23 +67,3 @@ if (telefone.length > 11) {
     telefone = telefone.slice(0, 11);
   }
 
-  let formato = telefone; 
-  if (telefone.length > 10) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
-  } else if (telefone.length > 6) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
-  } else if (telefone.length > 2) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
-  } else if (telefone.length > 0) {
-    formato = `(${telefone})`;
-  } else {
-    formato = "";
-  }
-  input.value = formato;
-  
-document.addEventListener("DOMContentLoaded", function () {
-  var telefoneInput = document.getElementById("telefone");
-  if (telefoneInput) {
-    telefoneInput.addEventListener("input", formatarTelefone);
-  }
-});
