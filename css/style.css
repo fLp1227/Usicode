@@ -12,6 +12,7 @@ body {
   background-color: #072044;
   font-family: "Open Sans", helvetica, arial, sans-serif;
   transition: background-color 0.2s linear;
+  overflow-x: hidden;
 }
 
 .servicesMenor {
@@ -408,9 +409,10 @@ address a {
 }
 
 .advantages-click {
-  height: 25px;
-  width: 25px;
-  line-height: 1;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+  line-height: 0.6;
   font-weight: 900;
   color: #3c6a9b;
   background-color: #072044;
@@ -461,6 +463,7 @@ address a {
   flex-direction: row-reverse;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 40px;
   gap: 100px;
 }
 
@@ -472,7 +475,10 @@ address a {
 
 .quemSomos-text h1 {
   font-weight: 700;
+  font-size: 30px;
   color: #1ab394;
+  display: flex;
+  gap: 30px;
 }
 
 .quemSomos-text p {
@@ -486,23 +492,110 @@ address a {
 
 .setas {
   height: 30px;
-  border-radius: 30px;
 }
 
 /* Nosso sistema */
 
-.nossoSistema  {
+.nossoSistema {
+  background-color: #3c6a9b;
+}
+
+.nossoSistema-title h1 {
+  font-family: "REM", sans-serif;
+  font-size: 35px;
+  margin-left: 360px;
+  color: #1ab394;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+
+.sistema-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-left: 330px;
+}
+
+.sistema-section ul {
+  list-style: none;
+  flex: 1;
+  min-width: 300px;
   color: #ffff;
 }
 
-.nossoSistema-item li {
-  list-style: none;
+.sistema-section li {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.beneficts {
-  color: #000000;
-  border-radius: 30px;
+
+.benefits {
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #072044;
+  border: none;
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
 }
+
+.benefits.rotate {
+  transform: rotate(90deg);
+}
+
+
+.benefits-content {
+  display: none;
+  margin-left: 25px;
+  padding: 5px 0;
+}
+
+.benefits-content ul {
+  margin-left: 20px;
+}
+
+.img-computer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.sistema {
+  height: 600px;
+}
+
+.title-destaque {
+  max-width: 600px;
+  font-family: "REM", sans-serif;
+}
+
+.title-destaque h1 {
+  font-weight: 900;
+  text-align: center;
+  font-size: 30px;
+  color: #072044;
+  background-color: #1ab394;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .sistema-section {
+    flex-direction: column;
+  }
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 .navbar-wrapper {
@@ -650,7 +743,6 @@ address a {
   margin-right: 60px;
 }
 
- /* MEDIA QUERY PARA TELAS PEQUENAS */
 
 @media (max-width: 768px) {
   .carousel-caption {
@@ -973,7 +1065,11 @@ fieldset[disabled] .btn-primary.active {
     font-size: 50px;
   }
 }
-
+@media (max-width: 992px) {
+  .carousel-image {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .carousel-caption,
   .carousel-caption.blank {
@@ -1572,5 +1668,3 @@ section.comments {
 .form-control.error {
   border: 1px solid #cc5965;
 }
-
-
