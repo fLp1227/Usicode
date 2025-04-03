@@ -369,7 +369,8 @@ address a {
   justify-content: center;
   align-items: center;
   text-align: left;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .content-advantages {
@@ -429,7 +430,79 @@ address a {
   }
 }
 
+/* Opiniões */
 
+.opinions {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  background-color: #3c6a9b;
+  font-family: "REM", sans-serif;
+  border-radius: 20px;
+}
+
+.opinion-item {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  align-items: center;
+  text-align: left;
+}
+
+.opinions-client {
+  color: #ffff;
+  font-weight: 500;
+}
+
+/* Quem somos */
+
+.quemSomos {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 100px;
+}
+
+.quemSomos-text {
+  line-height: 1.5;
+  font-family: "REM", sans-serif;
+  margin-top: 30px;
+}
+
+.quemSomos-text h1 {
+  font-weight: 700;
+  color: #1ab394;
+}
+
+.quemSomos-text p {
+  font-weight: 700;
+}
+
+.woman {
+  height: 500px;
+  width: 500px;
+}
+
+.setas {
+  height: 30px;
+  border-radius: 30px;
+}
+
+/* Nosso sistema */
+
+.nossoSistema  {
+  color: #ffff;
+}
+
+.nossoSistema-item li {
+  list-style: none;
+}
+
+.beneficts {
+  color: #000000;
+  border-radius: 30px;
+}
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 .navbar-wrapper {
@@ -616,7 +689,7 @@ address a {
   font-size: 16px !important;
   line-height: 1.5;
   word-spacing: 2px;
-  color: #072044;
+  color: #000000;
   text-align: left;
 }
 
