@@ -76,7 +76,5 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
   });
 }
 
-if (telefone.length > 11) {
-    telefone = telefone.slice(0, 11);
-  }
+
 
