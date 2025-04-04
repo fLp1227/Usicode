@@ -12,6 +12,7 @@ body {
   background-color: #072044;
   font-family: "Open Sans", helvetica, arial, sans-serif;
   transition: background-color 0.2s linear;
+  
 }
 
 .servicesMenor {
@@ -43,11 +44,7 @@ body {
   }
 }
 
-.hidden {
-  transform: translateX(120%);
-  opacity: 0;
-}
-
+/* BOTÃO OCULTAR */
 #hidebtn {
   position: fixed;
   top: 650px;
@@ -151,6 +148,19 @@ body {
   margin-top: 10px;
   margin-right: 100px;
   padding: 15px;
+}
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .navy-bd {
@@ -505,6 +515,20 @@ address a {
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -609,7 +633,7 @@ address a {
 /* BACKGROUNDS SLIDER
 -------------------------------------------------- */
 .header-back {
-  height: 470px;
+height: 470px;
   width: 100%;
 }
 .header-back.one {
@@ -631,7 +655,7 @@ address a {
   gap: 80px; 
   padding: 20px;
   height: auto; 
-  text-align: left;
+  text-align: center;
 }
 
 .men {
@@ -658,6 +682,9 @@ address a {
     align-items: center; 
     text-align: center; 
     gap: 30px;
+    .header-back{
+      height: 50px;
+    }
   }
 
   .men {
@@ -668,6 +695,7 @@ address a {
     max-width: 90%;
     text-align: center;
   }
+  
 }
 
 /* MEDIA QUERY PARA TELAS GRANDES */
@@ -950,6 +978,8 @@ fieldset[disabled] .btn-primary.active {
   /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
+   
+    
   }
   .navbar-wrapper .container {
     padding-right: 15px;
@@ -958,6 +988,7 @@ fieldset[disabled] .btn-primary.active {
   .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
+    display: flex;
   }
   /* The navbar becomes detached from the top, so we round the corners */
   .navbar-wrapper .navbar {
@@ -974,12 +1005,14 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 20%) { /*Barra branca */
   .carousel-caption,
   .carousel-caption.blank {
     left: 5%;
     top: 80px;
   }
+
+  
   .carousel-caption h1 {
   }
   .navbar.navbar-scroll .navbar-brand {
