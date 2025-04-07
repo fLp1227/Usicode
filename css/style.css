@@ -8,11 +8,11 @@
 */
 /* GLOBAL STYLES
 -------------------------------------------------- */
-body {
+html, body {
   background-color: #072044;
-  font-family: "Open Sans", helvetica, arial, sans-serif;
-  transition: background-color 0.2s linear;
+  font-family: "REM", sans-serif;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .servicesMenor {
@@ -44,11 +44,18 @@ body {
   }
 }
 
-.hidden {
-  transform: translateX(120%);
-  opacity: 0;
+@media (max-width: 768px) {
+  #formulario {
+    position: relative; 
+    top: auto;
+    left: 50px;
+    transform: none;
+    margin: 20px auto; 
+    width: 75%;
+  }
 }
 
+/* BOTÃO OCULTAR */
 #hidebtn {
   position: fixed;
   top: 650px;
@@ -74,6 +81,17 @@ body {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  #hidebtn {
+    position: relative; 
+    top: 200px;
+    left: 40px;
+    transform: none;
+    margin: 20px auto; 
+    width: 12%;
   }
 }
 
@@ -152,6 +170,19 @@ body {
   margin-top: 10px;
   margin-right: 100px;
   padding: 15px;
+}
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .navy-bd {
@@ -239,6 +270,7 @@ address a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 100px;
   width: 100%;
 }
@@ -248,10 +280,6 @@ address a {
   text-align: left;
 }
 
-.topic img {
-  max-width: 300px;
-  height: auto;
-}
 
 .content h1 {
   border-radius: 5px;
@@ -277,6 +305,43 @@ address a {
 
 }
 
+.computer img {
+  height: 30vh;
+}
+
+
+@media (max-width: 768px) {
+  .content h1 {
+    width: 100%;
+    padding: 10px 40px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content .content-p {
+    width: 100%;
+    padding: 10px 40px;
+    line-height: 0.9;
+  }
+}
+
+@media (max-width: 768px) {
+  .computer img {
+    width: 100%;
+    height: 35vh;
+  }
+}
+
+
 /* Topic cell phone */
 
 .topic-cell {
@@ -287,16 +352,34 @@ address a {
   margin-right: -500px;
 }
 
+@media (max-width: 768px) {
+  .topic-cell {
+    flex-direction: column;
+  }
+}
 .topic-cellphone {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 500px;
 }
 
+@media (max-width: 768px) {
+  .topic-cellphone {
+    flex-direction: column;
+  }
+}
+
 .cellphone-md {
   height: 400px;
+  width: 400px;
   margin-top: -60px;
+}
 
+@media (max-width: 768px) {
+  .cellphone-md {
+    width: 100%;
+    height: 50vh;
+  }
 }
 
 .content-app {
@@ -319,6 +402,12 @@ address a {
   line-height: 2;
 }
 
+@media (max-width: 768px) {
+  .content-list li {
+    font-size: 18px;
+  }
+}
+
 .arrow {
   height: 40px;
   width: 40px;
@@ -331,9 +420,17 @@ address a {
   cursor: pointer;
   border: none;
   outline: none;
-  font-size: 20px;
-  
+  font-size: 20px; 
 }
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+
 
 .content-md {
   margin-top: 100px;
@@ -347,6 +444,16 @@ address a {
   margin-bottom: 40px;
 }
 
+@media (max-width: 768px) {
+  .content-md {
+    max-width: 100%;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+
 .content-tittle {
   font-family: "REM" ,sans-serif;
   font-weight: 900;
@@ -357,9 +464,17 @@ address a {
   color: #000000;
 }
 
+@media (max-width: 768px) {
+  .content-tittle {
+    font-size: 20px;
+    order: 0;
+  }
+}
+
 .androidIos {
   color: #072044;
-  font-weight: 900;list-style: none;
+  font-weight: 900;
+  list-style: none;
   color: #072044;
 }
 
@@ -598,6 +713,20 @@ address a {
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -702,7 +831,7 @@ address a {
 /* BACKGROUNDS SLIDER
 -------------------------------------------------- */
 .header-back {
-  height: 470px;
+height: 470px;
   width: 100%;
 }
 .header-back.one {
@@ -724,7 +853,7 @@ address a {
   gap: 80px; 
   padding: 20px;
   height: auto; 
-  text-align: left;
+  text-align: center;
 }
 
 .men {
@@ -750,6 +879,9 @@ address a {
     align-items: center; 
     text-align: center; 
     gap: 30px;
+    .header-back{
+      height: 50px;
+    }
   }
 
   .men {
@@ -760,6 +892,7 @@ address a {
     max-width: 90%;
     text-align: center;
   }
+  
 }
 
 /* MEDIA QUERY PARA TELAS GRANDES */
@@ -1042,6 +1175,8 @@ fieldset[disabled] .btn-primary.active {
   /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
+   
+    
   }
   .navbar-wrapper .container {
     padding-right: 15px;
@@ -1050,6 +1185,7 @@ fieldset[disabled] .btn-primary.active {
   .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
+    display: flex;
   }
   /* The navbar becomes detached from the top, so we round the corners */
   .navbar-wrapper .navbar {
@@ -1065,17 +1201,24 @@ fieldset[disabled] .btn-primary.active {
     font-size: 50px;
   }
 }
+<<<<<<< HEAD
+
+@media (max-width: 20%) { /*Barra branca */
+=======
 @media (max-width: 992px) {
   .carousel-image {
     display: none;
   }
 }
 @media (max-width: 768px) {
+>>>>>>> 129a77aa4fc0e7e1f07f237f8cc6f5d28fed7dfa
   .carousel-caption,
   .carousel-caption.blank {
     left: 5%;
     top: 80px;
   }
+
+  
   .carousel-caption h1 {
   }
   .navbar.navbar-scroll .navbar-brand {

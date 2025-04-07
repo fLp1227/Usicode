@@ -9,6 +9,19 @@ function esconderFormulario() {
   botao.textContent = formulario.classList.contains("hidden") ? "<" : ">";
 }
 
+var SPMaskBehavior = function (val) {
+  return val.replace(/\D/g, '').length === 11 
+         ? '(00) 00000-0000' 
+         : '(00) 0000-00009';
+},
+spOptions = {
+  onKeyPress: function(val, e, field, options) {
+    field.mask(SPMaskBehavior.apply({}, arguments), options);
+  }
+};
+
+$('#telefone').mask(SPMaskBehavior, spOptions);
+
   function redirectToWhatsapp(event) {
     event.preventDefault();
 
@@ -63,22 +76,5 @@ function esconderFormulario() {
   });
 }
 
-if (telefone.length > 11) {
-    telefone = telefone.slice(0, 11);
-  }
 
-  let formato = telefone; 
-  if (telefone.length > 10) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
-  } else if (telefone.length > 6) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
-  } else if (telefone.length > 2) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
-  } else if (telefone.length > 0) {
-    formato = `(${telefone})`;
-  } else {
-    formato = "";
-  }
-  input.value = formato;
-  
-  
+
