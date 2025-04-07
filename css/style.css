@@ -10,15 +10,9 @@
 -------------------------------------------------- */
 html, body {
   background-color: #072044;
-<<<<<<< HEAD
-  font-family: "REM", sans-serif;
-  overflow-x: hidden;
-  max-width: 100vw;
-=======
   font-family: "Open Sans", helvetica, arial, sans-serif;
   transition: background-color 0.2s linear;
   overflow-x: hidden;
->>>>>>> a4ed8d82fd50f7d3c20e1075063783836b0263a2
 }
 
 .servicesMenor {
@@ -37,6 +31,7 @@ html, body {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   animation: slideIn 1s forwards;
+  
 }
 
 @keyframes slideIn {
@@ -50,20 +45,6 @@ html, body {
   }
 }
 
-<<<<<<< HEAD
-@media (max-width: 768px) {
-  #formulario {
-    position: relative; 
-    top: auto;
-    left: 50px;
-    transform: none;
-    margin: 20px auto; 
-    width: 75%;
-  }
-}
-
-=======
->>>>>>> a4ed8d82fd50f7d3c20e1075063783836b0263a2
 /* BOTÃO OCULTAR */
 #hidebtn {
   position: fixed;
@@ -92,17 +73,11 @@ html, body {
     opacity: 1;
   }
 }
-
 @media (max-width: 768px) {
-  #hidebtn {
-    position: relative; 
-    top: 200px;
-    left: 40px;
-    transform: none;
-    margin: 20px auto; 
-    width: 12%;
-  }
+ 
+ 
 }
+
 
 .button-right {
   right: 10px !important;
@@ -755,7 +730,7 @@ address a {
   padding-left: 15px;
 }
 .navbar-default.navbar-scroll {
-  background-color: #072044;
+  background-color: #072044e1;
   border-color: #072044;
   padding: 15px 0;
 }
@@ -1211,7 +1186,7 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-@media (max-width: 480px) { /*Barra branca */
+@media (max-width: 480px) { 
   .carousel-caption,
   .carousel-caption.blank {
     left: 5%;
@@ -1230,13 +1205,11 @@ fieldset[disabled] .btn-primary.active {
     margin-top: 6px;
   }
   .navbar-collapse {
-    background-color: none;
-    
-    
-    
-    
+    border: none;
   
   }
+
+  
   .navbar-default .navbar-nav > .active > a:focus {
     background: transparent;
     color: inherit;
@@ -1250,7 +1223,6 @@ fieldset[disabled] .btn-primary.active {
   .navbar-wrapper .navbar {
     padding-top: 0;
     padding-bottom: 5px;
-    border-bottom: 1px solid #e7eaec;
     border-radius: 0;
   }
   .nav > li > a {
