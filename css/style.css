@@ -12,11 +12,7 @@ body {
   background-color: #072044;
   font-family: "Open Sans", helvetica, arial, sans-serif;
   transition: background-color 0.2s linear;
-<<<<<<< HEAD
-  
-=======
   overflow-x: hidden;
->>>>>>> 129a77aa4fc0e7e1f07f237f8cc6f5d28fed7dfa
 }
 
 .servicesMenor {
@@ -152,6 +148,8 @@ body {
   margin-top: 10px;
   margin-right: 100px;
   padding: 15px;
+  
+
 }
 
 .navbar-toggle {
@@ -879,9 +877,7 @@ height: 470px;
   right: 10px;
   top: 136px;
 }
-.carousel-indicators {
-  /*padding-right: 60px;*/
-}
+
 .carousel-caption h1 {
   font-weight: 900;
   text-shadow: none;
@@ -1099,33 +1095,33 @@ fieldset[disabled] .btn-primary.active {
     font-size: 50px;
   }
 }
-<<<<<<< HEAD
 
-@media (max-width: 20%) { /*Barra branca */
-=======
-@media (max-width: 992px) {
-  .carousel-image {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
->>>>>>> 129a77aa4fc0e7e1f07f237f8cc6f5d28fed7dfa
+@media (max-width: 480px) { /*Barra branca */
   .carousel-caption,
   .carousel-caption.blank {
     left: 5%;
     top: 80px;
   }
 
-  
+  #navbar {
+    background-color: none;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
   .carousel-caption h1 {
+    
   }
   .navbar.navbar-scroll .navbar-brand {
     margin-top: 6px;
   }
-  .navbar-default {
-    background-color: #fff;
-    border-color: #fff;
-    padding: 15px 0;
+  .navbar-collapse {
+    background-color: none;
+    
+    
+    
+    
+  
   }
   .navbar-default .navbar-nav > .active > a:focus {
     background: transparent;
