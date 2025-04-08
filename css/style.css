@@ -31,6 +31,7 @@ html, body {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   animation: slideIn 1s forwards;
+  
 }
 
 @keyframes slideIn {
@@ -83,17 +84,11 @@ html, body {
     opacity: 1;
   }
 }
-
 @media (max-width: 768px) {
-  #hidebtn {
-    position: relative; 
-    top: 200px;
-    left: 40px;
-    transform: none;
-    margin: 20px auto; 
-    width: 12%;
-  }
+ 
+ 
 }
+
 
 .button-right {
   right: 10px !important;
@@ -744,7 +739,7 @@ address a {
   padding-left: 15px;
 }
 .navbar-default.navbar-scroll {
-  background-color: #072044;
+  background-color: #072044e1;
   border-color: #072044;
   padding: 15px 0;
 }
@@ -1209,12 +1204,26 @@ fieldset[disabled] .btn-primary.active {
     display: none;
   }
 }
+
 @media (max-width: 768px) {
   .carousel-caption,
   .carousel-caption.blank {
-    left: 5%;
-    top: 80px;
+    top: 70px;
   }
+}
+
+@media (max-width: 768px) {
+  .carousel-top {
+    left: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  .carousel-caption,
+  .carousel-caption.blank {
+    top: 175px;
+  }
+}
 
   .navbar.navbar-scroll .navbar-brand {
     margin-top: 6px;
@@ -1224,6 +1233,8 @@ fieldset[disabled] .btn-primary.active {
     border-color: #fff;
     padding: 15px 0;
   }
+
+  
   .navbar-default .navbar-nav > .active > a:focus {
     background: transparent;
     color: inherit;
@@ -1237,7 +1248,6 @@ fieldset[disabled] .btn-primary.active {
   .navbar-wrapper .navbar {
     padding-top: 0;
     padding-bottom: 5px;
-    border-bottom: 1px solid #e7eaec;
     border-radius: 0;
   }
   .nav > li > a {
@@ -1265,7 +1275,6 @@ fieldset[disabled] .btn-primary.active {
   .carousel-control {
     display: none;
   }
-}
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;
