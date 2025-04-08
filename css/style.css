@@ -31,7 +31,7 @@ html, body {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   animation: slideIn 1s forwards;
-  
+  z-index: 1000;
 }
 
 @keyframes slideIn {
@@ -73,8 +73,12 @@ html, body {
     opacity: 1;
   }
 }
-@media (max-width: 768px) {
- 
+@media (max-width: 480px) {
+  #hidebtn {
+    top: 70%;
+  }
+    
+   
  
 }
 
@@ -1195,6 +1199,11 @@ fieldset[disabled] .btn-primary.active {
   .carousel-caption.blank {
     left: 5%;
     top: 80px;
+  
+  }
+
+  .col-md-2 {
+    margin-right: 0px;
   }
 
   .navbar-fixed-top {
