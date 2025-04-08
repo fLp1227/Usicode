@@ -367,6 +367,15 @@ address a {
   }
 }
 
+@media (max-width: 375px) {
+  .cellphone {
+    width: 80%;
+    height: 50vh;
+    justify-content: right;
+    align-items: right;
+  }
+}
+
 .content-app {
   color: #fff;
 }
@@ -530,7 +539,9 @@ address a {
     grid-template-columns: 1fr;
   } .advantages {
     text-align: center;
-  } 
+  } .advantages-list li {
+    text-align: left;
+  }
 }
 
 /* Opiniões */
