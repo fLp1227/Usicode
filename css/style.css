@@ -798,6 +798,7 @@ address a {
   padding-bottom: 5px;
   border-bottom: 1px solid #e7eaec;
   border-radius: 0;
+  max-height: 50%;
 }
 .nav > li > a {
   padding: 25px 10px 15px 10px;
@@ -1166,6 +1167,9 @@ fieldset[disabled] .btn-primary.active {
 -------------------------------------------------- */
 @media (min-width: 768px) {
   /* Navbar positioning foo */
+  
+  
+  
   .navbar-wrapper {
     margin-top: 20px;
    
@@ -1207,11 +1211,15 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-@media (max-width: 768px) {
-  .carousel-top {
-    left: 50%;
+  .navbar-fixed-top {
+    position: relative;
   }
-}
+
+  #navbar {
+    background-color: #3c6a9bb0;
+    display: flex;
+    justify-content: flex-start;
+  }
 
 @media (max-width: 375px) {
   .carousel-caption,
@@ -1262,6 +1270,8 @@ fieldset[disabled] .btn-primary.active {
   .navbar-wrapper .navbar {
     padding-left: 15px;
     padding-right: 5px;
+    height: 100px;
+    max-height: 20%;
   }
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover {
