@@ -829,7 +829,14 @@ height: 470px;
 
 @media (max-width: 768px) {
   .header-back.one {
-    height: 900px;
+    height: 910px;
+    background-color: #3c6a9b;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-back.one {
+    height: 120vh;
     background-color: #3c6a9b;
   }
 }
@@ -878,7 +885,7 @@ height: 470px;
     max-width: 100%;
     justify-content: center;
     align-items: center;
-    text-align: right;
+    text-align: left;
   }
 }
 
@@ -895,7 +902,7 @@ height: 470px;
     align-items: center;
     right: 60px;
   } .carousel-top {
-    text-align: right;
+    text-align: left;
     font-size: 24px;
   }
 }
