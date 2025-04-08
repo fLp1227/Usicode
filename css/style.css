@@ -45,16 +45,6 @@ html, body {
   }
 }
 
-@media (max-width: 768px) {
-  #formulario {
-    position: relative; 
-    top: auto;
-    left: 50px;
-    transform: none;
-    margin: 20px auto; 
-    width: 50%;
-  }
-}
 
 /* BOTÃO OCULTAR */
 #hidebtn {
