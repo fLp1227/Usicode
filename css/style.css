@@ -21,7 +21,7 @@ html, body {
 
 #formulario {
   position: fixed;
-  font-family: "Open Sans", helvetica, arial, sans-serif;
+  font-family: "REM",sans-serif;
   bottom: 20px;
   right: 0;
   background-color: #e4e9e5;
@@ -52,7 +52,7 @@ html, body {
     left: 50px;
     transform: none;
     margin: 20px auto; 
-    width: 75%;
+    width: 50%;
   }
 }
 
@@ -84,11 +84,6 @@ html, body {
     opacity: 1;
   }
 }
-@media (max-width: 768px) {
- 
- 
-}
-
 
 .button-right {
   right: 10px !important;
