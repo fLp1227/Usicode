@@ -362,7 +362,7 @@ address a {
 
 @media (max-width: 768px) {
   .cellphone-md {
-    width: 95%;
+    width: 90%;
     height: 50vh;
   }
 }
@@ -481,7 +481,6 @@ address a {
 .content-advantages h1 {
   color: #1ab394;
   font-weight: 900;
-  margin-right: -500px;
 }
 
 .advantages-list {
@@ -529,7 +528,9 @@ address a {
 @media (max-width: 768px) {
   .advantages-list {
     grid-template-columns: 1fr;
-  }
+  } .advantages {
+    text-align: center;
+  } 
 }
 
 /* Opiniões */
