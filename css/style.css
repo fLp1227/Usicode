@@ -579,6 +579,26 @@ address a {
   gap: 100px;
 }
 
+
+@media (max-width: 768px) {
+  .quemSomos {
+    flex-direction: column;
+    max-width: 100%;
+    font-size: 4rem;
+  } .woman {
+    order: 1;
+    max-width: 100%;
+  } .setas {
+    display: none;
+  } .quemSomos-text h1 {
+    justify-content: center;
+  } .quemSomos-text p {
+    font-size: 13px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .quemSomos-text {
   line-height: 1.5;
   font-family: "REM", sans-serif;
