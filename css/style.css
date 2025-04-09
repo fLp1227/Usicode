@@ -605,9 +605,13 @@ address a {
     flex-direction: column;
     max-width: 100%;
     font-size: 4rem;
-  } .woman {
-    order: 1;
+    margin-top: -30px;
+    margin-bottom: -35px;
+  } .quemSomos img {
     max-width: 100%;
+    height: 40vh;
+    order: 1;
+  }
   } .quemSomos-text h1 {
     justify-content: left;
   } .quemSomos-text p {
@@ -615,8 +619,9 @@ address a {
     justify-content: center;
     align-items: center;
     word-break: break-word;
+  } .quemSomos-text img {
+    display: none;
   }
-}
 
 @media (max-width: 375px) {
   .quemSomos img {
@@ -893,7 +898,7 @@ height: 470px;
 
 @media (max-width: 768px) {
   .header-back.one {
-    height: 910px;
+    height: 913px;
     background-color: #3c6a9b;
   }
 }
@@ -942,6 +947,7 @@ height: 470px;
   .carousel-caption {
     flex-direction: column !important; 
     gap: 20px;
+    margin-top: 60px;
   } .men {
     max-width: 100%;
     order: 1;
