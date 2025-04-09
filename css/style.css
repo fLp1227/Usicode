@@ -599,6 +599,12 @@ address a {
   gap: 50px;
 }
 
+@media (min-width: 769px) {
+  .quemSomos-text img.setas {
+    display: inline;
+  }
+}
+
 
 @media (max-width: 768px) {
   .quemSomos {
@@ -621,7 +627,7 @@ address a {
     word-break: break-word;
   } .quemSomos-text img {
     display: none;
-  }
+}
 
 @media (max-width: 375px) {
   .quemSomos img {
