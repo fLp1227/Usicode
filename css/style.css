@@ -855,7 +855,7 @@ address a {
 .navbar-wrapper .navbar.navbar-scroll {
   padding-top: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid #e7eaec;
+  border-bottom: 1px solid #eaece760;
   border-radius: 0;
   max-height: 50%;
 }
@@ -1293,6 +1293,8 @@ fieldset[disabled] .btn-primary.active {
     background-color: #3c6a9bb0;
     display: flex;
     justify-content: flex-start;
+    
+  
   }
 
 @media (max-width: 375px) {
