@@ -17,6 +17,7 @@
     <link rel="icon" type="image/png" href="img/icone.png" />
 
     <title>USICODE</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/sweetalert.css" rel="stylesheet" />
@@ -161,29 +162,41 @@
             </section>
         </div>
 
-        <section class="opinions">
-            <div class="opinion-item">
-                <p>“Estou usando o sistema há quase 3 anos e ele é<br>
-                    bem estável. Existem muitas funcionalidades bem<br>
-                    úteis. Sempre que preciso de suporte, consigo com<br>
-                    facilidade e agilidade.”</p>
-                <span class="opinions-client">~Allbary</span>
+        <section class="swiper-container opinions">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>“Estou usando o sistema há quase 3 anos e ele é
+                            bem estável. Existem muitas funcionalidades bem
+                            úteis. Sempre que preciso de suporte, consigo com
+                            facilidade e agilidade.”</p>
+                
+                        <footer>Allbary</footer>
+                    </blockquote>
+                
+                </div>
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>“A experiência com o sistema está tranquila.
+                            Quando surge alguma dúvida, tem retorno rápido dos
+                            atendentes, que conseguem me ajudar rapidamente,
+                            então está tudo ok.”</p>
+                            <footer>Liam Planejados</footer>
+                    </blockquote>
+                </div>
+                <div class="swiper-slide">
+                    <blockquote>
+                        <p>“Este sistema eu não conhecia, mas à medida
+                            que uso com maior frequência, vou entendendo e me
+                            adaptando.”</p>
+                        <footer>La Casa</footer>
+                    </blockquote>
+                </div>
             </div>
-        
-            <div class="opinion-item">
-                <p>“A experiência com o sistema está tranquila.<br>
-                    Quando surge alguma dúvida, tem retorno rápido dos<br>
-                    atendentes, que conseguem me ajudar rapidamente,<br> 
-                    então está tudo ok.”</p>
-                <span class="opinions-client">~Liam Planejados</span>
-            </div>
-        
-            <div class="opinion-item">
-                <p>“Este sistema eu não conhecia, mas à medida<br>
-                    que uso com maior frequência, vou entendendo e me<br> 
-                    adaptando.”</p>
-                <span class="opinions-client">~La Casa</span>
-            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </section>
         
         
@@ -362,7 +375,7 @@
                         </div>
                     </div>
                 </div>
-            
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/jquery-2.1.1.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -376,6 +389,7 @@
         <script src="js/melhorias.js"></script>
     </div>
 </div>
+
 </body>
 </html>
 
