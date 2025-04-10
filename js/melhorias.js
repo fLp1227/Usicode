@@ -82,6 +82,20 @@ buttons.forEach((button) => {
   button.addEventListener('click', function () {
     const content = this.nextElementSibling;
 
+    document.querySelectorAll('.benefits').forEach((otherButton) => {
+      const otherContent = otherButton.nextElementSibling;
+
+      if (otherButton !== this && otherContent.classList.contains('active')) {
+        otherButton.classList.remove('rotate');
+        otherContent.style.maxHeight = otherContent.scrollHeight + 'px';
+
+        requestAnimationFrame(() => {
+          otherContent.style.maxHeight = '0';
+          otherContent.classList.remove('active');
+        })
+      }
+    })
+
     this.classList.toggle('rotate');
 
     if (content.classList.contains('active')) {
