@@ -613,7 +613,7 @@ address a {
     max-width: 100%;
     font-size: 4rem;
     margin-top: -30px;
-    margin-bottom: -35px;
+    margin-bottom: -28px;
   } .quemSomos img {
     max-width: 100%;
     height: 40vh;
@@ -639,7 +639,7 @@ address a {
   } .quemSomos {
     max-width: 100%;
     margin-top: -30px;
-    margin-bottom: -40px;
+    margin-bottom: -30px;
   }
 }
 
@@ -780,8 +780,25 @@ address a {
 
 
 @media (max-width: 768px) {
-  .sistema-section {
+  .nossoSistema {
     flex-direction: column;
+    margin-bottom: -55px;
+  } .img-computer img {
+    max-width: 100%;
+    height: 400px;
+    margin-left: -40px;
+  } .coluna-esquerda {
+    margin-top: 10px;
+  } .title-destaque {
+    max-width: 100%;
+    min-width: 250px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: -40px 20px;
+    text-align: center;
+    white-space: normal;
+  } .title-destaque h1 {
+    font-size: 2rem;
   }
 }
 
