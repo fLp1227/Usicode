@@ -77,19 +77,22 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
 }
 
 var swiper = new Swiper('.swiper-container', {
-  loop: true, // Faz o carrossel reiniciar
+  loop: true,
   autoplay: {
-    delay: 3000, // Intervalo entre os slides (3s)
-    disableOnInteraction: false, // Continua o autoplay após interação
+    delay: 5000,
+    disableOnInteraction: false,
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true, // Permite clicar na paginação pra navegar
+    clickable: true,
   },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
 });
-
 
