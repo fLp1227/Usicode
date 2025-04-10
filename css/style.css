@@ -674,7 +674,8 @@ address a {
 
 .nossoSistema {
   background-color: #3c6a9b;
-  padding: 60px 40px;
+  padding: 40px 40px;
+  margin-right: -100px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
