@@ -79,20 +79,30 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
 const buttons = document.querySelectorAll('.benefits');
 
 buttons.forEach((button) => {
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     const content = this.nextElementSibling;
 
     this.classList.toggle('rotate');
-    
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      content.style.opacity = 0;
+
+    if (content.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        content.style.maxHeight = '0';
+      content.classList.remove('active');
+      })
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-      content.style.opacity = 1
+      content.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + 'px';
+
+      const handler = () => {
+        content.style.maxHeight = '';
+        content.removeEventListener('transitionend', handler);
+      };
+      content.addEventListener('transitionend', handler);
     }
-  })
-})
+  });
+});
+
 
 var swiper = new Swiper('.swiper-container', {
   loop: true, // Faz o carrossel reiniciar
