@@ -94,4 +94,20 @@ buttons.forEach((button) => {
   })
 })
 
+var swiper = new Swiper('.swiper-container', {
+  loop: true, // Faz o carrossel reiniciar
+  autoplay: {
+    delay: 3000, // Intervalo entre os slides (3s)
+    disableOnInteraction: false, // Continua o autoplay após interação
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true, // Permite clicar na paginação pra navegar
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 

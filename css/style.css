@@ -155,6 +155,7 @@ html, body {
   margin-top: 10px;
   margin-right: 100px;
   padding: 15px;
+  
 }
 
 .navbar-toggle {
@@ -859,6 +860,7 @@ address a {
 .navbar-scroll.navbar-default .nav li a {
   color: #ffffff;
 }
+
 .navbar-scroll.navbar-default .nav li a:hover {
   color: #1ab394;
 }
@@ -1294,19 +1296,19 @@ fieldset[disabled] .btn-primary.active {
   .col-md-2 {
     margin-right: 0px;
   }
-}
-
-  .navbar-fixed-top {
-    position: relative;
-  }
 
   #navbar {
-    background-color: #3c6a9bb0;
-    display: flex;
+    background-color: #3c6a9bee;
+    display: fixed;
     justify-content: flex-start;
-    
+    border-bottom: ridge;
   
   }
+}
+
+.navbar-fixed-top {
+  position: relative;
+}
 
 @media (max-width: 375px) {
   .carousel-caption,
@@ -1848,6 +1850,10 @@ section.comments {
   .vertical-timeline-content p {
     font-size: 13px;
   }
+
+  .navbar-fixed-top {
+    position: fixed;
+  }
 }
 @media only screen and (min-width: 1170px) {
   .center-orientation .vertical-timeline-content {
@@ -1907,3 +1913,4 @@ section.comments {
 .form-control.error {
   border: 1px solid #cc5965;
 }
+
