@@ -693,7 +693,7 @@ address a {
 .coluna-esquerda {
   flex: 1;
   min-width: 300px;
-  max-width: 600px;
+  max-width: 400px;
   gap: 20px;
   margin-top: 50px;
 }
