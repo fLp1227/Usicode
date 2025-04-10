@@ -76,6 +76,48 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
   });
 }
 
+const buttons = document.querySelectorAll('.benefits');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', function () {
+    const content = this.nextElementSibling;
+
+    document.querySelectorAll('.benefits').forEach((otherButton) => {
+      const otherContent = otherButton.nextElementSibling;
+
+      if (otherButton !== this && otherContent.classList.contains('active')) {
+        otherButton.classList.remove('rotate');
+        otherContent.style.maxHeight = otherContent.scrollHeight + 'px';
+
+        requestAnimationFrame(() => {
+          otherContent.style.maxHeight = '0';
+          otherContent.classList.remove('active');
+        })
+      }
+    })
+
+    this.classList.toggle('rotate');
+
+    if (content.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        content.style.maxHeight = '0';
+      content.classList.remove('active');
+      })
+    } else {
+      content.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + 'px';
+
+      const handler = () => {
+        content.style.maxHeight = '';
+        content.removeEventListener('transitionend', handler);
+      };
+      content.addEventListener('transitionend', handler);
+    }
+  });
+});
+
+
 var swiper = new Swiper('.swiper-container', {
   loop: true,
   autoplay: {
