@@ -46,6 +46,8 @@ html, body {
 }
 
 
+
+
 /* BOTÃO OCULTAR */
 #hidebtn {
   position: fixed;
@@ -78,6 +80,23 @@ html, body {
   #hidebtn {
     top: 70%;
   }
+
+  blockquote {
+    padding : 5px;
+  }
+  
+  address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .phone-item {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* espaçamento entre o número e o ícone */
+    margin: 5px 0;
+  }
+ 
 }
 
 .button-right {
@@ -210,6 +229,7 @@ section p {
 }
 address {
   font-size: 15px;
+
 }
 textarea {
   resize: none;
@@ -336,7 +356,6 @@ address a {
   }
 }
 
-
 /* Topic cell phone */
 
 .topic-cell {
@@ -433,7 +452,6 @@ address a {
     height: 3rem;
   }
 }
-
 
 
 .content-md {
@@ -568,8 +586,7 @@ address a {
 /* Opiniões */
 
 .opinions {
-  display: flex;
-  justify-content: space-around;
+ position: relative;
   gap: 10px;
   background-color: #3c6a9b;
   font-family: "REM", sans-serif;
@@ -589,6 +606,41 @@ address a {
   font-weight: 500;
 }
 
+blockquote footer {
+  font-weight: bold;
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.swiper-slide {
+  background: #3c6a9b00;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 150px; /* ajuste conforme necessário */
+}
+
+/*Função dos botões comentarios*/
+/*.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* pra garantir que fiquem por cima 
+}
+
+.swiper-button-prev {
+  left: 10px; 
+}
+.swiper-button-next {
+  right: 10px; 
+}
+ */
 /* Quem somos */
 
 .quemSomos {
@@ -1944,4 +1996,3 @@ section.comments {
 .form-control.error {
   border: 1px solid #cc5965;
 }
-
