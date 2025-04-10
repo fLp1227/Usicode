@@ -82,7 +82,7 @@ html, body {
   }
 
   blockquote {
-    padding-top: -1px;
+    padding : 5px;
   }
   
   address {
