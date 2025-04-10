@@ -733,13 +733,19 @@ address a {
 
 .benefits.rotate .animation {
   transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }
 
 .benefits-content {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.benefits-content.active {
+  opacity: 1;
+  max-height: 500px;
 }
 
 .benefits-content ul li {
