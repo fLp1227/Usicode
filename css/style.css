@@ -851,6 +851,10 @@ blockquote footer {
     white-space: normal;
   } .title-destaque h1 {
     font-size: 2rem;
+  } .animation {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
 }
 
