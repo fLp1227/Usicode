@@ -138,3 +138,20 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+
+var carousels = document.querySelectorAll('.mySwiper');
+carousels.forEach(function(carousel) {
+  new Swiper(carousel, {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: { slidesPerView: 4 },
+      480: { slidesPerView: 2 }
+    }
+  });
+});

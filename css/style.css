@@ -583,6 +583,40 @@ address a {
   }
 }
 
+
+/*Empresas clientes*/
+
+.logo-carousel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  background-color: #3c6a9b;
+  /* Removendo a altura fixa permite que o container se ajuste automaticamente */
+  /* height: 290px; */
+}
+
+.swiper {
+  width: 100%;
+  height: auto; /* ou defina um valor maior, se necessário, ex: 150px */
+}
+
+/* Ajusta os slides para centralizar e permitir que a imagem ocupe melhor o espaço */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Aumenta os limites para as logos */
+.swiper-slide img {
+  max-height: 120px;   /* Valor aumentado */
+  max-width: 300px;    /* Valor aumentado */
+  object-fit: contain;
+}
+
+
+
 /* Opiniões */
 
 .opinions {
@@ -609,6 +643,8 @@ address a {
 blockquote footer {
   font-weight: bold;
 }
+
+
 
 .swiper-container {
   width: 100%;
