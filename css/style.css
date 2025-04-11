@@ -852,9 +852,7 @@ blockquote footer {
   } .title-destaque h1 {
     font-size: 2rem;
   } .animation {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    margin-right: 1.5rem;
   }
 }
 
