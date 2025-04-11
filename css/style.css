@@ -851,7 +851,7 @@ blockquote footer {
   } .title-destaque h1 {
     font-size: 2rem;
   } .animation {
-        
+      width: -1px;
   }
 }
 
