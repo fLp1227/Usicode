@@ -811,8 +811,8 @@ blockquote footer {
 
 .title-destaque {
   font-family: "REM", sans-serif;
-  margin-top: -103px;
-  padding: 1px 700px;
+  margin-top: -112px;
+  padding: 10px 600px;
 }
 
 .title-destaque h1 {
@@ -851,9 +851,31 @@ blockquote footer {
   } .title-destaque h1 {
     font-size: 2rem;
   } .animation {
-      width: -1px;
+    width: auto;
+    height: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .animation {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Contato */
+
+.contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contato h3 {
+  display: flex;
+}
+
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
