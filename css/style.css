@@ -859,8 +859,8 @@ blockquote footer {
 
 .title-destaque {
   font-family: "REM", sans-serif;
-  margin-top: -103px;
-  padding: 1px 700px;
+  margin-top: -112px;
+  padding: 10px 600px;
 }
 
 .title-destaque h1 {
@@ -899,9 +899,74 @@ blockquote footer {
   } .title-destaque h1 {
     font-size: 2rem;
   } .animation {
-      width: -1px;
+    width: auto;
+    height: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .animation {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Contato */
+
+#contact {
+  padding: 40px;
+}
+
+#contact h1 {
+  color: #1ab394;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.contato-colunas {
+  display: flex;
+  gap: 40px;
+}
+
+.tittle-contato {
+  color: #3c6a9b;
+  margin-bottom: 8px;
+}
+
+.coluna a {
+  color: #ffff;
+  flex-direction: column;
+}
+
+.coluna {
+  min-width: 100px;
+}
+
+.coluna h3 {
+  font-weight: 700;
+}
+
+.redes a {
+  font-size: 1.5em;
+  padding: 2px;
+  transition: color 0.3s ease;
+}
+
+.number, .emailto {
+  display: block;
+  margin: 4px 0;
+}
+
+.redes a:nth-child(1):hover {
+  color: #25D366;
+}
+
+.redes a:nth-child(2):hover {
+  color: #0A66C2; 
+}
+
+
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
