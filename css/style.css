@@ -908,11 +908,11 @@ blockquote footer {
 
 /* Contato */
 
-.contato {
+#contact {
   padding: 40px;
 }
 
-.contato h1 {
+#contact h1 {
   color: #1ab394;
   font-weight: 700;
   margin-bottom: 30px;
@@ -920,16 +920,46 @@ blockquote footer {
 
 .contato-colunas {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex: 1;
-  min-width: 200px;
-  margin-right: 20px;
+  gap: 40px;
 }
 
-.contato-colunas a {
+.tittle-contato {
+  color: #3c6a9b;
+  margin-bottom: 8px;
+}
+
+.coluna a {
+  color: #ffff;
+  flex-direction: column;
+}
+
+.coluna {
+  min-width: 100px;
+}
+
+.coluna h3 {
+  font-weight: 700;
+}
+
+.redes a {
+  font-size: 1.5em;
+  padding: 2px;
+  transition: color 0.3s ease;
+}
+
+.number, .emailto {
+  display: block;
   margin: 4px 0;
 }
+
+.redes a:nth-child(1):hover {
+  color: #25D366;
+}
+
+.redes a:nth-child(2):hover {
+  color: #0A66C2; 
+}
+
 
 
 
