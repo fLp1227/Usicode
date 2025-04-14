@@ -396,9 +396,11 @@ address a {
 }
 
 @media (max-width: 768px) {
-  .cellphone-md {
-    width: 90%;
-    height: 50vh;
+  .topic-cellphone {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
   }
 }
 
@@ -408,8 +410,14 @@ address a {
     height: 50vh;
     justify-content: right;
     align-items: right;
+  } .topic-cellphone {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
   }
 }
+
 
 .content-app {
   color: #fff;
@@ -958,6 +966,12 @@ blockquote footer {
 
 .redes a:nth-child(2):hover {
   color: #0A66C2; 
+}
+
+@media (max-width: 768px) {
+  .contato-colunas {
+    flex-direction: column;
+  }
 }
 
 
