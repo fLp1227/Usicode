@@ -2124,3 +2124,11 @@ section.comments {
 .form-control.error {
   border: 1px solid #cc5965;
 }
+
+.row {
+  color: #ffff;
+}
+
+.row h2 {
+  color: #1ab394;
+}
