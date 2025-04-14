@@ -360,7 +360,7 @@ address a {
 
 @media (max-width: 768px) {
   .computer img {
-    width: 100%;
+    width: auto;
     height: 30vh;
   } .topic {
     gap: 2px;
