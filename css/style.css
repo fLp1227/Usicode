@@ -81,6 +81,11 @@ html, body {
     top: 70%;
   }
   
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover {
+    border-top: none !important;
+  }
+
   .swiper-slide img {    /* Ajuste Logos em telas pequenas */
   height: 120px;  
   width: 200px;    
