@@ -566,7 +566,6 @@ address a {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   border: none;
   outline: none;
   font-size: 20px;
@@ -902,13 +901,26 @@ blockquote footer {
 /* Contato */
 
 .contato {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 40px;
 }
 
-.contato h3 {
+.contato h1 {
+  color: #1ab394;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.contato-colunas {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 200px;
+  margin-right: 20px;
+}
+
+.contato-colunas a {
+  margin: 4px 0;
 }
 
 
