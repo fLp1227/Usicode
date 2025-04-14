@@ -80,6 +80,12 @@ html, body {
   #hidebtn {
     top: 70%;
   }
+  
+  .swiper-slide img {    /* Ajuste Logos em telas pequenas */
+  height: 120px;  
+  width: 200px;    
+  object-fit: contain;
+}
 
   blockquote {
     padding : 5px;
@@ -416,6 +422,7 @@ address a {
   font-family: "REM", sans-serif;
   font-weight: 900;
   padding: 0;
+
 }
 
 .content-list li {
@@ -440,7 +447,7 @@ address a {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: unset;
   border: none;
   outline: none;
   font-size: 20px; 
@@ -566,6 +573,7 @@ address a {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  cursor: unset;
   border: none;
   outline: none;
   font-size: 20px;
@@ -993,7 +1001,7 @@ blockquote footer {
 }
 .navbar-default.navbar-scroll .navbar-nav > .active > a:focus {
   background: transparent;
-  color: inherit;
+  color: inheit;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -1483,7 +1491,7 @@ fieldset[disabled] .btn-primary.active {
   
   .navbar-default .navbar-nav > .active > a:focus {
     background: transparent;
-    color: inherit;
+    color: #fff;
   }
   .navbar-default .nav li a {
     color: #ffffff;
@@ -1518,7 +1526,7 @@ fieldset[disabled] .btn-primary.active {
   }
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover {
-    color: inherit;
+    color: white;
   }
   .carousel-control {
     display: none;
