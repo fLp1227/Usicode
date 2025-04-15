@@ -45,7 +45,15 @@ html, body {
   }
 }
 
-
+#chamado {
+  font-family: "REM", sans-serif;
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}
 
 
 /* BOTÃO OCULTAR */
@@ -558,6 +566,9 @@ address a {
   list-style: none; 
   padding: 30px;
 }
+#advantages-title {
+margin-left: 40px;
+}
 
 .advantages-list li {
   background-color: #1ab394;
@@ -567,10 +578,9 @@ address a {
   display: flex;
   align-items: center;
   gap: 15px; 
-  font-size: 14px;
-  font-weight: 900;
-  box-shadow: 2px 2px 10px rgba(252, 251, 251, 0.541);
-  color: #072044;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
   line-height: 1.2;
   word-spacing: 1px;
 }
@@ -581,7 +591,7 @@ address a {
   padding: 10px;
   line-height: 0.6;
   font-weight: 900;
-  color: #3c6a9b;
+  color: #1ab394;
   background-color: #072044;
   border-radius: 50%;
   justify-content: center;
@@ -612,6 +622,7 @@ address a {
   gap: 30px;
   padding: 20px;
   background-color: #3c6a9b;
+  margin-top: -19px;
   /* Removendo a altura fixa permite que o container se ajuste automaticamente */
   /* height: 290px; */
 }
@@ -679,8 +690,14 @@ blockquote footer {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   height: 150px; /* ajuste conforme necessário */
+  
 }
 
+.logo-slide {
+  width: auto !important;
+  object-fit: contain;
+  object-position: center;
+}
 /*Função dos botões comentarios*/
 /*.swiper-button-prev,
 .swiper-button-next {
@@ -1196,6 +1213,11 @@ height: 470px;
   }
 }
 
+.carousel-top {
+ justify-content: center;
+  
+}
+
 .text-md {
   font-family: "REM", sans-serif;
   font-weight: 900;
@@ -1203,7 +1225,8 @@ height: 470px;
   line-height: 1.5;
   word-spacing: 2px;
   color: #000000;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 

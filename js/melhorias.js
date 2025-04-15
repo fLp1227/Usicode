@@ -142,7 +142,7 @@ var swiper = new Swiper('.swiper-container', {
 var carousels = document.querySelectorAll('.mySwiper');
 carousels.forEach(function(carousel) {
   new Swiper(carousel, {
-    slidesPerView: 5,
+    slidesPerView: 'auto',
     spaceBetween: 30,
     loop: true,
     autoplay: {
@@ -150,8 +150,8 @@ carousels.forEach(function(carousel) {
       disableOnInteraction: false,
     },
     breakpoints: {
-      768: { slidesPerView: 4 },
-      480: { slidesPerView: 2 }
+      768: { slidesPerView: 'auto' },
+      480: { slidesPerView: 'auto' }
     }
   });
 });
