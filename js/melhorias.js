@@ -155,3 +155,27 @@ carousels.forEach(function(carousel) {
     }
   });
 });
+
+const observerCallBack = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = entry.target;    
+      target.classList.add('visible')
+      observer.unobserve(target);
+    }
+  })
+}
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+}
+
+const observer = new IntersectionObserver(observerCallBack, observerOptions)
+
+const elementsToAnimate = document.querySelectorAll('.quemSomos-text h1, .quemSomos-text p, .quemSomos-text .setas')
+
+elementsToAnimate.forEach(element => {
+  observer.observe(element)
+})    
