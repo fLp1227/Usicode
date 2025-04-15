@@ -730,7 +730,7 @@ blockquote footer {
   } .quemSomos-text h1 {
     justify-content: left;
   } .quemSomos-text p {
-    font-size: 13px;
+    font-size: 15px;
     justify-content: center;
     align-items: center;
     word-break: break-word;
@@ -933,7 +933,7 @@ blockquote footer {
 
 .contato-colunas {
   display: flex;
-  gap: 40px;
+  gap: 80px;
 }
 
 .tittle-contato {
@@ -2142,6 +2142,9 @@ section.comments {
   gap: 10px;
 }
 
+.text-row span, a {
+  margin-bottom: 20px;
+}
 
 
 
