@@ -778,6 +778,19 @@ blockquote footer {
   height: 30px;
 }
 
+.quemSomos-text h1, .quemSomos-text p, .quemSomos-text .setas {
+  opacity: 0;  
+  transition: opacity 1s ease-out, transform 1s ease-out; 
+  transform: translateX(-100px); 
+}
+
+.quemSomos-text h1.visible, 
+.quemSomos-text p.visible, 
+.quemSomos-text .setas.visible {
+  opacity: 1; 
+  transform: translateX(0); 
+}
+
 /* Nosso sistema */
 
 .nossoSistema {
