@@ -1787,7 +1787,7 @@ fieldset[disabled] .btn-primary.active {
   margin-bottom: 20px;
 }
 .m-b-lg {
-  margin-bottom: 30px;
+  margin-bottom: 300px;
 }
 .m-b-xl {
   margin-bottom: 40px;
@@ -2132,3 +2132,18 @@ section.comments {
 .row h2 {
   color: #1ab394;
 }
+
+.text-row {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  text-align: center;
+  gap: 10px;
+}
+
+
+
+
+
+
