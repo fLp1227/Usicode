@@ -76,6 +76,8 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
   });
 }
 
+/* Botão de rotacionar */
+
 const buttons = document.querySelectorAll('.benefits');
 
 buttons.forEach((button) => {
@@ -117,6 +119,7 @@ buttons.forEach((button) => {
   });
 });
 
+/* logos dos cliente */
 
 var swiper = new Swiper('.swiper-container', {
   loop: true,
@@ -156,6 +159,8 @@ carousels.forEach(function(carousel) {
   });
 });
 
+/* evento das listas ao clicar no botão */
+
 const observerCallBack = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -180,21 +185,25 @@ elementsToAnimate.forEach(element => {
   observer.observe(element)
 })    
 
-const arrowIcon = document.querySelectorAll('.seta')
+/* evento ao clicar no botão */ 
 
-arrowIcon.forEach((arrow, index) => {
+const arrows = document.querySelectorAll('.seta');
+
+arrows.forEach((arrow, index) => {
   arrow.addEventListener('click', () => {
-    arrow.classList.remove('fa-beat-fade')
+    
+    arrows.forEach(a => a.classList.remove('custom-blink'));
 
-    const nextArrow = arrowIcon[index + 1]
 
+    const nextArrow = arrows[index + 1];
     if (nextArrow) {
-      nextArrow.classList.add('fa-beat-fade')
+      nextArrow.classList.add('custom-blink');
     } else {
+
       setTimeout(() => {
-        arrowIcon.forEach(a => a.classList.remove('fa-beat-fade'))
-        arrowIcon[0].classList.add('fa-beat-fade')
-      }, 1000)
+        arrows.forEach(a => a.classList.remove('custom-blink'));
+        arrows[0].classList.add('custom-blink');
+      }, 1000);
     }
-  })
-})
+  });
+});
