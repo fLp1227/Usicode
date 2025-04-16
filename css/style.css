@@ -915,6 +915,16 @@ blockquote footer {
   height: 600px;
 }
 
+/* comportamento do botão */
+
+.custom-blink {
+  animation: customBlink 1s linear infinite;
+}
+
+@keyframes customBlink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
 
 @media (max-width: 768px) {
   .nossoSistema {
@@ -1241,6 +1251,8 @@ height: 470px;
   text-align: justify;
   text-justify: inter-word;
 }
+
+
 
 
 /* Declare heights because of positioning of img element */
