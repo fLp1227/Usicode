@@ -88,6 +88,10 @@ html, body {
   #hidebtn {
     top: 70%;
   }
+
+  .carousel-top {
+    text-align: left;
+}
   
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover {
@@ -404,7 +408,7 @@ address a {
 
 .cellphone-md {
   height: 400px;
-  width: 300px;
+  width: auto;
   margin-top: -60px;
 }
 
@@ -747,7 +751,7 @@ blockquote footer {
   } .quemSomos-text h1 {
     justify-content: left;
   } .quemSomos-text p {
-    font-size: 15px;
+    font-size: 13px;
     justify-content: center;
     align-items: center;
     word-break: break-word;
@@ -793,19 +797,6 @@ blockquote footer {
 
 .setas {
   height: 30px;
-}
-
-.quemSomos-text h1, .quemSomos-text p, .quemSomos-text .setas {
-  opacity: 0;  
-  transition: opacity 1s ease-out, transform 1s ease-out; 
-  transform: translateX(-100px); 
-}
-
-.quemSomos-text h1.visible, 
-.quemSomos-text p.visible, 
-.quemSomos-text .setas.visible {
-  opacity: 1; 
-  transform: translateX(0); 
 }
 
 /* Nosso sistema */
@@ -975,7 +966,7 @@ blockquote footer {
 
 .contato-colunas {
   display: flex;
-  gap: 80px;
+  gap: 40px;
 }
 
 .tittle-contato {
@@ -1174,7 +1165,7 @@ height: 470px;
 .carousel-caption {
   display: flex;
   flex-direction: row-reverse; 
-  flex-wrap: wrap;
+  
   justify-content: center;
   align-items: center;
   gap: 80px; 
@@ -1188,6 +1179,7 @@ height: 470px;
   width: 450px;
   height: auto; 
   max-width: 40%;
+  padding: 13px;
 }
 
 .carousel-kd {
@@ -1236,20 +1228,17 @@ height: 470px;
   }
 }
 
-.carousel-top {
- justify-content: center;
-  
-}
+
 
 .text-md {
   font-family: "REM", sans-serif;
   font-weight: 900;
   font-size: 16px !important;
   line-height: 1.5;
-  word-spacing: 2px;
+  word-spacing: 1px;
   color: #000000;
   text-align: justify;
-  text-justify: inter-word;
+
 }
 
 
@@ -1321,7 +1310,7 @@ height: 470px;
 .carousel-caption h1 {
   font-weight: 900;
   text-shadow: none;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 .carousel-caption p {
   font-weight: 700;
@@ -1835,7 +1824,7 @@ fieldset[disabled] .btn-primary.active {
   margin-bottom: 20px;
 }
 .m-b-lg {
-  margin-bottom: 300px;
+  margin-bottom: 30px;
 }
 .m-b-xl {
   margin-bottom: 40px;
@@ -2180,21 +2169,3 @@ section.comments {
 .row h2 {
   color: #1ab394;
 }
-
-.text-row {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-  text-align: center;
-  gap: 10px;
-}
-
-.text-row span, a {
-  margin-bottom: 20px;
-}
-
-
-
-
-
