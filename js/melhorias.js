@@ -1,3 +1,5 @@
+/* Formulário */
+
 function esconderFormulario() {
   var formulario = document.getElementById("formulario");
   var botao = document.getElementById("hidebtn");
@@ -159,31 +161,6 @@ carousels.forEach(function(carousel) {
   });
 });
 
-/* evento das listas ao clicar no botão */
-
-const observerCallBack = (entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const target = entry.target;    
-      target.classList.add('visible')
-      observer.unobserve(target);
-    }
-  })
-}
-
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.5
-}
-
-const observer = new IntersectionObserver(observerCallBack, observerOptions)
-
-const elementsToAnimate = document.querySelectorAll('.quemSomos-text h1, .quemSomos-text p, .quemSomos-text .setas')
-
-elementsToAnimate.forEach(element => {
-  observer.observe(element)
-})    
 
 /* evento ao clicar no botão */ 
 
@@ -207,3 +184,21 @@ arrows.forEach((arrow, index) => {
     }
   });
 });
+
+/* animação do "Quem somos" */
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate')
+      observer.unobserve(entry.target)
+    }
+  })
+}, {root: null,
+  rootMargin: '0px',
+  threshold: 0.2
+});
+
+observer.observe(document.querySelector('.setas'))
+observer.observe(document.querySelector('.woman'))
+observer.observe(document.querySelector('quemSomos-text'))
