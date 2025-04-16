@@ -179,3 +179,22 @@ const elementsToAnimate = document.querySelectorAll('.quemSomos-text h1, .quemSo
 elementsToAnimate.forEach(element => {
   observer.observe(element)
 })    
+
+const arrowIcon = document.querySelectorAll('.seta')
+
+arrowIcon.forEach((arrow, index) => {
+  arrow.addEventListener('click', () => {
+    arrow.classList.remove('fa-beat-fade')
+
+    const nextArrow = arrowIcon[index + 1]
+
+    if (nextArrow) {
+      nextArrow.classList.add('fa-beat-fade')
+    } else {
+      setTimeout(() => {
+        arrowIcon.forEach(a => a.classList.remove('fa-beat-fade'))
+        arrowIcon[0].classList.add('fa-beat-fade')
+      }, 1000)
+    }
+  })
+})
