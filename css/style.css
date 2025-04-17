@@ -780,28 +780,35 @@ blockquote footer {
 
 /* animação texto e imagem */
 
-.quemSomos .woman, 
-.quemSomos .quemSomos-text,   
-.quemSomos-text .setas {
-  transform: translateY(5px);
-  transition: all 0.8s ease-out;
+.woman, .setas {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
 }
 
-.setas.animate {
-  animation: slideInRight 0.8s ease-out forwards;
-  animation-delay: 0.2s;
+.from-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}  
+
+.from-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
 }
 
-.woman.animate {
-  animation: slideInRight 0.8s ease-out forwards;
-  animation-delay: 0.4s;
+.from-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
 }
 
-.quemSomos-text.animate {
-  animation: slideInLeft 0.8s ease-out forwards;
-  animation-delay: 0.2s;
+.from-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
 }
-  
 
 .quemSomos-text h1 {
   font-weight: 700;
