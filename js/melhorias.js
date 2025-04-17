@@ -196,9 +196,9 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, {root: null,
   rootMargin: '0px',
-  threshold: 0.2
+  threshold: 0.5
 });
 
 observer.observe(document.querySelector('.setas'))
 observer.observe(document.querySelector('.woman'))
-observer.observe(document.querySelector('quemSomos-text'))
+observer.observe(document.querySelector('.quemSomos-text'))
