@@ -780,12 +780,6 @@ blockquote footer {
 
 /* animação texto e imagem */
 
-.woman, .setas {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 1s ease-out;
-}
-
 .from-left {
   opacity: 0;
   transform: translateX(-100px);
