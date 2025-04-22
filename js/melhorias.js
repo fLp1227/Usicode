@@ -201,3 +201,5 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(document.querySelector('.from-left'))
 observer.observe(document.querySelector('.from-right'))
+
+
