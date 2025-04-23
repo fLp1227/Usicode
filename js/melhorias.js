@@ -198,3 +198,7 @@ arrowIcon.forEach((arrow, index) => {
     }
   })
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.men').classList.add('animate-men');
+});
