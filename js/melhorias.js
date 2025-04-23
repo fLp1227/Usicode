@@ -202,13 +202,13 @@ const observer = new IntersectionObserver((entries) => {
 observer.observe(document.querySelector('.from-left'))
 observer.observe(document.querySelector('.from-right'))
 
-
+/* scrollar até o tópico "quem somos" */
 
 document.getElementById("oquesomos").addEventListener("click", function() {
   const destino = document.getElementById("oquesomos");
-  const offset = 100; // Ajuste esse valor com base no tamanho do seu cabeçalho ou outros elementos fixos no topo
+  const offset = 100; 
   
-  // Calcula a posição do destino com o ajuste do offset
+  
   const position = destino.getBoundingClientRect().top + window.pageYOffset - offset;
   
   window.scrollTo({
@@ -216,6 +216,32 @@ document.getElementById("oquesomos").addEventListener("click", function() {
     behavior: "smooth"
   });
 });
+
+
+/* animação do h1 em "nosso sistema" */
+
+const botoes = document.querySelectorAll('.benefits');
+const titles = document.querySelectorAll('.title-destaque h1');
+
+botoes.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const content = botao.parentElement.querySelector('.benefits-content');
+    const list = content.querySelector('ul');
+    const itens = list ? list.querySelectorAll('li').length : 0;
+
+    const isOpenNow = content.classList.toggle('open');
+
+    if (isOpenNow && itens >= 6) {
+      titles.forEach(h1 => h1.classList.add('animate-slide'));
+    } else {
+      titles.forEach(h1 => h1.classList.remove('animate-slide'));
+    }
+  });
+});
+
+
+
+
 
 
 
