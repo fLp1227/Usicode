@@ -38,6 +38,9 @@ html, body {
   z-index: 1000;
 }
 
+.aceitedotermo {
+  font-size: 8px;
+}
 
 
 @keyframes slideIn {
