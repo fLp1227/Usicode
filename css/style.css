@@ -937,6 +937,22 @@ blockquote footer {
   margin-top: 5px;
 }
 
+.title-destaque h1.animate-slide {
+  animation: slideRight 0.5s ease-in-out;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  } 
+  30% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .img-computer img {
   height: 600px;
 }
@@ -2242,17 +2258,4 @@ section.comments {
 
 .text-center a {
   font-weight: 700;
-}
-
-.blink {
-  animation: piscar 1s infinite;
-}
-
-@keyframes piscar {
-  0%, 100% {
-    opacity: 1;
-  } 50% {
-    opacity: 0;
-  }
-
 }
