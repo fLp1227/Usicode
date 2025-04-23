@@ -1,3 +1,5 @@
+/* Formulário */
+
 function esconderFormulario() {
   var formulario = document.getElementById("formulario");
   var botao = document.getElementById("hidebtn");
@@ -76,6 +78,8 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
   });
 }
 
+/* Botão de rotacionar */
+
 const buttons = document.querySelectorAll('.benefits');
 
 buttons.forEach((button) => {
@@ -117,6 +121,7 @@ buttons.forEach((button) => {
   });
 });
 
+/* logos dos cliente */
 
 var swiper = new Swiper('.swiper-container', {
   loop: true,
@@ -156,49 +161,64 @@ carousels.forEach(function(carousel) {
   });
 });
 
-const observerCallBack = (entries, observer) => {
+
+/* evento ao clicar no botão */ 
+
+const arrows = document.querySelectorAll('.seta');
+
+arrows.forEach((arrow, index) => {
+  arrow.addEventListener('click', () => {
+    
+    arrows.forEach(a => a.classList.remove('custom-blink'));
+
+
+    const nextArrow = arrows[index + 1];
+    if (nextArrow) {
+      nextArrow.classList.add('custom-blink');
+    } else {
+
+      setTimeout(() => {
+        arrows.forEach(a => a.classList.remove('custom-blink'));
+        arrows[0].classList.add('custom-blink');
+      }, 1000);
+    }
+  });
+});
+
+/* animação do "Quem somos" */
+
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const target = entry.target;    
-      target.classList.add('visible')
-      observer.unobserve(target);
+      entry.target.classList.add('animate')
+      observer.unobserve(entry.target)
     }
   })
-}
-
-const observerOptions = {
-  root: null,
+}, {root: null,
   rootMargin: '0px',
   threshold: 0.5
-}
-
-const observer = new IntersectionObserver(observerCallBack, observerOptions)
-
-const elementsToAnimate = document.querySelectorAll('.quemSomos-text h1, .quemSomos-text p, .quemSomos-text .setas')
-
-elementsToAnimate.forEach(element => {
-  observer.observe(element)
-})    
-
-const arrowIcon = document.querySelectorAll('.seta')
-
-arrowIcon.forEach((arrow, index) => {
-  arrow.addEventListener('click', () => {
-    arrow.classList.remove('fa-beat-fade')
-
-    const nextArrow = arrowIcon[index + 1]
-
-    if (nextArrow) {
-      nextArrow.classList.add('fa-beat-fade')
-    } else {
-      setTimeout(() => {
-        arrowIcon.forEach(a => a.classList.remove('fa-beat-fade'))
-        arrowIcon[0].classList.add('fa-beat-fade')
-      }, 1000)
-    }
-  })
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.men').classList.add('animate-men');
 });
+
+observer.observe(document.querySelector('.from-left'))
+observer.observe(document.querySelector('.from-right'))
+
+
+
+document.getElementById("oquesomos").addEventListener("click", function() {
+  const destino = document.getElementById("oquesomos");
+  const offset = 100; // Ajuste esse valor com base no tamanho do seu cabeçalho ou outros elementos fixos no topo
+  
+  // Calcula a posição do destino com o ajuste do offset
+  const position = destino.getBoundingClientRect().top + window.pageYOffset - offset;
+  
+  window.scrollTo({
+    top: position,
+    behavior: "smooth"
+  });
+});
+
+
+
+
+
+
