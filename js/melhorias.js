@@ -203,3 +203,22 @@ observer.observe(document.querySelector('.from-left'))
 observer.observe(document.querySelector('.from-right'))
 
 
+
+document.getElementById("oquesomos").addEventListener("click", function() {
+  const destino = document.getElementById("oquesomos");
+  const offset = 100; // Ajuste esse valor com base no tamanho do seu cabeçalho ou outros elementos fixos no topo
+  
+  // Calcula a posição do destino com o ajuste do offset
+  const position = destino.getBoundingClientRect().top + window.pageYOffset - offset;
+  
+  window.scrollTo({
+    top: position,
+    behavior: "smooth"
+  });
+});
+
+
+
+
+
+
