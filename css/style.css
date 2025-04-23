@@ -941,20 +941,12 @@ blockquote footer {
   margin-top: 5px;
 }
 
-.title-destaque h1.animate-slide {
-  animation: slideRight 0.5s ease-in-out;
-}
-
-@keyframes slideRight {
-  0% {
-    transform: translateX(0);
-  } 
-  30% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+@media (min-width: 768px) {
+    .title-destaque h1 {
+      transition: transform 0.3s ease-in-out;
+    }
+  } .title-destaque h1.animate-slide {
+    transform: translateX(80px);
 }
 
 .img-computer img {
@@ -995,17 +987,8 @@ blockquote footer {
   } .animation {
     width: auto;
     height: auto;
-  }
+  } 
 }
-
-@media (max-width: 768px) {
-  .animation {
-    width: auto;
-    height: auto;
-  }
-}
-
-
 
 /* Contato */
 
