@@ -1600,6 +1600,10 @@ fieldset[disabled] .btn-primary.active {
     padding: 15px 0;
   }
 
+  .navbar-default-politics {
+    background-color: #072044;
+  }
+
   
   .navbar-default .navbar-nav > .active > a:focus {
     background: transparent;
@@ -2194,4 +2198,32 @@ section.comments {
 
 .row h2 {
   color: #1ab394;
+}
+
+.row-lg {
+  height: 80px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.text-center {
+  margin-bottom: 2vh;
+}
+
+.text-center a {
+  font-weight: 700;
+}
+
+.blink {
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  } 50% {
+    opacity: 0;
+  }
+
 }
