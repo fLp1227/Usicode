@@ -914,8 +914,9 @@ blockquote footer {
 
 .title-destaque {
   font-family: "REM", sans-serif;
-  margin-top: -112px;
-  padding: 10px 600px;
+  margin-top: -120px;
+  padding: 10px 670px;
+  background-color: #3c6a9b;
 }
 
 .title-destaque h1 {
