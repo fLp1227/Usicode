@@ -38,6 +38,10 @@ html, body {
   z-index: 1000;
 }
 
+.aceitedotermo {
+  margin-top: 15px;
+  font-size: 10px;
+}
 
 
 @keyframes slideIn {
