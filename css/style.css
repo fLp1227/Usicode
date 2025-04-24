@@ -909,12 +909,12 @@ blockquote footer {
   background-color: #072044;
   border: none;
   border-radius: 50%;
-  transform: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .benefits .animation {
   display: inline-block;
-  transform: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .benefits.rotate .animation {
@@ -1011,11 +1011,34 @@ blockquote footer {
   } .title-destaque h1.animate-slide {
     transform: none;
   } .benefits {
-    all:unset
-    appearance: none;
-    -webkit-appearance: none;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
   }
 }
+
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .benefits {
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      font-size: 15px;
+    }
+
+    .benefits .seta {
+      display: block;
+      font-size: 14px;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      transform: translateY(1px); 
+      color: white;
+    }
+  }
+}
+
 
 /* Contato */
 
