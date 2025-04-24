@@ -494,6 +494,14 @@ address a {
   .arrow {
     width: 3rem;
     height: 3rem;
+    appearance: none;
+    -webkit-appearance: none;
+    all: unset;
+    color: #3c6a9b;
+    background-color: #072044;
+    border-radius: 50%;
+    padding: 2px 15px;
+    line-height: 1.8;
   }
 }
 
@@ -964,7 +972,7 @@ blockquote footer {
   50% {opacity: 0;}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nossoSistema {
     flex-direction: column;
     margin-bottom: -50px;
@@ -975,19 +983,23 @@ blockquote footer {
   } .coluna-esquerda {
     margin-top: 10px;
   } .title-destaque {
-    max-width: 100%;
-    min-width: 250px;
-    display: inline-block;
-    padding: 10px 25px;
-    margin: -40px 20px;
+    width: 124%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     white-space: normal;
+    margin: 0 auto;
+    padding: 2px 15px;
   } .title-destaque h1 {
-    font-size: 2rem;
+    font-size: 22px;
   } .animation {
     width: auto;
     height: auto;
-  } 
+  } .title-destaque h1.animate-slide {
+    transform: none;
+  }
 }
 
 /* Contato */
