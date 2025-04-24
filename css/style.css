@@ -927,7 +927,7 @@ blockquote footer {
 .title-destaque {
   font-family: "REM", sans-serif;
   margin-top: -120px;
-  padding: 10px 670px;
+  padding: 10px 600px;
   background-color: #3c6a9b;
 }
 
@@ -936,9 +936,9 @@ blockquote footer {
   text-align: center;
   color: #072044;
   background-color: #1ab394;
-  padding: 5px;
+  padding: 2px 5px;
   border-radius: 5px;
-  margin-top: 5px;
+  margin-right: 100px;
 }
 
 @media (min-width: 768px) {
@@ -946,7 +946,7 @@ blockquote footer {
       transition: transform 0.3s ease-in-out;
     }
   } .title-destaque h1.animate-slide {
-    transform: translateX(80px);
+    transform: translateX(100px);
 }
 
 .img-computer img {
