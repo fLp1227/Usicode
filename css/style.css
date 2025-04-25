@@ -845,6 +845,7 @@ blockquote footer {
 .quemSomos-text p {
   font-weight: 700;
   font-size: 14px;
+  text-align: justify;
 }
 
 .woman {
@@ -1037,6 +1038,10 @@ blockquote footer {
       top: 1px; 
     }
   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) { 
+  
 }
 
 
@@ -2304,8 +2309,5 @@ section.comments {
   font-weight: bold;
   width: fit-content;
   cursor: unset;
-}
-
-.copyright:hover {
-  color: #ffff;
+  margin-bottom: 10px;
 }
