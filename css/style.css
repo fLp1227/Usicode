@@ -769,7 +769,6 @@ blockquote footer {
   .quemSomos {
     flex-direction: column;
     max-width: 100%;
-    font-size: 4rem;
     margin-top: -30px;
     margin-bottom: -28px;
   } .quemSomos img {
@@ -779,17 +778,19 @@ blockquote footer {
     margin-left: 15px;
     margin-bottom: 2px;
     order: 1;
-  }
   } .quemSomos-text h1 {
     justify-content: left;
+    padding: 0 20px;
   } .Quem_somos{
     justify-content: center;
     align-items: center;
     word-break: break-word;
     font-weight: 700;
     font-size: 14px;
+    padding: 20px 20px;
   } .quemSomos-text img {
     display: none;
+  }
 }
 
 @media (max-width: 375px) {
@@ -812,6 +813,10 @@ blockquote footer {
   text-align: justify;
   max-width: 600px;
   word-break: break-word;
+}
+
+@media (min-width: 600px) and (max-width: 1900px) {
+  
 }
 
 /* animação texto e imagem */
@@ -861,7 +866,7 @@ blockquote footer {
 /* Nosso sistema */
 
 .nossoSistema {
-  background-color: #3c6a9b;
+  background-color: #072044;
   padding: 40px 40px;
   margin-right: -100px;
   flex-wrap: wrap;
@@ -909,6 +914,7 @@ blockquote footer {
   font-size: 15px;
   cursor: pointer;
   background-color: #072044;
+  color: #ffff;
   border: none;
   border-radius: 50%;
   transition: transform 0.3s ease;
@@ -959,9 +965,8 @@ blockquote footer {
 
 .title-destaque {
   font-family: "REM", sans-serif;
-  margin-top: -100px;
+  margin-top: -60px;
   padding: 10px 250px;
-  background-color: #3c6a9b;
 }
 
 .title-destaque h1 {
@@ -997,6 +1002,8 @@ blockquote footer {
   50% {opacity: 0;}
 }
 
+/* media query "nosso sistema */
+
 @media (max-width: 767px) {
   .nossoSistema {
     flex-direction: column;
@@ -1008,13 +1015,10 @@ blockquote footer {
   } .coluna-esquerda {
     margin-top: 10px;
   } .title-destaque {
-    width: 124%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    white-space: normal;
     margin: 0 auto;
     padding: 2px 15px;
   } .title-destaque h1 {
@@ -1053,15 +1057,26 @@ blockquote footer {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) { 
+@media (min-width: 600px) and (max-width: 1900px) { 
   .title-destaque {
-    color: #ffff;
+    padding: 20px 500px;
+  } .img-computer img {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1400px) { 
+  .title-destaque {
+    padding: 20px 200px;
+  } .img-computer img {
+    width: 500px;
+    height: 500px;
   }
 }
 
 
-/* Contato */
-
+/* Contato */ 
 #contact {
   padding: 40px;
 }
@@ -1069,7 +1084,7 @@ blockquote footer {
 #contact h1 {
   color: #1ab394;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .contato-colunas {
