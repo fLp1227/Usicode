@@ -144,22 +144,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 
-var carousels = document.querySelectorAll('.mySwiper');
-carousels.forEach(function(carousel) {
-  new Swiper(carousel, {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      768: { slidesPerView: 'auto' },
-      480: { slidesPerView: 'auto' }
-    }
-  });
-});
+
 
 
 /* evento ao clicar no botão */ 
@@ -242,6 +227,16 @@ botoes.forEach((botao) => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.logo-track');
+  // 1. Clona tudo pra duplicar automaticamente
+  track.innerHTML += track.innerHTML;
+
+  // 2. Mede metade da largura total (original + clone)
+  const scrollWidth = track.scrollWidth / 2;
+  document.documentElement.style.setProperty('--scroll-width', `${scrollWidth}px`);
+});
+    
 
 
 

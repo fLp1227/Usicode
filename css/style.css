@@ -630,6 +630,7 @@ margin-left: 40px;
 }
 
 
+
 /*Empresas clientes*/
 
 .logo-carousel-section {
@@ -714,22 +715,9 @@ blockquote footer {
   object-fit: contain;
   object-position: center;
 }
-/*Função dos botões comentarios*/
-/*.swiper-button-prev,
-.swiper-button-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10; /* pra garantir que fiquem por cima 
-}
 
-.swiper-button-prev {
-  left: 10px; 
-}
-.swiper-button-next {
-  right: 10px; 
-}
- */
+
+
 /* Quem somos */
 
 .quemSomos {
@@ -739,6 +727,7 @@ blockquote footer {
   margin-top: 40px;
   gap: 50px;
 }
+
 
 @media (min-width: 769px) {
   .quemSomos-text img.setas {
@@ -761,11 +750,12 @@ blockquote footer {
   }
   } .quemSomos-text h1 {
     justify-content: left;
-  } .quemSomos-text p {
-    font-size: 13px;
+  } .Quem_somos{
     justify-content: center;
     align-items: center;
     word-break: break-word;
+    font-weight: 700;
+    font-size: 14px;
   } .quemSomos-text img {
     display: none;
 }
@@ -787,6 +777,8 @@ blockquote footer {
   line-height: 1.5;
   font-family: "REM", sans-serif;
   margin-top: 80px;
+  text-align: justify;
+  width: 600px;
 }
 
 /* animação texto e imagem */
@@ -823,10 +815,6 @@ blockquote footer {
   gap: 30px;
 }
 
-.quemSomos-text p {
-  font-weight: 700;
-  font-size: 14px;
-}
 
 .woman {
   height: 500px;
@@ -924,10 +912,22 @@ blockquote footer {
   margin-top: 5px;
 }
 
+.chamado {
+
+  font-family: "REM", sans-serif;
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}
+
 .title-destaque {
   font-family: "REM", sans-serif;
-  margin-top: -120px;
-  padding: 10px 600px;
+  margin-top: -100px;
+  padding: 10px 250px;
   background-color: #3c6a9b;
 }
 
@@ -936,7 +936,7 @@ blockquote footer {
   text-align: center;
   color: #072044;
   background-color: #1ab394;
-  padding: 2px 5px;
+  padding: 2px 60px;
   border-radius: 5px;
   margin-right: 100px;
 }
@@ -1238,7 +1238,9 @@ height: 470px;
   }
 
 
+
 }
+
 
 .carousel-kd {
   display: flex; 
@@ -1298,8 +1300,6 @@ height: 470px;
   text-align: justify;
 
 }
-
-
 
 
 /* Declare heights because of positioning of img element */
@@ -2245,4 +2245,46 @@ section.comments {
 
 .text-center a {
   font-weight: 700;
+}
+
+
+:root {
+  --duration: 60s;        /* ajusta a velocidade */
+  --scroll-width: 0px;    /* vai ser preenchido via JS */
+}
+
+.logo-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+.logo-track {
+  display: flex;
+  gap: 50px;              /* seu espaçamento */
+  animation: scroll var(--duration) linear infinite;
+  /* sem width aqui */
+}
+.logo {
+  /* garante que o container fique centrado pro logo não esticar demais */
+  display: grid;
+  align-items: center;
+  background: #00ff4000;
+  padding: 20px;
+  justify-content: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.137);
+  
+}
+
+.logo img {
+  display: block;
+  width: auto;           /* deixa a largura livre */
+  height: auto;          /* idem pro height */
+  max-width: 300px;      /* seu valor desejado */
+  max-height: 120px;     /* seu valor desejado */
+  object-fit: contain;   /* mantém proporção e centra dentro da caixa */
+  
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--scroll-width))); }
 }
