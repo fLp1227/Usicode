@@ -797,7 +797,8 @@ blockquote footer {
   font-family: "REM", sans-serif;
   margin-top: 80px;
   text-align: justify;
-  width: 600px;
+  max-width: 600px;
+  word-break: break-word;
 }
 
 /* animação texto e imagem */
