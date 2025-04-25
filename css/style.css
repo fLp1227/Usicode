@@ -2278,6 +2278,8 @@ section.comments {
   color: #1ab394;
 }
 
+/* Politica de privacidade */
+
 .row-lg {
   height: 80px;
   justify-content: center;
@@ -2286,9 +2288,24 @@ section.comments {
 }
 
 .text-center {
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
+  flex-direction: column;
 }
 
 .text-center a {
   font-weight: 700;
+}
+
+.copyright {
+  color: #3c6a9b;
+  display: flex;
+  font-size: 12px;
+  margin: 0 auto;
+  font-weight: bold;
+  width: fit-content;
+  cursor: unset;
+}
+
+.copyright:hover {
+  color: #ffff;
 }
