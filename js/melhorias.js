@@ -216,7 +216,7 @@ botoes.forEach((botao) => {
 
     const isOpenNow = content.classList.toggle('open');
 
-    if (isOpenNow && itens >= 5) {
+    if (isOpenNow && itens >= 6) {
       titles.forEach(h1 => h1.classList.add('animate-slide'));
     } else {
       titles.forEach(h1 => h1.classList.remove('animate-slide'));
