@@ -808,6 +808,10 @@ blockquote footer {
   margin-top: 80px;
 }
 
+@media (min-width: 600px) and (max-width: 1900px) {
+  
+}
+
 /* animação texto e imagem */
 
 .from-left {
@@ -1040,15 +1044,27 @@ blockquote footer {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) { 
+@media (min-width: 600px) and (max-width: 1900px) { 
   .title-destaque {
-    color: #ffff;
+    padding: 20px 500px;
+  } .img-computer img {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1400px) { 
+  .title-destaque {
+    padding: 20px 200px;
+  } .img-computer img {
+    width: 500px;
+    height: 500px;
   }
 }
 
 
 /* Contato */
-
+x
 #contact {
   padding: 40px;
 }
