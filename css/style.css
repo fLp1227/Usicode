@@ -123,9 +123,10 @@ html, body {
 
 .chamado {
 
-  width: 75%;
+  width: 90%;
   font-size: 21px !important;
   text-align: justify;
+  padding-left: 12%;
 }
 
   blockquote {
@@ -738,14 +739,6 @@ blockquote footer {
   height: 150px; /* ajuste conforme necessário */
   
 }
-
-.logoaaaaa {
-  width: auto !important;
-  object-fit: contain;
-  object-position: center;
-}
-
-
 
 /* Quem somos */
 
@@ -2369,6 +2362,10 @@ section.comments {
   justify-content: center;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.137);
   
+}
+
+.opinions_background {
+  background-color: #3c6a9b;
 }
 
 .logo img {
