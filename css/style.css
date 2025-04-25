@@ -900,7 +900,7 @@ blockquote footer {
   width: 30px;
   font-size: 15px;
   cursor: pointer;
-  background-color: #072044;
+  background-color: #3c6a9b;
   color: #ffff;
   border: none;
   border-radius: 50%;
@@ -930,7 +930,7 @@ blockquote footer {
 }
 
 .benefits-content ul li {
-  margin-left: 100px;
+  margin-left: 50px;
   font-weight: 700;
   font-size: 1.6rem;
   margin-bottom: 5px;
