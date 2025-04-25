@@ -1010,31 +1010,31 @@ blockquote footer {
     height: auto;
   } .title-destaque h1.animate-slide {
     transform: none;
-  } .benefits {
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    font-size: 15px;
-  }
+  } 
 }
 
 @media not all and (min-resolution:.001dpcm) {
   @supports (-webkit-appearance: none) {
     .benefits {
-      border-radius: 50%;
       height: 30px;
       width: 30px;
-      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #072044;
+      border: none;
+      border-radius: 50%;
+      padding: 0;
     }
 
     .benefits .seta {
-      display: block;
       font-size: 14px;
       line-height: 1;
       margin: 0;
       padding: 0;
-      transform: translateY(1px); 
       color: white;
+      position: relative;
+      top: 1px; 
     }
   }
 }
