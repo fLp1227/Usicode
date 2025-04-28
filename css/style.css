@@ -17,10 +17,11 @@ html, body {
 }
 
 
-
 .servicesMenor {
   background-color: #072044;
 }
+
+/* Formulário */
 
 #formulario {
   position: fixed;
@@ -55,19 +56,8 @@ html, body {
   }
 }
 
-#chamado {
-  font-family: "REM", sans-serif;
-  font-size: 40px;
-  color: #000000;
-  margin-bottom: 10px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
-}
-
-
 /* BOTÃO OCULTAR */
+
 #hidebtn {
   position: fixed;
   top: 650px;
@@ -323,6 +313,103 @@ address a {
   color: #ffffff !important;
 }
 
+/* Primeiro tópico */
+
+.carousel-caption {
+  display: flex;
+  flex-direction: row-reverse; 
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; 
+  padding: 20px;
+  height: auto; 
+  text-align: center;
+}
+
+.men {
+  position: relative;
+  width: 450px;
+  height: auto; 
+  max-width: 40%;
+  padding: 13px;
+  transform: translateY(50%);
+  animation: entrarDeBaixo 1s ease-out forwards;
+  top: 0;
+  z-index: -1;
+}
+
+.carousel-kd {
+  display: flex; 
+  flex-direction: column;
+  max-width: 50%;
+  justify-content: center;
+  font-family: "REM", sans-serif;
+  text-align: left;
+  margin-right: 60px;
+}
+
+.text-md {
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  font-size: 16px !important;
+  line-height: 1.5;
+  word-spacing: 1px;
+  color: #000000;
+  text-align: justify;
+}
+
+/* key frames and media query carousel */
+
+@keyframes entrarDeBaixo {
+  
+  from {
+    transform: translateX(-0%) translateY(50%);
+    opacity: 0;
+  }
+  
+  to {
+    left: 0%;
+    transform: translate(0%, 0%);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    flex-direction: column !important; 
+    gap: 20px;
+    margin-top: 60px;
+  } .men {
+    max-width: 100%;
+    margin-right: 15px;
+    order: 1;
+  } .carousel-kd {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  } 
+}
+
+@media (max-width: 375px) {
+  .carousel-caption {
+    flex-direction: column !important; 
+    gap: 20px;
+    margin-top: -80px;
+  } .men {
+    max-width: 100%;
+    order: 1;
+  } .carousel-kd {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    right: 60px;
+  } .carousel-top {
+    text-align: left;
+    font-size: 24px;
+  }
+}
+
 /* Container */
 
 .topics-container {
@@ -429,27 +516,104 @@ address a {
   margin-top: 58px;
 }
 
-@media (max-width: 768px) {
-  .topic-cell {
-    flex-direction: column;
-  }
-}
 .topic-cellphone {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 500px;
 }
 
-@media (max-width: 768px) {
-  .topic-cellphone {
-    flex-direction: column;
-  }
-}
-
 .cellphone-md {
   height: 400px;
   width: auto;
   margin-top: -60px;
+}
+
+.content-app {
+  color: #fff;
+}
+
+.content-list {
+  list-style: none !important;
+  font-size: 24px;
+  line-height: 1.5;
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  padding: 0;
+
+}
+
+.arrow {
+  height: 40px;
+  width: 40px;
+  line-height: 0.5;
+  color: #3c6a9b;
+  background-color: #072044;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: unset;
+  border: none;
+  outline: none;
+  font-size: 20px; 
+}
+
+.content-list {
+  list-style: none !important;
+  font-size: 24px;
+  line-height: 1.5;
+  font-family: "REM", sans-serif;
+  font-weight: 900;
+  padding: 0;
+
+}
+
+.content-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 2;
+}
+
+.content-md {
+  margin-top: 100px;
+  font-family: "REM", sans-serif;
+  background-color: #072044;
+  font-weight: 900;
+  font-size: 35px;
+  margin-right: -280px;
+  line-height: 0.5;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.content-tittle {
+  font-family: "REM" ,sans-serif;
+  font-weight: 900;
+  font-size: 35px;
+  line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+.androidIos {
+  color: #072044;
+  font-weight: 900;
+  color: #072044;
+}
+
+/* media query topic cellphone */
+
+@media (max-width: 768px) {
+  .topic-cell {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .topic-cellphone {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
@@ -475,47 +639,10 @@ address a {
   } 
 }
 
-
-.content-app {
-  color: #fff;
-}
-
-.content-list {
-  list-style: none !important;
-  font-size: 24px;
-  line-height: 1.5;
-  font-family: "REM", sans-serif;
-  font-weight: 900;
-  padding: 0;
-
-}
-
-.content-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  line-height: 2;
-}
-
 @media (max-width: 768px) {
   .content-list li {
     font-size: 18px;
   }
-}
-
-.arrow {
-  height: 40px;
-  width: 40px;
-  line-height: 0.5;
-  color: #3c6a9b;
-  background-color: #072044;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  cursor: unset;
-  border: none;
-  outline: none;
-  font-size: 20px; 
 }
 
 @media (max-width: 768px) {
@@ -530,19 +657,6 @@ address a {
     line-height: 1.8;
     margin-top: 2px;
   }
-}
-
-
-.content-md {
-  margin-top: 100px;
-  font-family: "REM", sans-serif;
-  background-color: #072044;
-  font-weight: 900;
-  font-size: 35px;
-  margin-right: -280px;
-  line-height: 0.5;
-  padding: 20px;
-  margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {
@@ -566,27 +680,11 @@ address a {
   }
 }
 
-.content-tittle {
-  font-family: "REM" ,sans-serif;
-  font-weight: 900;
-  font-size: 35px;
-  line-height: 1;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  color: #000000;
-}
-
 @media (max-width: 768px) {
   .content-tittle {
     font-size: 20px;
     order: 0;
   }
-}
-
-.androidIos {
-  color: #072044;
-  font-weight: 900;
-  color: #072044;
 }
 
 @media (max-width: 768px) {
@@ -622,6 +720,7 @@ address a {
   list-style: none; 
   padding: 30px;
 }
+
 #advantages-title {
 margin-left: 40px;
 }
@@ -740,6 +839,34 @@ blockquote footer {
   gap: 50px;
 }
 
+.quemSomos-text {
+  line-height: 1.5;
+  font-family: "REM", sans-serif;
+  margin-top: 80px;
+  text-align: justify;
+  max-width: 600px;
+  word-break: break-word;
+}
+
+.quemSomos-text h1 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #1ab394;
+  display: flex;
+  gap: 30px;
+}
+
+
+.woman {
+  height: 500px;
+  width: 500px;
+}
+
+.setas {
+  height: 30px;
+}
+
+/* media query "Quem somos" */
 
 @media (min-width: 769px) {
   .quemSomos-text img.setas {
@@ -789,15 +916,6 @@ blockquote footer {
   }
 }
 
-.quemSomos-text {
-  line-height: 1.5;
-  font-family: "REM", sans-serif;
-  margin-top: 80px;
-  text-align: justify;
-  max-width: 600px;
-  word-break: break-word;
-}
-
 @media (min-width: 600px) and (max-width: 1900px) {
   
 }
@@ -826,24 +944,6 @@ blockquote footer {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.3s;
-}
-
-.quemSomos-text h1 {
-  font-weight: 700;
-  font-size: 30px;
-  color: #1ab394;
-  display: flex;
-  gap: 30px;
-}
-
-
-.woman {
-  height: 500px;
-  width: 500px;
-}
-
-.setas {
-  height: 30px;
 }
 
 /* Nosso sistema */
@@ -896,7 +996,7 @@ blockquote footer {
   width: 30px;
   font-size: 15px;
   cursor: pointer;
-  background-color: #072044;
+  background-color: #3c6a9b;
   color: #ffff;
   border: none;
   border-radius: 50%;
@@ -926,24 +1026,12 @@ blockquote footer {
 }
 
 .benefits-content ul li {
-  margin-left: 100px;
+  margin-left: 50px;
   font-weight: 700;
   font-size: 1.6rem;
   margin-bottom: 5px;
   line-height: 1.5;
   margin-top: 5px;
-}
-
-.chamado {
-
-  font-family: "REM", sans-serif;
-  font-size: 40px;
-  color: #000000;
-  margin-bottom: 10px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
 }
 
 .title-destaque {
@@ -962,48 +1050,25 @@ blockquote footer {
   margin-right: 100px;
 }
 
-@media (min-width: 768px) {
-    .title-destaque h1 {
-      transition: transform 0.3s ease-in-out;
-    }
-  } .title-destaque h1.animate-slide {
-    transform: translateX(100px);
-}
-
-.img-computer img {
-  height: 600px;
-}
-
-/* comportamento do botão */
-
-.custom-blink {
-  animation: customBlink 1s linear infinite;
-}
-
-@keyframes customBlink {
-  0%, 100% {opacity: 1;}
-  50% {opacity: 0;}
-}
-
 /* media query "nosso sistema */
 
 @media (max-width: 767px) {
   .nossoSistema {
     flex-direction: column;
-    margin-bottom: -50px;
+    padding: 20px 20px;
   } .img-computer img {
-    max-width: 100%;
-    height: 400px;
-    margin-left: -38px;
+    display: block;         
+    max-width: 80%;          
+    height: auto !important;                      
   } .coluna-esquerda {
     margin-top: 10px;
   } .title-destaque {
-    width: 100%;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     padding: 2px 15px;
+    max-width: 100%;
   } .title-destaque h1 {
     font-size: 22px;
   } .animation {
@@ -1058,8 +1123,86 @@ blockquote footer {
   }
 }
 
+@media (min-width: 768px) {
+    .title-destaque h1 {
+      transition: transform 0.3s ease-in-out;
+    }
+  } .title-destaque h1.animate-slide {
+    transform: translateX(100px);
+}
+
+.img-computer img {
+  height: 600px;
+}
+
+/* logos */
+
+.chamado {
+
+  font-family: "REM", sans-serif;
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}
+
+:root {
+  --duration: 60s;        /* ajusta a velocidade */
+  --scroll-width: 0px;    /* vai ser preenchido via JS */
+}
+
+.logo-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+.logo-track {
+  display: flex;
+  gap: 50px;              /* seu espaçamento */
+  animation: scroll var(--duration) linear infinite;
+  /* sem width aqui */
+}
+.logo {
+  /* garante que o container fique centrado pro logo não esticar demais */
+  display: grid;
+  align-items: center;
+  background: #00ff4000;
+  padding: 20px;
+  justify-content: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.137);
+  
+}
+
+.logo img {
+  display: block;
+  width: auto;           /* deixa a largura livre */
+  height: auto;          /* idem pro height */
+  max-width: 300px;      /* seu valor desejado */
+  max-height: 120px;     /* seu valor desejado */
+  object-fit: contain;   /* mantém proporção e centra dentro da caixa */
+  
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--scroll-width))); }
+}
+
+/* comportamento do botão */
+
+.custom-blink {
+  animation: customBlink 1s linear infinite;
+}
+
+@keyframes customBlink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
 
 /* Contato */ 
+
 #contact {
   padding: 40px;
 }
@@ -1264,110 +1407,36 @@ height: 470px;
     background-color: #3c6a9b;
   }
 }
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-/* Carousel base class */
 
-.carousel-caption {
+
+/* Politica de privacidade */
+
+.row-lg {
+  height: 80px;
+  justify-content: center;
   display: flex;
-  flex-direction: row-reverse; 
-  position: relative;
-  justify-content: center;
   align-items: center;
-  gap: 80px; 
-  padding: 20px;
-  height: auto; 
-  text-align: center;
 }
 
-
-.men {
-  position: relative;
-  width: 450px;
-  height: auto; 
-  max-width: 40%;
-  padding: 13px;
-  transform: translateY(50%);
-  animation: entrarDeBaixo 1s ease-out forwards;
-  top: 0;
-  z-index: -1;
-}
-
-@keyframes entrarDeBaixo {
-  
-  from {
-    transform: translateX(-0%) translateY(50%);
-    opacity: 0;
-  }
-  
-  to {
-    left: 0%;
-    transform: translate(0%, 0%);
-  }
-
-
-
-}
-
-
-.carousel-kd {
-  display: flex; 
+.text-center {
+  margin-bottom: 1vh;
   flex-direction: column;
-  max-width: 50%;
-  justify-content: center;
-  font-family: "REM", sans-serif;
-  text-align: left;
-  margin-right: 60px;
 }
 
-
-@media (max-width: 768px) {
-  .carousel-caption {
-    flex-direction: column !important; 
-    gap: 20px;
-    margin-top: 60px;
-  } .men {
-    max-width: 100%;
-    margin-right: 15px;
-    order: 1;
-  } .carousel-kd {
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-  } 
+.text-center a {
+  font-weight: 700;
 }
 
-@media (max-width: 375px) {
-  .carousel-caption {
-    flex-direction: column !important; 
-    gap: 20px;
-    margin-top: -80px;
-  } .men {
-    max-width: 100%;
-    order: 1;
-  } .carousel-kd {
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-    right: 60px;
-  } .carousel-top {
-    text-align: left;
-    font-size: 24px;
-  }
+.copyright {
+  color: #3c6a9b;
+  display: flex;
+  font-size: 12px;
+  margin: 0 auto;
+  font-weight: bold;
+  width: fit-content;
+  cursor: unset;
+  margin-bottom: 10px;
 }
-
-.text-md {
-  font-family: "REM", sans-serif;
-  font-weight: 900;
-  font-size: 16px !important;
-  line-height: 1.5;
-  word-spacing: 1px;
-  color: #000000;
-  text-align: justify;
-
-}
-
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
@@ -2056,79 +2125,4 @@ section.comments {
 
 .row h2 {
   color: #1ab394;
-}
-
-/* Politica de privacidade */
-
-.row-lg {
-  height: 80px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
-
-.text-center {
-  margin-bottom: 1vh;
-  flex-direction: column;
-}
-
-.text-center a {
-  font-weight: 700;
-}
-
-.copyright {
-  color: #3c6a9b;
-  display: flex;
-  font-size: 12px;
-  margin: 0 auto;
-  font-weight: bold;
-  width: fit-content;
-  cursor: unset;
-  margin-bottom: 10px;
-}
-
-
-:root {
-  --duration: 60s;        /* ajusta a velocidade */
-  --scroll-width: 0px;    /* vai ser preenchido via JS */
-}
-
-.logo-carousel {
-  overflow: hidden;
-  width: 100%;
-}
-.logo-track {
-  display: flex;
-  gap: 50px;              /* seu espaçamento */
-  animation: scroll var(--duration) linear infinite;
-  /* sem width aqui */
-}
-.logo {
-  /* garante que o container fique centrado pro logo não esticar demais */
-  display: grid;
-  align-items: center;
-  background: #00ff4000;
-  padding: 20px;
-  justify-content: center;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.137);
-  
-}
-
-.opinions_background {
-  background-color: #3c6a9b;
-}
-
-.logo img {
-  display: block;
-  width: auto;           /* deixa a largura livre */
-  height: auto;          /* idem pro height */
-  max-width: 300px;      /* seu valor desejado */
-  max-height: 120px;     /* seu valor desejado */
-  object-fit: contain;   /* mantém proporção e centra dentro da caixa */
-  
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(-1 * var(--scroll-width))); }
 }
