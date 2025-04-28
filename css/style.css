@@ -915,7 +915,7 @@ blockquote footer {
 
 @media (max-width: 375px) {
   .quemSomos img {
-    height: 50vh;
+    height: 45vh;
     width: 100%;
   } .quemSomos-text img {
     display: none;
@@ -1106,6 +1106,8 @@ blockquote footer {
     transform: none;
   } .benefits {
     background-color: #072044;
+  } .benefits-content ul li {
+    margin-right: 50px;
   }
 }
 
