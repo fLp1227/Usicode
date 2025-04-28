@@ -94,7 +94,7 @@ html, body {
 
 @media (max-width: 480px) {
   #hidebtn {
-    top: 70%;
+    top: 65%;
   }
 
   .text-md {
@@ -107,10 +107,6 @@ html, body {
     font-size: 28px !important;
   }
   
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > .active > a:hover {
-    border-top: none !important;
-  }
 
   .logo {    /* Ajuste Logos em telas pequenas */
   max-height: auto !important;  
@@ -1102,7 +1098,7 @@ blockquote footer {
     width: auto;
     height: auto;
   } .title-destaque h1.animate-slide {
-    transform: none;
+    transform: none !important;
   } .benefits {
     background-color: #072044;
   } .benefits-content ul li {
@@ -1682,55 +1678,6 @@ li.pricing-title {
   color: #1ab394;
 }
 
-/* Buttons - only primary custom button
-------------------------- */
-.btn-primary.btn-outline:hover,
-.btn-success.btn-outline:hover,
-.btn-info.btn-outline:hover,
-.btn-warning.btn-outline:hover,
-.btn-danger.btn-outline:hover {
-  color: #fff;
-}
-.btn-primary {
-  background-color: #1ab394;
-  border-color: #1ab394;
-  color: #ffffff;
-  font-size: 14px;
-  padding: 10px 20px;
-  font-weight: 600;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-color: #18a689;
-  border-color: #18a689;
-  color: #ffffff;
-}
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-image: none;
-}
-.btn-primary.disabled,
-.btn-primary.disabled:hover,
-.btn-primary.disabled:focus,
-.btn-primary.disabled:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled],
-.btn-primary[disabled]:hover,
-.btn-primary[disabled]:focus,
-.btn-primary[disabled]:active,
-.btn-primary.active[disabled],
-fieldset[disabled] .btn-primary,
-fieldset[disabled] .btn-primary:hover,
-fieldset[disabled] .btn-primary:focus,
-fieldset[disabled] .btn-primary:active,
-fieldset[disabled] .btn-primary.active {
-  background-color: #1dc5a3;
-  border-color: #1dc5a3;
-}
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 @media (min-width: 768px) {
