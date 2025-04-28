@@ -1061,6 +1061,11 @@ blockquote footer {
   margin-top: 5px;
 }
 
+.benefits-content ul li::before {
+  content: "•";
+  margin-right: 5px;
+}
+
 .title-destaque {
   font-family: "REM", sans-serif;
   margin-top: -60px;
@@ -1150,6 +1155,7 @@ blockquote footer {
   } .img-computer img {
     width: 700px;
     height: 700px;
+    max-width: 100%;
   }
 }
 
