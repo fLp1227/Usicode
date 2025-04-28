@@ -877,6 +877,7 @@ blockquote footer {
     width: 90vw;
     margin-left: 15px;
     order: 1;
+    margin-bottom: 40px;
   } .quemSomos-text h1 {
     justify-content: left;
     padding: 0 20px;
@@ -937,6 +938,24 @@ blockquote footer {
   transform: translateX(0);
   transition-delay: 0.3s;
 }
+
+/* divisor */
+
+.divisor {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .divisor {
+    display: block;
+    border: none;
+    border-top: 2px solid #00b894; 
+    width: 90%; 
+    margin: 10px auto; 
+  }
+}
+
+
 
 /* Nosso sistema */
 
@@ -1046,7 +1065,7 @@ blockquote footer {
 @media (max-width: 767px) {
   .nossoSistema {
     flex-direction: column;
-    padding: 20px 20px;
+    padding: 10px 20px;
   } .img-computer img {
     display: block;         
     max-width: 100%;          
