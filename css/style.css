@@ -465,6 +465,13 @@ address a {
   height: 30vh;
 }
 
+.logos-clientes {
+  background-color: #3c6a9b;
+ 
+  /* Removendo a altura fixa permite que o container se ajuste automaticamente */
+  /* height: 290px; */
+}
+
 @media (max-width: 768px) {
   .content h1 {
     width: 100%;
