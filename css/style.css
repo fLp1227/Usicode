@@ -334,7 +334,6 @@ address a {
   width: 450px;
   height: auto; 
   max-width: 40%;
-  padding: 13px;
   transform: translateY(50%);
   animation: entrarDeBaixo 1s ease-out forwards;
   top: 0;
