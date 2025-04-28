@@ -101,6 +101,11 @@ html, body {
     font-size: 16px !important;
     text-align: left !important;
   }
+
+  h1 {
+
+    font-size: 22px !important;
+  }
   
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover {
@@ -115,9 +120,11 @@ html, body {
 .chamado {
 
   width: 90%;
-  font-size: 21px !important;
+  font-size: 20px !important;
   text-align: justify;
-  padding-left: 12%;
+  padding: 14px 26px;
+  margin-left: 5%;
+
 }
 
   blockquote {
@@ -137,6 +144,11 @@ html, body {
 
 
   }
+
+  .header-back.one {
+    height: 749px !important;
+  }
+ 
 }
 
 .button-right {
@@ -453,6 +465,13 @@ address a {
 
 .computer img {
   height: 30vh;
+}
+
+.logos-clientes {
+  background-color: #3c6a9b;
+ 
+  /* Removendo a altura fixa permite que o container se ajuste automaticamente */
+  /* height: 290px; */
 }
 
 @media (max-width: 768px) {
@@ -869,13 +888,14 @@ blockquote footer {
   .quemSomos {
     flex-direction: column;
     max-width: 100%;
-    margin-top: -45px;
-    margin-bottom: -15px;
+    margin-top: -30px;
+    margin-bottom: -28px;
   } .quemSomos img {
     max-width: 100%;
     height: 40vh;
     width: 90vw;
     margin-left: 15px;
+    margin-bottom: 2px;
     order: 1;
     margin-bottom: 40px;
   } .quemSomos-text h1 {
@@ -907,10 +927,7 @@ blockquote footer {
 }
 
 @media (min-width: 600px) and (max-width: 1900px) {
-  .woman {
-    height: 500px;
-    width: 500px !important;
-  }
+  
 }
 
 /* animação texto e imagem */
@@ -962,6 +979,7 @@ blockquote footer {
 .nossoSistema {
   background-color: #072044;
   padding: 40px 40px;
+  margin-right: -100px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
@@ -1068,36 +1086,25 @@ blockquote footer {
     padding: 10px 20px;
   } .img-computer img {
     display: block;         
-    max-width: 100%;          
+    max-width: 80%;          
     height: auto !important;                      
   } .coluna-esquerda {
     margin-top: 10px;
   } .title-destaque {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 0 auto;
-    padding: 10px 15px;
+    padding: 2px 15px;
     max-width: 100%;
-    box-sizing: border-box;
   } .title-destaque h1 {
-    font-size: 20px;
-    text-align: center;
-    padding: auto 50px;
-    margin-left: 100px;
-    width: 100%;
-    white-space: normal;
+    font-size: 22px;
   } .animation {
     width: auto;
     height: auto;
   } .title-destaque h1.animate-slide {
     transform: none;
-  } .nossoSistema-title h1 {
-    font-size: 30px;
-  } .benefits {
-    background-color: transparent;
-  }
+  } 
 }
 
 @media not all and (min-resolution:.001dpcm) {
@@ -1169,7 +1176,6 @@ blockquote footer {
   justify-content: center;
   font-weight: 900;
 }
- 
 
 :root {
   --duration: 60s;        /* ajusta a velocidade */
@@ -1197,10 +1203,6 @@ blockquote footer {
   
 }
 
-.opinions_background {
-  background-color: #3c6a9b;
-}
-
 .logo img {
   display: block;
   width: auto;           /* deixa a largura livre */
@@ -1215,7 +1217,6 @@ blockquote footer {
   from { transform: translateX(0); }
   to   { transform: translateX(calc(-1 * var(--scroll-width))); }
 }
-
 
 /* comportamento do botão */
 
@@ -1423,7 +1424,7 @@ height: 470px;
 
 @media (max-width: 768px) {
   .header-back.one {
-    height: 870px;
+    height: 907px;
     background-color: #3c6a9b;
   }
 }
@@ -2153,4 +2154,3 @@ section.comments {
 .row h2 {
   color: #1ab394;
 }
-
