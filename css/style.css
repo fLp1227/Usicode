@@ -1104,7 +1104,9 @@ blockquote footer {
     height: auto;
   } .title-destaque h1.animate-slide {
     transform: none;
-  } 
+  } .benefits {
+    background-color: #072044;
+  }
 }
 
 @media not all and (min-resolution:.001dpcm) {
