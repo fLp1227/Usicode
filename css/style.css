@@ -14,7 +14,6 @@ html, body {
   overflow-x: hidden;
   overflow-y: visible;
   max-width: 100vw;
- 
 }
 
 
@@ -86,6 +85,13 @@ html, body {
     opacity: 1;
   }
 }
+
+@media (max-width: 380px) {
+    .men {
+      margin-top: -21px !important;
+    }
+}
+
 @media (max-width: 480px) {
   #hidebtn {
     top: 70%;
@@ -115,7 +121,7 @@ html, body {
 }
 
   blockquote {
-    padding : 2px;
+    padding : 1px;
   }
   
   address {
@@ -128,6 +134,12 @@ html, body {
     align-items: center;
     gap: 5px; /* espaçamento entre o número e o ícone */
     margin: 5px 0;
+
+
+  }
+
+  .header-back.one {
+    height: 749px !important;
   }
  
 }
@@ -401,7 +413,8 @@ address a {
   gap: 80px; 
   padding: 20px;
   position: relative;
-  z-index: 3;
+  z-index: 10;
+  background-color: #072044;
 }
 
 .topic {
@@ -495,6 +508,7 @@ address a {
   justify-content: center;
   align-items: center;
   margin-right: -500px;
+  margin-top: 58px;
 }
 
 .topic-cellphone {
@@ -757,36 +771,12 @@ margin-left: 40px;
 
 /*Empresas clientes*/
 
-.logo-carousel-section {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 20px;
-  background-color: #3c6a9b;
-  margin-top: -19px;
-  /* Removendo a altura fixa permite que o container se ajuste automaticamente */
-  /* height: 290px; */
-}
+
 
 .swiper {
   width: 100%;
   height: auto; /* ou defina um valor maior, se necessário, ex: 150px */
 }
-
-/* Ajusta os slides para centralizar e permitir que a imagem ocupe melhor o espaço */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Aumenta os limites para as logos */
-.swiper-slide img {
-  max-height: 120px;   /* Valor aumentado */
-  max-width: 300px;    /* Valor aumentado */
-  object-fit: contain;
-}
-
 
 
 /* Opiniões */
@@ -1840,247 +1830,7 @@ fieldset[disabled] .btn-primary.active {
     margin-top: 120px;
   }
 }
-/* MARGINS & PADDINGS
--------------------------------------------------- */
-.p-xxs {
-  padding: 5px;
-}
-.p-xs {
-  padding: 10px;
-}
-.p-sm {
-  padding: 15px;
-}
-.p-m {
-  padding: 20px;
-}
-.p-md {
-  padding: 25px;
-}
-.p-lg {
-  padding: 30px;
-}
-.p-xl {
-  padding: 40px;
-}
 
-.m-t-md {
-  text-align: center;
-}
-.m-xxs {
-  margin: 2px 4px;
-}
-.m-xs {
-  margin: 5px;
-}
-.m-sm {
-  margin: 10px;
-}
-.m {
-  margin: 15px;
-}
-.m-md {
-  margin: 20px;
-}
-.m-lg {
-  margin: 30px;
-}
-.m-xl {
-  margin: 50px;
-}
-.m-n {
-  margin: 0 !important;
-}
-.m-l-none {
-  margin-left: 0;
-}
-.m-l-xs {
-  margin-left: 5px;
-}
-.m-l-sm {
-  margin-left: 10px;
-}
-.m-l {
-  margin-left: 15px;
-}
-.m-l-md {
-  margin-left: 20px;
-}
-.m-l-lg {
-  margin-left: 30px;
-}
-.m-l-xl {
-  margin-left: 40px;
-}
-.m-l-n-xxs {
-  margin-left: -1px;
-}
-.m-l-n-xs {
-  margin-left: -5px;
-}
-.m-l-n-sm {
-  margin-left: -10px;
-}
-.m-l-n {
-  margin-left: -15px;
-}
-.m-l-n-md {
-  margin-left: -20px;
-}
-.m-l-n-lg {
-  margin-left: -30px;
-}
-.m-l-n-xl {
-  margin-left: -40px;
-}
-.m-t-none {
-  margin-top: 0;
-}
-.m-t-xxs {
-  margin-top: 1px;
-}
-.m-t-xs {
-  margin-top: 5px;
-}
-.m-t-sm {
-  margin-top: 10px;
-}
-.m-t {
-  margin-top: 15px;
-}
-.m-t-md {
-  margin-top: 20px;
-}
-.m-t-lg {
-  margin-top: 30px;
-}
-.m-t-xl {
-  margin-top: 40px;
-}
-.m-t-n-xxs {
-  margin-top: -1px;
-}
-.m-t-n-xs {
-  margin-top: -5px;
-}
-.m-t-n-sm {
-  margin-top: -10px;
-}
-.m-t-n {
-  margin-top: -15px;
-}
-.m-t-n-md {
-  margin-top: -20px;
-}
-.m-t-n-lg {
-  margin-top: -30px;
-}
-.m-t-n-xl {
-  margin-top: -40px;
-}
-.m-r-none {
-  margin-right: 0;
-}
-.m-r-xxs {
-  margin-right: 1px;
-}
-.m-r-xs {
-  margin-right: 5px;
-}
-.m-r-sm {
-  margin-right: 10px;
-}
-.m-r {
-  margin-right: 15px;
-}
-.m-r-md {
-  margin-right: 20px;
-}
-.m-r-lg {
-  margin-right: 30px;
-}
-.m-r-xl {
-  margin-right: 40px;
-}
-.m-r-n-xxs {
-  margin-right: -1px;
-}
-.m-r-n-xs {
-  margin-right: -5px;
-}
-.m-r-n-sm {
-  margin-right: -10px;
-}
-.m-r-n {
-  margin-right: -15px;
-}
-.m-r-n-md {
-  margin-right: -20px;
-}
-.m-r-n-lg {
-  margin-right: -30px;
-}
-.m-r-n-xl {
-  margin-right: -40px;
-}
-.-none {
-  margin-bottom: 0;
-}
-.m-b-xxs {
-  margin-bottom: 1px;
-}
-.m-b-xs {
-  margin-bottom: 5px;
-}
-.m-b-sm {
-  margin-bottom: 10px;
-}
-.m-b {
-  margin-bottom: 15px;
-}
-.m-b-md {
-  margin-bottom: 20px;
-}
-.m-b-lg {
-  margin-bottom: 30px;
-}
-.m-b-xl {
-  margin-bottom: 40px;
-}
-.m-b-n-xxs {
-  margin-bottom: -1px;
-}
-.m-b-n-xs {
-  margin-bottom: -5px;
-}
-.m-b-n-sm {
-  margin-bottom: -10px;
-}
-.m-b-n {
-  margin-bottom: -15px;
-}
-.m-b-n-md {
-  margin-bottom: -20px;
-}
-.m-b-n-lg {
-  margin-bottom: -30px;
-}
-.m-b-n-xl {
-  margin-bottom: -40px;
-}
-.space-15 {
-  margin: 15px 0;
-}
-.space-20 {
-  margin: 20px 0;
-}
-.space-25 {
-  margin: 25px 0;
-}
-.space-30 {
-  margin: 30px 0;
-}
-/* PACE PLUGIN
 -------------------------------------------------- */
 .pace .pace-progress {
   background: #fff;
