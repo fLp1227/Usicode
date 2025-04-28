@@ -42,6 +42,7 @@ html, body {
 .aceitedotermo {
   margin-top: 15px;
   font-size: 10px;
+  text-align: justify;
 }
 
 
@@ -90,23 +91,36 @@ html, body {
     top: 70%;
   }
 
-  .carousel-top {
-    text-align: left;
-}
+  .text-md {
+    font-size: 16px !important;
+    text-align: left !important;
+  }
+
+  h1 {
+
+    font-size: 22px !important;
+  }
   
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover {
     border-top: none !important;
   }
 
-  .swiper-slide img {    /* Ajuste Logos em telas pequenas */
-  height: 120px;  
-  width: 200px;    
-  object-fit: contain;
+  .logo {    /* Ajuste Logos em telas pequenas */
+  max-height: auto !important;  
+  max-width: auto !important;    
+}
+
+.chamado {
+
+  width: 90%;
+  font-size: 21px !important;
+  text-align: justify;
+  padding-left: 12%;
 }
 
   blockquote {
-    padding : 5px;
+    padding : 2px;
   }
   
   address {
@@ -825,14 +839,6 @@ blockquote footer {
   
 }
 
-.logo-slide {
-  width: auto !important;
-  object-fit: contain;
-  object-position: center;
-}
-
-
-
 /* Quem somos */
 
 .quemSomos {
@@ -1506,9 +1512,8 @@ height: 470px;
 }
 
 .carousel-caption h1 {
-  font-weight: 900;
+  font-weight: 800;
   text-shadow: none;
-  letter-spacing: 2px;
 }
 .carousel-caption p {
   font-weight: 700;
