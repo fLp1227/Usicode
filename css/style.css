@@ -95,11 +95,6 @@ html, body {
     font-size: 16px !important;
     text-align: left !important;
   }
-
-  h1 {
-
-    font-size: 22px !important;
-  }
   
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover {
@@ -961,7 +956,6 @@ blockquote footer {
 .nossoSistema {
   background-color: #072044;
   padding: 40px 40px;
-  margin-right: -100px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
@@ -1068,25 +1062,36 @@ blockquote footer {
     padding: 20px 20px;
   } .img-computer img {
     display: block;         
-    max-width: 80%;          
+    max-width: 100%;          
     height: auto !important;                      
   } .coluna-esquerda {
     margin-top: 10px;
   } .title-destaque {
-    display: block;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    padding: 2px 15px;
+    padding: 10px 15px;
     max-width: 100%;
+    box-sizing: border-box;
   } .title-destaque h1 {
-    font-size: 22px;
+    font-size: 20px;
+    text-align: center;
+    padding: auto 50px;
+    margin-left: 100px;
+    width: 100%;
+    white-space: normal;
   } .animation {
     width: auto;
     height: auto;
   } .title-destaque h1.animate-slide {
     transform: none;
-  } 
+  } .nossoSistema-title h1 {
+    font-size: 30px;
+  } .benefits {
+    background-color: transparent;
+  }
 }
 
 @media not all and (min-resolution:.001dpcm) {
@@ -1158,6 +1163,7 @@ blockquote footer {
   justify-content: center;
   font-weight: 900;
 }
+ 
 
 :root {
   --duration: 60s;        /* ajusta a velocidade */
@@ -1185,6 +1191,10 @@ blockquote footer {
   
 }
 
+.opinions_background {
+  background-color: #3c6a9b;
+}
+
 .logo img {
   display: block;
   width: auto;           /* deixa a largura livre */
@@ -1199,6 +1209,7 @@ blockquote footer {
   from { transform: translateX(0); }
   to   { transform: translateX(calc(-1 * var(--scroll-width))); }
 }
+
 
 /* comportamento do botão */
 
@@ -2376,3 +2387,4 @@ section.comments {
 .row h2 {
   color: #1ab394;
 }
+
