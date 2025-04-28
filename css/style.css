@@ -1110,6 +1110,14 @@ blockquote footer {
   }
 }
 
+@media (max-width: 380px) {
+  .img-computer img {
+    max-width: 75%;
+  } .title-destaque h1 {
+    font-size: 18px !important;
+  }
+}
+
 @media not all and (min-resolution:.001dpcm) {
   @supports (-webkit-appearance: none) {
     .benefits {
@@ -1140,8 +1148,8 @@ blockquote footer {
   .title-destaque {
     padding: 20px 500px;
   } .img-computer img {
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
   }
 }
 
@@ -1149,8 +1157,8 @@ blockquote footer {
   .title-destaque {
     padding: 20px 200px;
   } .img-computer img {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
   }
 }
 
