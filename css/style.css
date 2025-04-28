@@ -137,11 +137,6 @@ html, body {
 
 
   }
-
-  .header-back.one {
-    height: 749px !important;
-  }
- 
 }
 
 .button-right {
@@ -874,14 +869,13 @@ blockquote footer {
   .quemSomos {
     flex-direction: column;
     max-width: 100%;
-    margin-top: -30px;
-    margin-bottom: -28px;
+    margin-top: -45px;
+    margin-bottom: -15px;
   } .quemSomos img {
     max-width: 100%;
     height: 40vh;
     width: 90vw;
     margin-left: 15px;
-    margin-bottom: 2px;
     order: 1;
   } .quemSomos-text h1 {
     justify-content: left;
@@ -912,7 +906,10 @@ blockquote footer {
 }
 
 @media (min-width: 600px) and (max-width: 1900px) {
-  
+  .woman {
+    height: 500px;
+    width: 500px !important;
+  }
 }
 
 /* animação texto e imagem */
@@ -1407,7 +1404,7 @@ height: 470px;
 
 @media (max-width: 768px) {
   .header-back.one {
-    height: 907px;
+    height: 870px;
     background-color: #3c6a9b;
   }
 }
