@@ -104,7 +104,7 @@ html, body {
 
   h1 {
 
-    font-size: 26px !important;
+    font-size: 28px !important;
   }
   
   .navbar-default .navbar-nav > .active > a,
@@ -144,11 +144,6 @@ html, body {
 
 
   }
-
-  .header-back.one {
-    height: 818px !important;
-  }
- 
 }
 
 .button-right {
@@ -1102,7 +1097,7 @@ blockquote footer {
     padding: 2px 15px;
     max-width: 100%;
   } .title-destaque h1 {
-    font-size: 22px;
+    font-size: 20px !important;
   } .animation {
     width: auto;
     height: auto;
@@ -1446,9 +1441,15 @@ height: 470px;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
+.header-back.one {
+  height: 848px;
+}
+}
+
+@media (max-width: 380px) {
   .header-back.one {
-    height: 830px;
+    height: 780px;
     background-color: #3c6a9b;
   }
 }
