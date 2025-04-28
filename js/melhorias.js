@@ -225,8 +225,6 @@ botoes.forEach((botao) => {
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.logo-track');
   // 1. Clona tudo pra duplicar automaticamente
