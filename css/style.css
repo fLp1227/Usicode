@@ -93,6 +93,29 @@ html, body {
 }
 
 @media (max-width: 480px) {
+  .navbar-fixed-top {
+    height: 4% !important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+
+  .navbar-brand {
+
+    height: 78px;
+  }
+
+  .navbar-wrapper {
+    position: fixed !important;
+    
+  }
+
+  #navbar {
+    margin-top: 0px !important;
+    text-align: right;
+
+  }
+
+
   #hidebtn {
     top: 70%;
   }
@@ -149,6 +172,16 @@ html, body {
     height: 818px !important;
   }
  
+  .navbar-toggle{
+    position: fixed !important;
+    margin-left: 87vw;
+  }
+
+  .navbar-toggle:hover {
+    background-color: #ffffff00 !important;
+  }
+  
+
 }
 
 .button-right {
@@ -224,23 +257,10 @@ html, body {
 
 #navbar {
   margin-top: 10px;
-  margin-right: 100px;
   padding: 15px;
-  
+
 }
 
-.navbar-toggle {
-  position: relative;
-  float: right;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
-  margin-bottom: 8px;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
 
 .navy-bd {
   font-family: "Roboto", sans-serif;
@@ -1172,7 +1192,7 @@ blockquote footer {
 
   font-family: "REM", sans-serif;
   font-size: 40px;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 10px;
   margin-top: 50px;
   display: flex;
@@ -1196,14 +1216,14 @@ blockquote footer {
   /* sem width aqui */
 }
 .logo {
-  /* garante que o container fique centrado pro logo não esticar demais */
-  display: grid;
+  display: grid
+;
   align-items: center;
   background: #00ff4000;
-  padding: 20px;
+  padding-left: 57px;
+  padding-bottom: 20px;
   justify-content: center;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.137);
-  
+  border-left: 1px solid #ffffff3b;
 }
 
 .logo img {
@@ -1333,7 +1353,8 @@ blockquote footer {
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
-  transition: all 0.3s ease-in-out 0s;
+ 
+  
 }
 .navbar-default .nav li a {
   color: #fff;
@@ -1771,7 +1792,6 @@ fieldset[disabled] .btn-primary.active {
 
   #navbar {
     background-color: #3c6a9bee;
-    display: fixed;
     justify-content: flex-start;
     border-bottom: ridge;
   
