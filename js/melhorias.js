@@ -237,7 +237,37 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const isMobile = /iPhone|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  // Aqui está a correção: mudamos .phone-link para .number
+  const phoneLinks = document.querySelectorAll(".number[data-phone]");
+  
+  phoneLinks.forEach(link => {
+    const rawPhone = link.getAttribute("data-phone");
+    
+    if (isMobile) {
+      link.href = `tel:${rawPhone}`;
+    } else {
+      link.href = `https://wa.me/${rawPhone}`;
+      link.target = "_blank";
+    }
+  });
+});
 
 
 
+document.addEventListener('click', function(event) {
+  // Aplica somente em telas menores que 768px (ex: celular)
+  if (window.innerWidth < 500) {
+    var menu = document.getElementById('navbar');
+    var isClickInsideMenu = menu.contains(event.target);
+    var isClickOnToggle = document.querySelector('.navbar-toggle').contains(event.target);
 
+    // Se o menu estiver aberto e o clique for fora dele e fora do botão de abrir
+    if (menu.classList.contains('in') && !isClickInsideMenu && !isClickOnToggle) {
+      menu.classList.remove('in');
+      menu.classList.add('collapse');
+    }
+  }
+});
