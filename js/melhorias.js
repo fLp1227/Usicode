@@ -234,6 +234,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollWidth = track.scrollWidth / 2;
   document.documentElement.style.setProperty('--scroll-width', `${scrollWidth}px`);
 });
+
+/* cookies */
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    // Se já tiver escolha, oculta o banner
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookies-choice', 'accepted');
+      banner.classList.add('hidden');
+    });
+
+    rejectBtn.addEventListener('click', () => {
+      localStorage.setItem('cookies-choice', 'rejected');
+      banner.classList.add('hidden');
+    });
+  });
+
+
+
+
+
     
 
 
