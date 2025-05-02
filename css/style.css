@@ -467,9 +467,10 @@ address a {
 @media (max-width: 768px) {
   .content h1 {
     width: 100%;
-    padding: 10px 10px;
+    padding: 2px 10px;
     line-height: 1;
     text-align: center;
+    font-size: 24px !important;
   }
 }
 
@@ -484,7 +485,7 @@ address a {
 @media (max-width: 768px) {
   .content .content-p {
     width: 100%;
-    padding: 10px 10px;
+    padding: 4px 10px;
     line-height: 0.9;
     text-align: center;
   } .content p {
@@ -1297,6 +1298,74 @@ blockquote footer {
   }
 }
 
+/* Cookies */
+
+#cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #072044;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#cookie-banner.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+#cookie-banner p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#accept-cookies {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#accept-cookies:hover {
+  background-color: #45a049;
+}
+
+#reject-cookies {
+  background-color: #f44336;
+  color: white;
+}
+
+#reject-cookies:hover {
+  background-color: #be312e;
+}
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -1439,7 +1508,7 @@ height: 470px;
 
 @media (max-width: 480px) {
 .header-back.one {
-  height: 848px;
+  height: 837px;
 }
 }
 
