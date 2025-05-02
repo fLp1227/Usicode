@@ -93,6 +93,41 @@ html, body {
 }
 
 @media (max-width: 480px) {
+ 
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover {
+    border-top:none !important;
+  }
+.computer img {
+  display: none;
+  }
+
+  .img-computer {
+    display: none;
+  }
+ 
+  .navbar-fixed-top {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+
+  .navbar-brand {
+
+    height: 78px;
+  }
+
+  .navbar-wrapper {
+    position: fixed !important;
+    
+  }
+
+  #navbar {
+    margin-top: 0px !important;
+    text-align: right;
+
+  }
+
+
   #hidebtn {
     top: 65%;
   }
@@ -140,6 +175,21 @@ html, body {
 
 
   }
+
+  .header-back.one {
+    height: 818px !important;
+  }
+ 
+  .navbar-toggle{
+    position: fixed !important;
+    margin-left: 87vw;
+  }
+
+  .navbar-toggle:hover {
+    background-color: #ffffff00 !important;
+  }
+  
+
 }
 
 .button-right {
@@ -215,23 +265,10 @@ html, body {
 
 #navbar {
   margin-top: 10px;
-  margin-right: 100px;
   padding: 15px;
-  
+
 }
 
-.navbar-toggle {
-  position: relative;
-  float: right;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
-  margin-bottom: 8px;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
 
 .navy-bd {
   font-family: "Roboto", sans-serif;
@@ -1178,7 +1215,7 @@ blockquote footer {
 
   font-family: "REM", sans-serif;
   font-size: 40px;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 10px;
   margin-top: 50px;
   display: flex;
@@ -1202,14 +1239,14 @@ blockquote footer {
   /* sem width aqui */
 }
 .logo {
-  /* garante que o container fique centrado pro logo não esticar demais */
-  display: grid;
+  display: grid
+;
   align-items: center;
   background: #00ff4000;
-  padding: 20px;
+  padding-left: 57px;
+  padding-bottom: 20px;
   justify-content: center;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.137);
-  
+  border-left: 1px solid #ffffff3b;
 }
 
 .logo img {
@@ -1248,10 +1285,12 @@ blockquote footer {
   color: #1ab394;
   font-weight: 700;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .contato-colunas {
   display: flex;
+  justify-content: space-around;
   gap: 40px;
 }
 
@@ -1407,7 +1446,8 @@ blockquote footer {
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
-  transition: all 0.3s ease-in-out 0s;
+ 
+  
 }
 .navbar-default .nav li a {
   color: #fff;
@@ -1802,7 +1842,6 @@ li.pricing-title {
 
   #navbar {
     background-color: #3c6a9bee;
-    display: fixed;
     justify-content: flex-start;
     border-bottom: ridge;
   
@@ -2187,4 +2226,24 @@ section.comments {
 
 .row h2 {
   color: #1ab394;
+}
+
+.number {
+  text-decoration: none;
+  color: inherit;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+/* Ícone do WhatsApp dentro do link */
+.number i.fa-whatsapp {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* Hover no link inteiro muda a cor do ícone */
+.number:hover i.fa-whatsapp {
+  color: #25D366; /* verde oficial do WhatsApp */
 }
