@@ -100,17 +100,15 @@ buttons.forEach((button, index) => {
   button.addEventListener('click', function () {
     const content = this.nextElementSibling;
 
-    buttons.forEach((otherButton, i) => {
+    buttons.forEach((otherButton) => {
       const otherContent = otherButton.nextElementSibling;
       const iconSpan = otherButton.querySelector('.icon');
 
-      if (otherButton !== this) {
         otherButton.classList.remove('rotate');
         otherContent.style.maxHeight = '0';
-        otherContent.classList.remove('active');
-
+        otherContent.classList.remove('active');              
         iconSpan.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
-      }
+
     });
 
     const iconSpan = this.querySelector('.icon');
@@ -134,6 +132,30 @@ buttons.forEach((button, index) => {
       const nextIndex = (index + 1) % buttons.length;
       const nextIconSpan = buttons[nextIndex].querySelector('.icon');
       nextIconSpan.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
+
+      if (index === buttons.length - 1) {
+        setTimeout(() => {
+          buttons.forEach((btn) => {
+            const cnt = btn.nextElementSibling;
+            const span = btn.querySelector('.icon');
+
+            btn.classList.remove('rotate');
+            cnt.style.maxHeight = '0';
+            cnt.classList.remove('active');
+            span.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
+          });
+
+          const firstButton = buttons[0];
+          const firstContent = firstButton.nextElementSibling;
+          const secondIcon = buttons[1].querySelector('.icon');
+          
+          firstButton.classList.add('rotate');
+          firstContent.classList.add('active');
+          firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+
+          secondIcon.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
+        }, 0);
+      }
     }
   });
 });

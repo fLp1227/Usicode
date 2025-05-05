@@ -1051,9 +1051,9 @@ blockquote footer {
 
 .benefits {
   display: flex;
-  gap: 20px;
-  height: 30px;
-  width: 30px;
+  gap: 18px;
+  height: 33px;
+  width: 31px;
   font-size: 22px;
   cursor: pointer;
   background-color: #3c6a9b;
@@ -1110,6 +1110,7 @@ blockquote footer {
 
 .icon i {
   font-size: 18px;
+  padding: 2px;
 }
 
 .title-destaque {
