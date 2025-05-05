@@ -1,3 +1,5 @@
+/* Formulário */
+
 function esconderFormulario() {
   var formulario = document.getElementById("formulario");
   var botao = document.getElementById("hidebtn");
@@ -8,6 +10,19 @@ function esconderFormulario() {
 
   botao.textContent = formulario.classList.contains("hidden") ? "<" : ">";
 }
+
+var SPMaskBehavior = function (val) {
+  return val.replace(/\D/g, '').length === 11 
+         ? '(00) 00000-0000' 
+         : '(00) 0000-00009';
+},
+spOptions = {
+  onKeyPress: function(val, e, field, options) {
+    field.mask(SPMaskBehavior.apply({}, arguments), options);
+  }
+};
+
+$('#telefone').mask(SPMaskBehavior, spOptions);
 
   function redirectToWhatsapp(event) {
     event.preventDefault();
@@ -63,27 +78,192 @@ function esconderFormulario() {
   });
 }
 
-if (telefone.length > 11) {
-    telefone = telefone.slice(0, 11);
-  }
+/* Botão de rotacionar */
 
-  let formato = telefone; 
-  if (telefone.length > 10) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7)}`;
-  } else if (telefone.length > 6) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 6)}-${telefone.slice(6)}`;
-  } else if (telefone.length > 2) {
-    formato = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
-  } else if (telefone.length > 0) {
-    formato = `(${telefone})`;
-  } else {
-    formato = "";
-  }
-  input.value = formato;
-  
-document.addEventListener("DOMContentLoaded", function () {
-  var telefoneInput = document.getElementById("telefone");
-  if (telefoneInput) {
-    telefoneInput.addEventListener("input", formatarTelefone);
+const buttons = document.querySelectorAll('.benefits');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const firstButton = buttons[0];
+  const firstContent = firstButton.nextElementSibling;
+
+  firstButton.classList.add('rotate');
+  firstContent.classList.add('active');
+  firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+
+  if (buttons[1]) {
+    const iconSpan = buttons[1].querySelector('.icon');
+    iconSpan.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
   }
 });
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', function () {
+    const content = this.nextElementSibling;
+
+    buttons.forEach((otherButton, i) => {
+      const otherContent = otherButton.nextElementSibling;
+      const iconSpan = otherButton.querySelector('.icon');
+
+      if (otherButton !== this) {
+        otherButton.classList.remove('rotate');
+        otherContent.style.maxHeight = '0';
+        otherContent.classList.remove('active');
+
+        iconSpan.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
+      }
+    });
+
+    const iconSpan = this.querySelector('.icon');
+    const isActive = content.classList.contains('active');
+
+    if (isActive) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        content.style.maxHeight = '0';
+        content.classList.remove('active');
+      });
+      iconSpan.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
+      this.classList.remove('rotate');
+    } else {
+      content.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + 'px';
+      this.classList.add('rotate');
+
+      iconSpan.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>'; 
+
+      const nextIndex = (index + 1) % buttons.length;
+      const nextIconSpan = buttons[nextIndex].querySelector('.icon');
+      nextIconSpan.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
+    }
+  });
+});
+
+
+
+/* logos dos cliente */
+
+var swiper = new Swiper('.swiper-container', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+});
+
+
+/* animação do "Quem somos" */
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate')
+      observer.unobserve(entry.target)
+    }
+  })
+}, {root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+});
+
+observer.observe(document.querySelector('.from-left'))
+observer.observe(document.querySelector('.from-right'))
+
+/* scrollar até o tópico "quem somos" */
+
+document.getElementById("oquesomos").addEventListener("click", function() {
+  const destino = document.getElementById("oquesomos");
+  const offset = 100; 
+  
+  
+  const position = destino.getBoundingClientRect().top + window.pageYOffset - offset;
+  
+  window.scrollTo({
+    top: position,
+    behavior: "smooth"
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.logo-track');
+  // 1. Clona tudo pra duplicar automaticamente
+  track.innerHTML += track.innerHTML;
+
+  // 2. Mede metade da largura total (original + clone)
+  const scrollWidth = track.scrollWidth / 2;
+  document.documentElement.style.setProperty('--scroll-width', `${scrollWidth}px`);
+});
+
+
+/* cookies */
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookies-choice', 'accepted');
+      banner.classList.add('hidden');
+    });
+
+    rejectBtn.addEventListener('click', () => {
+      localStorage.setItem('cookies-choice', 'rejected');
+      banner.classList.add('hidden');
+    });
+  });
+
+
+
+
+
+    
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const isMobile = /iPhone|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  // Aqui está a correção: mudamos .phone-link para .number
+  const phoneLinks = document.querySelectorAll(".number[data-phone]");
+  
+  phoneLinks.forEach(link => {
+    const rawPhone = link.getAttribute("data-phone");
+    
+    if (isMobile) {
+      link.href = `tel:${rawPhone}`;
+    } else {
+      link.href = `https://wa.me/${rawPhone}`;
+      link.target = "_blank";
+    }
+  });
+});
+
+
+
+document.addEventListener('click', function(event) {
+  // Aplica somente em telas menores que 768px (ex: celular)
+  if (window.innerWidth < 500) {
+    var menu = document.getElementById('navbar');
+    var isClickInsideMenu = menu.contains(event.target);
+    var isClickOnToggle = document.querySelector('.navbar-toggle').contains(event.target);
+
+    // Se o menu estiver aberto e o clique for fora dele e fora do botão de abrir
+    if (menu.classList.contains('in') && !isClickInsideMenu && !isClickOnToggle) {
+      menu.classList.remove('in');
+      menu.classList.add('collapse');
+    }
+  }
+});
+
