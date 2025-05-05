@@ -1174,6 +1174,7 @@ blockquote footer {
     padding-left: 0;
     margin-bottom: 0.25rem;
   }
+}
 
 @media (max-width: 380px) {
   .img-computer img {
