@@ -83,82 +83,98 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
 const buttons = document.querySelectorAll('.benefits');
 
 document.addEventListener('DOMContentLoaded', () => {
-  const firstButton = buttons[0];
-  const firstContent = firstButton.nextElementSibling;
+  const isMobile = window.innerWidth < 768;
 
-  firstButton.classList.add('rotate');
-  firstContent.classList.add('active');
-  firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+  const resetAll = () => {
+    buttons.forEach((btn) => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.icon');
+      btn.classList.remove('rotate');
+      content.classList.remove('active');
+      content.style.maxHeight = '0';
+      icon.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
+    });
+  };
 
-  if (buttons[1]) {
-    const iconSpan = buttons[1].querySelector('.icon');
-    iconSpan.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
+  if (!isMobile) {
+  
+    const openFirstItem = () => {
+      const firstButton = buttons[0];
+      const firstContent = firstButton.nextElementSibling;
+      const firstIcon = firstButton.querySelector('.icon');
+
+      firstButton.classList.add('rotate');
+      firstContent.classList.add('active');
+      firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+      firstIcon.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>';
+
+      if (buttons[1]) {
+        const iconSpan = buttons[1].querySelector('.icon');
+        iconSpan.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+      }
+    };
+
+    openFirstItem();
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', function () {
+        resetAll();
+
+        const content = this.nextElementSibling;
+        const iconSpan = this.querySelector('.icon');
+
+        content.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        this.classList.add('rotate');
+        iconSpan.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>';
+
+        if (index < buttons.length - 1) {
+          const nextIconSpan = buttons[index + 1].querySelector('.icon');
+          nextIconSpan.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+        }
+
+        if (index === buttons.length - 1) {
+          setTimeout(() => {
+            resetAll();
+            openFirstItem();
+          }, 5000);
+        }
+      });
+    });
+  } else {
+    resetAll();
+
+    const firstIcon = buttons[0].querySelector('.icon');
+    firstIcon.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', function () {
+        const content = this.nextElementSibling;
+        const iconSpan = this.querySelector('.icon');
+        const isActive = content.classList.contains('active');
+
+        resetAll();
+
+        if (!isActive) {
+
+          content.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          button.classList.add('rotate');
+          iconSpan.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>';
+
+          if (index + 1 < buttons.length) {
+            const nextIcon = buttons[index + 1].querySelector('.icon');
+            nextIcon.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+          }
+        } else {
+          const firstIconAgain = buttons[0].querySelector('.icon');
+          firstIconAgain.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+        }
+      });
+    });
   }
 });
 
-buttons.forEach((button, index) => {
-  button.addEventListener('click', function () {
-    const content = this.nextElementSibling;
-
-    buttons.forEach((otherButton) => {
-      const otherContent = otherButton.nextElementSibling;
-      const iconSpan = otherButton.querySelector('.icon');
-
-        otherButton.classList.remove('rotate');
-        otherContent.style.maxHeight = '0';
-        otherContent.classList.remove('active');              
-        iconSpan.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
-
-    });
-
-    const iconSpan = this.querySelector('.icon');
-    const isActive = content.classList.contains('active');
-
-    if (isActive) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      requestAnimationFrame(() => {
-        content.style.maxHeight = '0';
-        content.classList.remove('active');
-      });
-      iconSpan.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
-      this.classList.remove('rotate');
-    } else {
-      content.classList.add('active');
-      content.style.maxHeight = content.scrollHeight + 'px';
-      this.classList.add('rotate');
-
-      iconSpan.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>'; 
-
-      const nextIndex = (index + 1) % buttons.length;
-      const nextIconSpan = buttons[nextIndex].querySelector('.icon');
-      nextIconSpan.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
-
-      if (index === buttons.length - 1) {
-        setTimeout(() => {
-          buttons.forEach((btn) => {
-            const cnt = btn.nextElementSibling;
-            const span = btn.querySelector('.icon');
-
-            btn.classList.remove('rotate');
-            cnt.style.maxHeight = '0';
-            cnt.classList.remove('active');
-            span.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
-          });
-
-          const firstButton = buttons[0];
-          const firstContent = firstButton.nextElementSibling;
-          const secondIcon = buttons[1].querySelector('.icon');
-          
-          firstButton.classList.add('rotate');
-          firstContent.classList.add('active');
-          firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
-
-          secondIcon.innerHTML = '<i class="fa-solid fa-hand-point-up fa-bounce"></i>';
-        }, 0);
-      }
-    }
-  });
-});
 
 
 
