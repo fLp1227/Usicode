@@ -1027,6 +1027,13 @@ blockquote footer {
   line-height: 1.5;
 }
 
+.coluna-esquerda {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  gap: 20px;
+  margin-top: 50px;
+}
 
 .sistema-section ul {
   list-style: none;

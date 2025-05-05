@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.style.setProperty('--scroll-width', `${scrollWidth}px`);
 });
 
-
 /* cookies */
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -224,12 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
       banner.classList.add('hidden');
     });
   });
-
-
-
-
-
-    
 
 
 document.addEventListener("DOMContentLoaded", function () {
