@@ -175,11 +175,6 @@ html, body {
 
 
   }
-
-  .header-back.one {
-    height: 818px !important;
-  }
- 
   .navbar-toggle{
     position: fixed !important;
     margin-left: 87vw;
@@ -515,7 +510,7 @@ address a {
   .content {
     width: 100%;
     padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 }
 
@@ -526,19 +521,20 @@ address a {
     line-height: 0.9;
     text-align: center;
   } .content p {
+    margin-top: 23px;
     align-items: center;
     text-align: left;
+    letter-spacing: -1px;
+    font-weight: 900;
   } br {
     display: none;
   }
 }
 
 @media (max-width: 768px) {
-  .computer img {
-    width: auto;
-    height: 30vh;
-  } .topic {
+   .topic {
     gap: 2px;
+    margin-top: 30px;
   }
 }
 
@@ -644,23 +640,45 @@ address a {
 @media (max-width: 768px) {
   .topic-cell {
     flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-  .topic-cellphone {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-  .topic-cellphone {
+  } .topic-cellphone {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 24px;
+  } .topic-cellphone {
+    flex-direction: column;
+  } .content-list li {
+    font-size: 18px;
+  } .arrow {
+    appearance: none;
+    -webkit-appearance: none;
+    all: unset;
+    color: #3c6a9b;
+    background-color: #072044;
+    border-radius: 50%;
+    padding: 2px 12px;
+    line-height: 1.8;
+    margin-top: 2px;
+  } .content-md {
+    max-width: 100%;
+    font-size: 24px !important;
+    line-height: 1;
+    border-radius: 10px;
+    text-align: center;
+  } .androidIos {
+    margin-right: 122px;
+  } .content-tittle {
+    font-size: 16px;
+    order: 0;
+    text-align: justify;
+    padding: 0 40px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  } .content-list {
+    padding: 0 5px;
   }
 }
+
 
 @media (max-width: 375px) {
   .cellphone {
@@ -676,36 +694,6 @@ address a {
   } 
 }
 
-@media (max-width: 768px) {
-  .content-list li {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .arrow {
-    appearance: none;
-    -webkit-appearance: none;
-    all: unset;
-    color: #3c6a9b;
-    background-color: #072044;
-    border-radius: 50%;
-    padding: 2px 10px;
-    line-height: 1.8;
-    margin-top: 2px;
-  }
-}
-
-@media (max-width: 768px) {
-  .content-md {
-    max-width: 100%;
-    font-size: 24px;
-    line-height: 1;
-    border-radius: 10px;
-    text-align: center;
-  }
-}
-
 @media (max-width: 375px) {
   .content-md {
     max-width: 100%;
@@ -717,18 +705,6 @@ address a {
   }
 }
 
-@media (max-width: 768px) {
-  .content-tittle {
-    font-size: 20px;
-    order: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .androidIos {
-    margin-right: 140px;
-  }
-}
 
 /* Tópico Vantagens */
 
@@ -2158,10 +2134,6 @@ section.comments {
 .vertical-timeline-content h2 {
   font-weight: 400;
   margin-top: 4px;
-}
-.vertical-timeline-content p {
-  margin: 1em 0;
-  line-height: 1.6;
 }
 .vertical-timeline-content .vertical-date {
   float: left;
