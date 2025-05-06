@@ -524,8 +524,7 @@ address a {
     margin-top: 23px;
     align-items: center;
     text-align: left;
-    letter-spacing: -1px;
-    font-weight: 900;
+    font-weight: 700;
   } br {
     display: none;
   }
