@@ -1139,12 +1139,14 @@ blockquote footer {
 @media (max-width: 767px) {
   .nossoSistema {
     flex-direction: column;
+    padding: 5px 8px;
   } .coluna-esquerda {
     margin-top: 10px;
     padding-left: 1rem;
     margin-left: 0;
   } .title-destaque {
     display: block;
+    padding: 0 23px;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
@@ -1152,15 +1154,17 @@ blockquote footer {
     max-width: 100%;
   } .title-destaque h1 {
     font-size: 20px !important;
+    margin-top: 10px;
   } .animation {
     width: auto;
     height: auto;
   } .title-destaque h1.animate-slide {
     transform: none !important;
   } .benefits {
-    background-color: #072044;
+    background-color: #3c6a9b;
   } .benefits-content ul li {
-    margin-right: 50px;
+    margin-left: 35px;
+    margin-top: -2px;
   } .sistema-section ul {
     margin: 0;
     padding: 0;
