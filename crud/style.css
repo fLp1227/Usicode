@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.1);
+}
+
+button { cursor: pointer; }
+
+.container {
+  width: 90%;
+  height: 80%;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+
+.header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 12px;
+}
+
+.header span {
+  font-weight: 900;
+  font-size: 20px;
+  word-break: break-word;
+}
+
+#btnCadastrarCliente {
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgb(57, 57, 226);
+}
+
+.divTable {
+  padding: 10px;
+  width: auto; 
+  height:inherit; 
+  overflow:auto;
+}
+
+.divtable::-webkit-scrollbar {
+  width: 12px;
+  background-color: whitesmoke;
+}
+
+.divtable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgray;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 10px;
+  border-collapse: separate;
+  text-align: center;
+}
+
+thead {
+  background-color: whitesmoke;
+}
+
+thead tr th {
+  padding: 8px 12px;
+}
+
+thead tr th.acao {
+  text-align: center;
+  width: 100px;
+}
+
+tbody tr {
+  background: #fff;
+}
+
+tbody tr td {
+  padding: 10px 12px;
+  vertical-align: top;
+  /* remove max-width */
+  /* control overflow se precisar: */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td.acao {
+  text-align: center;
+}
+
+td button {
+  border: none;
+  background: transparent;
+}
+
+td button i {
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+/* Modal */
+.modal-container {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container.active {
+  display: flex;
+}
+
+.modal {
+  width: 50%;
+  max-width: 500px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal label {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+.modal button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(57, 57, 226);
+  color: white;
+  font-size: 16px;
+}
+
+/* animação */
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.modal-container.active .modal {
+  animation: modal 0.4s ease-out;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  body {
+    font-size: 10px;
+  }
+  
+  .header span {
+    font-size: 15px;
+  }
+
+  #new {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  thead tr th.acao {
+    width: auto!important;
+  }
+  
+  td button i {
+    font-size: 20px!important;
+  }
+
+  td button i:first-child {
+    margin-right: 0;
+  }
+
+  .modal {
+    width: 90%!important;
+  }
+
+  .modal label {
+    font-size: 12px!important;
+  }
+}
+
+
+
+.bx-x:before {
+  font-size: 25px;
+  float: right;
+  font-weight: 900;
+}

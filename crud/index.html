@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Cadastro de Leads</span>
+            <button onclick="openModal()" id="btnCadastrarCliente">Incluir</button>
+        </div>
+    
+
+        <div class="divTable">
+            <table id="tableClient">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Empresa</th>
+                    <th>Setor</th>
+                    <th class="acao">Editar</th>
+                    <th class="acao">Excluir</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- as linhas de dados vão aqui -->
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <i class="bx bx-x" id="modalClose"></i>
+
+            <form class="modal-form" id="form">
+                <label for="nome">Nome</label>
+                <input id="nome" data-index="new" type="text" required placeholder="Nome do Lead">
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" data-index="new" required placeholder="(00) 00000-0000">
+                
+                <label for="email">E-mail</label>
+                <input type="text" id="email" data-index="new" required placeholder="E-mail da Empresa">
+
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" data-index="new" required placeholder="Nome da empresa">
+
+                <label for="setor">Setor</label>
+                <input type="text" id="setor" data-index="new" required placeholder="Setor da empresa">
+                <button type="button" id="btnSalvar">Salvar</button>
+
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
