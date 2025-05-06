@@ -82,44 +82,101 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
 
 const buttons = document.querySelectorAll('.benefits');
 
-buttons.forEach((button) => {
-  button.addEventListener('click', function () {
-    const content = this.nextElementSibling;
+document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = window.innerWidth < 768;
 
-    document.querySelectorAll('.benefits').forEach((otherButton) => {
-      const otherContent = otherButton.nextElementSibling;
-
-      if (otherButton !== this && otherContent.classList.contains('active')) {
-        otherButton.classList.remove('rotate');
-        otherContent.style.maxHeight = otherContent.scrollHeight + 'px';
-
-        requestAnimationFrame(() => {
-          otherContent.style.maxHeight = '0';
-          otherContent.classList.remove('active');
-        })
-      }
-    })
-
-    this.classList.toggle('rotate');
-
-    if (content.classList.contains('active')) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      requestAnimationFrame(() => {
-        content.style.maxHeight = '0';
+  const resetAll = () => {
+    buttons.forEach((btn) => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.icon');
+      btn.classList.remove('rotate');
       content.classList.remove('active');
-      })
-    } else {
-      content.classList.add('active');
-      content.style.maxHeight = content.scrollHeight + 'px';
+      content.style.maxHeight = '0';
+      icon.innerHTML = '<i class="fa-solid fa-arrow-right seta"></i>';
+    });
+  };
 
-      const handler = () => {
-        content.style.maxHeight = '';
-        content.removeEventListener('transitionend', handler);
-      };
-      content.addEventListener('transitionend', handler);
-    }
-  });
+  if (!isMobile) {
+  
+    const openFirstItem = () => {
+      const firstButton = buttons[0];
+      const firstContent = firstButton.nextElementSibling;
+      const firstIcon = firstButton.querySelector('.icon');
+
+      firstButton.classList.add('rotate');
+      firstContent.classList.add('active');
+      firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+      firstIcon.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>';
+
+      if (buttons[1]) {
+        const iconSpan = buttons[1].querySelector('.icon');
+        iconSpan.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+      }
+    };
+
+    openFirstItem();
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', function () {
+        resetAll();
+
+        const content = this.nextElementSibling;
+        const iconSpan = this.querySelector('.icon');
+
+        content.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        this.classList.add('rotate');
+        iconSpan.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>';
+
+        if (index < buttons.length - 1) {
+          const nextIconSpan = buttons[index + 1].querySelector('.icon');
+          nextIconSpan.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+        }
+
+        if (index === buttons.length - 1) {
+          setTimeout(() => {
+            resetAll();
+            openFirstItem();
+          }, 5000);
+        }
+      });
+    });
+  } else {
+    resetAll();
+
+    const firstIcon = buttons[0].querySelector('.icon');
+    firstIcon.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', function () {
+        const content = this.nextElementSibling;
+        const iconSpan = this.querySelector('.icon');
+        const isActive = content.classList.contains('active');
+
+        resetAll();
+
+        if (!isActive) {
+
+          content.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          button.classList.add('rotate');
+          iconSpan.innerHTML = '<i class="fa-solid fa-arrow-down seta"></i>';
+
+          if (index + 1 < buttons.length) {
+            const nextIcon = buttons[index + 1].querySelector('.icon');
+            nextIcon.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+          }
+        } else {
+          const firstIconAgain = buttons[0].querySelector('.icon');
+          firstIconAgain.innerHTML = '<i class="fa-solid fa-hand-point-right fa-bounce"></i>';
+        }
+      });
+    });
+  }
 });
+
+
+
 
 /* logos dos cliente */
 
@@ -143,32 +200,6 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
-
-
-
-
-/* evento ao clicar no botão */ 
-
-const arrows = document.querySelectorAll('.seta');
-
-arrows.forEach((arrow, index) => {
-  arrow.addEventListener('click', () => {
-    
-    arrows.forEach(a => a.classList.remove('custom-blink'));
-
-
-    const nextArrow = arrows[index + 1];
-    if (nextArrow) {
-      nextArrow.classList.add('custom-blink');
-    } else {
-
-      setTimeout(() => {
-        arrows.forEach(a => a.classList.remove('custom-blink'));
-        arrows[0].classList.add('custom-blink');
-      }, 1000);
-    }
-  });
-});
 
 /* animação do "Quem somos" */
 
@@ -203,28 +234,6 @@ document.getElementById("oquesomos").addEventListener("click", function() {
 });
 
 
-/* animação do h1 em "nosso sistema" */
-
-const botoes = document.querySelectorAll('.benefits');
-const titles = document.querySelectorAll('.title-destaque h1');
-
-botoes.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const content = botao.parentElement.querySelector('.benefits-content');
-    const list = content.querySelector('ul');
-    const itens = list ? list.querySelectorAll('li').length : 0;
-
-    const isOpenNow = content.classList.toggle('open');
-
-    if (isOpenNow && itens >= 6) {
-      titles.forEach(h1 => h1.classList.add('animate-slide'));
-    } else {
-      titles.forEach(h1 => h1.classList.remove('animate-slide'));
-    }
-  });
-});
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.logo-track');
   // 1. Clona tudo pra duplicar automaticamente
@@ -234,7 +243,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollWidth = track.scrollWidth / 2;
   document.documentElement.style.setProperty('--scroll-width', `${scrollWidth}px`);
 });
-    
+
+/* cookies */
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookies-choice', 'accepted');
+      banner.classList.add('hidden');
+    });
+
+    rejectBtn.addEventListener('click', () => {
+      localStorage.setItem('cookies-choice', 'rejected');
+      banner.classList.add('hidden');
+    });
+  });
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -271,3 +297,4 @@ document.addEventListener('click', function(event) {
     }
   }
 });
+
