@@ -1,127 +1,133 @@
-// A partir da 
+// script.js
 
+// Helpers API
+const API = {
+  base: '/solicitacao',
+  async list() {
+    const res = await fetch(this.base);
+    if (!res.ok) throw new Error('Erro ao listar');
+    return res.json();
+  },
+  async create(payload) {
+    const res = await fetch(this.base, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('Erro ao criar');
+    return res.json();
+  },
+  async update(id, payload) {
+    const res = await fetch(`${this.base}/${id}`, {
+      method: 'PUT',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('Erro ao atualizar');
+  },
+  async remove(id) {
+    const res = await fetch(`${this.base}/${id}`, { method: 'DELETE' });
+    if (!res.ok) throw new Error('Erro ao deletar');
+  }
+};
 
-const openModal = () => document.getElementById('modal')
-  .classList.add('active')
+// Modal & Form
+const modal     = document.getElementById('modal');
+const form      = document.getElementById('form');
+const nomeFld   = document.getElementById('nome');
+const telFld    = document.getElementById('telefone');
+const emailFld  = document.getElementById('email');
+const empFld    = document.getElementById('empresa');
+const setorFld  = document.getElementById('setor');
+const saveBtn   = document.getElementById('btnSalvar');
 
-const closeModal = () => { 
-  clearFields() 
-  document.getElementById('modal').classList.remove('active')
-  
+let editingId = null;
+
+const openModal = () => modal.classList.add('active');
+const closeModal = () => {
+  form.reset();
+  editingId = null;
+  modal.classList.remove('active');
+};
+
+// Preenche fields pra edição
+function fillFields(client) {
+  nomeFld.value  = client.nome;
+  telFld.value   = client.telefone;
+  emailFld.value = client.email;
+  empFld.value   = client.empresa;
+  setorFld.value = client.setor;
+  editingId      = client.id;
+  openModal();
 }
 
+// CRUD Handlers
+async function saveClient() {
+  if (!form.reportValidity()) return;
 
-const updateClient = (index, client) => {
-  const dbClient = readClient()
-  dbClient[index] = client
-  setLocalStorage(dbClient)
-}
+  const payload = {
+    nome:     nomeFld.value,
+    telefone: telFld.value,
+    email:    emailFld.value,
+    empresa:  empFld.value,
+    setor:    setorFld.value
+  };
 
-function readClient() {
-  return getLocalStorage();
-}
-
-const getLocalStorage = () => JSON.parse(localStorage.getItem('dbclient')) ?? []
-const setLocalStorage = (dbClient) => localStorage.setItem("dbclient", JSON.stringify(dbClient))
-
-const createClient = (client) => {
-  const dbclient = getLocalStorage()
-  dbclient.push(client)
-  setLocalStorage(dbclient)
-}
-
-const isValidFields = () => {
-  return document.getElementById('form').reportValidity()
-}
-
-const clearFields = () => document.getElementById('form').reset()
-
-
-const saveClient = () => {
-  if (isValidFields()) {
-    const client = {
-      nome: document.getElementById('nome').value,
-      telefone: document.getElementById('telefone').value,
-      email: document.getElementById('email').value,
-      empresa: document.getElementById('empresa').value,
-      setor: document.getElementById('setor').value,
-    }
-    const index = document.getElementById('nome').dataset.index
-    if (index == 'new') {
-      createClient(client)
-      updateTable()
-      closeModal()
+  try {
+    if (editingId) {
+      await API.update(editingId, payload);
     } else {
-      updateClient(index, client)
-      updateTable()
-      closeModal()
+      await API.create(payload);
     }
-    
+    await updateTable();
+    closeModal();
+  } catch (err) {
+    console.error(err);
+    alert('Ocorreu um erro. Checa o console.');
   }
-
 }
 
-const fillFields = (client) => {
-  document.getElementById('nome').value = client.nome
-  document.getElementById('telefone').value = client.telefone
-  document.getElementById('email').value = client.email
-  document.getElementById('empresa').value = client.empresa
-  document.getElementById('setor').value = client.setor
-  document.getElementById('nome').dataset.index = client.index
-}
-
-function editClient(index) {
-  openModal(true, index)
- const client = readClient()[index]
- client.index = index
- fillFields(client)
-  
-}
-
-function deleteClient(index) {
-  const client = readClient()[index]
-  const response = confirm(`Deseja realmente excluir o cliente ${client.nome} ?`)
-  if (response) {
-
+async function deleteClient(id) {
+  if (!confirm('Quer mesmo excluir?')) return;
+  try {
+    await API.remove(id);
+    await updateTable();
+  } catch (err) {
+    console.error(err);
+    alert('Erro ao deletar');
   }
-  const dbClient = readClient();
-  dbClient.splice(index, 1);
-  setLocalStorage(dbClient);
-  updateTable();
 }
 
-
-
-const createRow = (client, index) => {
-  const newRow = document.createElement('tr')
-  newRow.innerHTML = `
+// Monta linhas da tabela
+function createRow(client) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
     <td>${client.nome}</td>
-     <td>${client.telefone}</td>
-    <td>${client.email}</td> 
-    <td>${client.empresa}</td>
-    <td>${client.setor}</td> 
+    <td>${client.telefone}</td>
+    <td>${client.email}</td>
+    <td>${client.empresa || ''}</td>
+    <td>${client.setor || ''}</td>
     <td class="acao">
-      <button onclick="editClient(${index})"><i class='bx bx-edit' ></i></button>
+      <button onclick="fillFields(${JSON.stringify(client)})">
+        <i class='bx bx-edit'></i>
+      </button>
     </td>
     <td class="acao">
-      <button onclick="deleteClient(${index})"><i class='bx bx-trash'></i></button>
+      <button onclick="deleteClient(${client.id})">
+        <i class='bx bx-trash'></i>
+      </button>
     </td>
-     `
-  document.querySelector('#tableClient>tbody').appendChild(newRow)
+  `;
+  document.querySelector('#tableClient>tbody').appendChild(tr);
 }
 
-const clearTable = () => {
-  const rows = document.querySelectorAll('#tableClient>tbody tr')
-  rows.forEach((row) => row.parentNode.removeChild(row))
+// Atualiza toda a tabela
+async function updateTable() {
+  document.querySelectorAll('#tableClient>tbody tr')
+    .forEach(tr => tr.remove());
+  const clients = await API.list();
+  clients.forEach(createRow);
 }
-
-const updateTable = () => {
-  const dbClient = readClient()
-  clearTable()
-  dbClient.forEach((client, index) => createRow(client, index))
-}
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   // máscara de telefone
@@ -154,3 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // render inicial
   updateTable();
 });
+
+const dadosCliente = { nome, email, telefone, empresa, setor, sendEmail: false };

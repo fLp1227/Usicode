@@ -78,6 +78,9 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
   });
 }
 
+const dadosCliente = { nome, email, telefone, empresa, setor, sendEmail: true };
+
+
 /* Botão de rotacionar */
 
 const buttons = document.querySelectorAll('.benefits');
