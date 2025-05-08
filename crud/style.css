@@ -48,6 +48,10 @@ button { cursor: pointer; }
   background-color: rgb(57, 57, 226);
 }
 
+#btnCadastrarCliente:hover {
+  background-color: rgb(49, 49, 194);;
+}
+
 .divTable {
   padding: 10px;
   width: auto; 
@@ -153,6 +157,16 @@ td button i {
   outline: none;
 }
 
+.modal textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
 .modal button {
   width: 100%;
   padding: 10px;
@@ -161,6 +175,10 @@ td button i {
   background-color: rgb(57, 57, 226);
   color: white;
   font-size: 16px;
+}
+
+.modal button:hover {
+  background-color: rgb(49, 49, 194);
 }
 
 /* animação */
