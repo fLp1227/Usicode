@@ -256,6 +256,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const acceptBtn = document.getElementById('accept-cookies');
     const rejectBtn = document.getElementById('reject-cookies');
 
+    const cookieChoice = localStorage.getItem('cookies-choice');
+
+      if (cookieChoice === 'accepted' || cookieChoice === 'rejected') {
+        banner.style.display = 'none';
+        return;
+      }
+
     acceptBtn.addEventListener('click', () => {
       localStorage.setItem('cookies-choice', 'accepted');
       banner.classList.add('hidden');
