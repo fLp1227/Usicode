@@ -52,9 +52,10 @@ const closeModal = () => {
   statusFld.classList.remove('pendente','atendido','resolvido');
   modal.classList.remove('active');
 };
-
+const observFld = document.getElementById('observacoes');
 // Preenche fields pra edição
 function fillFields(client) {
+  observFld.value = client.observacoes || '';
   // seta valor e classe do status
   statusFld.value = client.status || 'pendente';
   statusFld.classList.remove('pendente','atendido','resolvido');
@@ -79,7 +80,8 @@ async function saveClient() {
     telefone: telFld.value,
     email:    emailFld.value,
     empresa:  empFld.value,
-    setor:    setorFld.value
+    setor:    setorFld.value,
+    observacoes: observFld.value
   };
 
   try {
