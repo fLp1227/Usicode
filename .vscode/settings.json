@@ -1,0 +1,9 @@
+{
+    "dotnet.preferCSharpExtension": true,
+<<<<<<< HEAD
+    "dotnet.defaultSolution": "Usicode.sln"
+=======
+    "dotnet.defaultSolution": "Usicode.sln",
+    "liveServer.settings.port": 5501
+>>>>>>> 884aea4 (Melhorias)
+}
