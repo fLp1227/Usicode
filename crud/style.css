@@ -222,15 +222,46 @@ td button i {
   font-weight: 900;
 }
 
-.pendent {
+/* Select na tabela */
+.status-select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  appearance: none;        /* remove seta default em alguns browsers */
+  cursor: pointer;
+}
+
+/* Cores por status */
+.status-select.pendente {
+  background-color: #fef5e7;
+  color: #f39c12;
+  border-color: #f39c12;
+}
+
+.status-select.atendido {
+  background-color: #eaf6fd;
+  color: #3498db;
+  border-color: #3498db;
+}
+
+.status-select.resolvido {
+  background-color: #e8f8f5;
+  color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+/* E no modal, se quiser também */
+#status.pendente {
+  background-color: #fef5e7;
   color: #f39c12;
 }
 
-answered {
+#status.atendido {
+  background-color: #eaf6fd;
   color: #3498db;
 }
 
-.completed {
+#status.resolvido {
+  background-color: #e8f8f5;
   color: #2ecc71;
 }
-
