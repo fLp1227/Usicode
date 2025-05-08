@@ -50,8 +50,11 @@ const closeModal = () => {
   modal.classList.remove('active');
 };
 
+const statusFld = document.getElementById('status');
+
 // Preenche fields pra edição
 function fillFields(client) {
+  statusFld.value = client.status || 'pendente';
   nomeFld.value  = client.nome;
   telFld.value   = client.telefone;
   emailFld.value = client.email;
@@ -66,6 +69,7 @@ async function saveClient() {
   if (!form.reportValidity()) return;
 
   const payload = {
+    status: statusFld.value,
     nome:     nomeFld.value,
     telefone: telFld.value,
     email:    emailFld.value,
@@ -102,22 +106,47 @@ async function deleteClient(id) {
 function createRow(client) {
   const tr = document.createElement('tr');
   tr.innerHTML = `
+     <td>
+      <select class="status-select">
+        <option value="pendente">Pendente</option>
+        <option value="atendido">Atendido</option>
+        <option value="resolvido">Resolvido</option>
+      </select>
+    </td>
     <td>${client.nome}</td>
     <td>${client.telefone}</td>
     <td>${client.email}</td>
     <td>${client.empresa || ''}</td>
     <td>${client.setor || ''}</td>
-    <td class="acao">
-      <button onclick="fillFields(${JSON.stringify(client)})">
-        <i class='bx bx-edit'></i>
-      </button>
-    </td>
-    <td class="acao">
-      <button onclick="deleteClient(${client.id})">
-        <i class='bx bx-trash'></i>
-      </button>
-    </td>
+    <td class="acao"><button class="edit-btn"><i class='bx bx-edit'></i></button></td>
+    <td class="acao"><button class="delete-btn"><i class='bx bx-trash'></i></button></td>
   `;
+  const sel = tr.querySelector('.status-select');
+  sel.value = client.status;
+  // listener pra atualizar status sem modal:
+  sel.addEventListener('change', async () => {
+    try {
+      await API.update(client.id, {
+        nome: client.nome,
+        telefone: client.telefone,
+        email: client.email,
+        empresa: client.empresa,
+        setor: client.setor,
+        status: sel.value
+      });
+      // opcional: feedback visual
+    } catch (e) {
+      console.error('Erro ao atualizar status', e);
+      alert('Não rolou mudar status');
+    }
+  });
+  
+  // adiciona listeners em vez de inline onclick
+  tr.querySelector('.edit-btn')
+    .addEventListener('click', () => fillFields(client));
+  tr.querySelector('.delete-btn')
+    .addEventListener('click', () => deleteClient(client.id));
+
   document.querySelector('#tableClient>tbody').appendChild(tr);
 }
 
@@ -161,4 +190,3 @@ document.addEventListener('DOMContentLoaded', () => {
   updateTable();
 });
 
-const dadosCliente = { nome, email, telefone, empresa, setor, sendEmail: false };

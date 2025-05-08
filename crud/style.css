@@ -221,3 +221,16 @@ td button i {
   float: right;
   font-weight: 900;
 }
+
+.pendent {
+  color: #f39c12;
+}
+
+answered {
+  color: #3498db;
+}
+
+.completed {
+  color: #2ecc71;
+}
+

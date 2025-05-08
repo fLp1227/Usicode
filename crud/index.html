@@ -19,6 +19,7 @@
             <table id="tableClient">
                 <thead>
                   <tr>
+                    <th>Status</th>
                     <th>Nome</th>
                     <th>Telefone</th>
                     <th>Email</th>
@@ -42,6 +43,13 @@
             <i class="bx bx-x" id="modalClose"></i>
 
             <form class="modal-form" id="form">
+                <label for="status">Status</label>
+                <select id="status" required>
+                  <option value="pendente" id="pendent">Pendente</option>
+                  <option value="atendido" id="answered">Atendido</option>
+                  <option value="resolvido" id="completed">Resolvido</option>
+                </select>
+
                 <label for="nome">Nome</label>
                 <input id="nome" data-index="new" type="text" required placeholder="Nome do Lead">
 

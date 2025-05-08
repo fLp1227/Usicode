@@ -55,11 +55,13 @@ $('#telefone').mask(SPMaskBehavior, spOptions);
     email: emailCliente,
     telefone: telefoneCliente,
     empresa: empresaCliente,
-    setor: setorCliente
+    setor: setorCliente,
+    sendEmail: true
+    
   };
 
   
-  fetch('http://localhost:3000/solicitacao', {
+  fetch('http://192.168.0.123:3000/solicitacao', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(dadosCliente)

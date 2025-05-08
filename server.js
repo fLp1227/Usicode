@@ -35,30 +35,89 @@ app.get('/solicitacao', (req, res) => {
   });
 });
 
+// POST /solicitacao
 app.post('/solicitacao', (req, res) => {
-  const { nome, telefone, email, empresa, setor } = req.body;
+  const {
+    nome,
+    telefone,
+    email,
+    empresa,
+    setor,
+    sendEmail = false
+  } = req.body;
+  const status = req.body.status || 'pendente';
+
+  // validação mínima
   if (!nome || !telefone || !email) {
     return res.status(400).json({ mensagem: 'Campos obrigatórios faltando.' });
   }
-  const sql = 'INSERT INTO solicitacoes (nome, telefone, email, empresa, setor) VALUES (?, ?, ?, ?, ?)';
-  db.query(sql, [nome, telefone, email, empresa||null, setor||null], (err, result) => {
-    if (err) return res.status(500).json({ erro: err });
-    if (sendEmail) {
-      enviarEmailNotificacao({ nome, telefone, email, empresa, setor });
-    }
 
-    res.json({ mensagem: 'Salvo!', id: result.insertId });
-  });
+  // insere no banco incluindo status
+  const sql = `
+    INSERT INTO solicitacoes
+      (nome, telefone, email, empresa, setor, status)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+  db.query(sql,
+    [nome, telefone, email, empresa || null, setor || null, status],
+    (err, result) => {
+      if (err) {
+        console.error('Erro ao inserir no DB:', err);
+        return res.status(500).json({ erro: 'Erro interno ao salvar.' });
+      }
+
+      // dispara e-mail só se precisar
+      if (sendEmail) {
+        try {
+          enviarEmailNotificacao({ nome, telefone, email, empresa, setor });
+        } catch (mailErr) {
+          console.error('Erro no envio de notificação:', mailErr);
+          // não aborta a resposta
+        }
+      }
+
+      // retorna sucesso com novo ID
+      res.json({
+        mensagem: 'Criado!',
+        id: result.insertId
+      });
+    }
+  );
 });
+
 
 app.put('/solicitacao/:id', (req, res) => {
   const { id } = req.params;
-  const { nome, telefone, email, empresa, setor } = req.body;
-  const sql = 'UPDATE solicitacoes SET nome=?, telefone=?, email=?, empresa=?, setor=? WHERE id=?';
-  db.query(sql, [nome, telefone, email, empresa, setor, id], (err) => {
-    if (err) return res.status(500).json({ erro: err });
-    res.json({ mensagem: 'Atualizado!' });
-  });
+  const {
+    nome,
+    telefone,
+    email,
+    empresa,
+    setor,
+    status = 'pendente'
+  } = req.body;
+
+  // validação mínima (opcional)
+  if (!nome || !telefone || !email) {
+    return res.status(400).json({ mensagem: 'Campos obrigatórios faltando.' });
+  }
+
+  // atualiza todos os campos incluindo status
+  const sql = `
+    UPDATE solicitacoes
+      SET nome=?, telefone=?, email=?, empresa=?, setor=?, status=?
+    WHERE id=?
+  `;
+  db.query(sql,
+    [nome, telefone, email, empresa || null, setor || null, status, id],
+    (err) => {
+      if (err) {
+        console.error('Erro ao atualizar no DB:', err);
+        return res.status(500).json({ erro: 'Erro interno ao atualizar.' });
+      }
+      res.json({ mensagem: 'Atualizado!' });
+    }
+  );
 });
 
 app.delete('/solicitacao/:id', (req, res) => {
