@@ -171,16 +171,29 @@ async function updateTable() {
   clients.forEach(createRow);
 }
 
-// Setup listeners e máscara
 document.addEventListener('DOMContentLoaded', () => {
+  // render inicial
+  updateTable();
+
   // máscara de telefone
-  telFld.addEventListener('input', e => {
-    let d = e.target.value.replace(/\D/g, '');
-    if (d.length > 11) d = d.slice(0, 11);
-    e.target.value = d.length <= 10
-      ? d.replace(/^(\d{0,2})(\d{0,4})(\d{0,4}).*/, (m, a,b,c) => `${a?`(${a}) `:''}${b||''}${c?`-${c}`:''}`)
-      : d.replace(/^(\d{0,2})(\d{0,5})(\d{0,4}).*/, (m, a,b,c) => `${a?`(${a}) `:''}${b||''}${c?`-${c}`:''}`);
-  });
+  const telefoneInput = document.getElementById('telefone');
+const mask = IMask(telefoneInput, {
+  mask: [
+    {
+      mask: '(00) 00000-0000'
+    },
+    {
+      mask: '(00) 0000-0000'
+    }
+  ],
+  dispatch: function (appended, dynamicMasked) {
+    // escolhe a máscara de 11 dígitos ou 10 dígitos conforme o user digita
+    const value = (dynamicMasked.value + appended).replace(/\D/g, '');
+    return value.length > 10 ? dynamicMasked.compiledMasks[0] : dynamicMasked.compiledMasks[1];
+  },
+  lazy: false,            // sempre mostra a máscara completa
+  overwrite: true         // sobrescreve em vez de inserir
+});
 
   // CRUD listeners
   document.getElementById('btnCadastrarCliente')
@@ -188,7 +201,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('modalClose')
     .addEventListener('click', closeModal);
   saveBtn.addEventListener('click', saveClient);
-
-  // render inicial
-  updateTable();
 });
