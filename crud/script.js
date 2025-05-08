@@ -31,45 +31,50 @@ const API = {
   }
 };
 
-// Modal & Form
-const modal     = document.getElementById('modal');
-const form      = document.getElementById('form');
-const nomeFld   = document.getElementById('nome');
-const telFld    = document.getElementById('telefone');
-const emailFld  = document.getElementById('email');
-const empFld    = document.getElementById('empresa');
-const setorFld  = document.getElementById('setor');
-const saveBtn   = document.getElementById('btnSalvar');
+// DOM References
+const modal    = document.getElementById('modal');
+const form     = document.getElementById('form');
+const statusFld= document.getElementById('status');
+const nomeFld  = document.getElementById('nome');
+const telFld   = document.getElementById('telefone');
+const emailFld = document.getElementById('email');
+const empFld   = document.getElementById('empresa');
+const setorFld = document.getElementById('setor');
+const saveBtn  = document.getElementById('btnSalvar');
 
 let editingId = null;
 
-const openModal = () => modal.classList.add('active');
+// Modal open/close
+const openModal  = () => modal.classList.add('active');
 const closeModal = () => {
   form.reset();
   editingId = null;
+  statusFld.classList.remove('pendente','atendido','resolvido');
   modal.classList.remove('active');
 };
 
-const statusFld = document.getElementById('status');
-
 // Preenche fields pra edição
 function fillFields(client) {
+  // seta valor e classe do status
   statusFld.value = client.status || 'pendente';
-  nomeFld.value  = client.nome;
-  telFld.value   = client.telefone;
-  emailFld.value = client.email;
-  empFld.value   = client.empresa;
-  setorFld.value = client.setor;
-  editingId      = client.id;
+  statusFld.classList.remove('pendente','atendido','resolvido');
+  statusFld.classList.add(client.status || 'pendente');
+
+  nomeFld.value   = client.nome;
+  telFld.value    = client.telefone;
+  emailFld.value  = client.email;
+  empFld.value    = client.empresa;
+  setorFld.value  = client.setor;
+  editingId       = client.id;
   openModal();
 }
 
-// CRUD Handlers
+// Salvar ou atualizar via modal
 async function saveClient() {
   if (!form.reportValidity()) return;
 
   const payload = {
-    status: statusFld.value,
+    status:   statusFld.value,
     nome:     nomeFld.value,
     telefone: telFld.value,
     email:    emailFld.value,
@@ -91,6 +96,7 @@ async function saveClient() {
   }
 }
 
+// Deletar cliente
 async function deleteClient(id) {
   if (!confirm('Quer mesmo excluir?')) return;
   try {
@@ -102,11 +108,11 @@ async function deleteClient(id) {
   }
 }
 
-// Monta linhas da tabela
+// Monta linhas da tabela com status inline
 function createRow(client) {
   const tr = document.createElement('tr');
   tr.innerHTML = `
-     <td>
+    <td>
       <select class="status-select">
         <option value="pendente">Pendente</option>
         <option value="atendido">Atendido</option>
@@ -117,33 +123,38 @@ function createRow(client) {
     <td>${client.telefone}</td>
     <td>${client.email}</td>
     <td>${client.empresa || ''}</td>
-    <td>${client.setor || ''}</td>
+    <td>${client.setor   || ''}</td>
     <td class="acao"><button class="edit-btn"><i class='bx bx-edit'></i></button></td>
     <td class="acao"><button class="delete-btn"><i class='bx bx-trash'></i></button></td>
   `;
+
   const sel = tr.querySelector('.status-select');
+  // valor e classe iniciais
   sel.value = client.status;
-  // listener pra atualizar status sem modal:
+  sel.classList.add(client.status);
+
+  // update inline de status
   sel.addEventListener('change', async () => {
+    const old = client.status;
+    const neu = sel.value;
+    const payload = { ...client, status: neu };
+
     try {
-      await API.update(client.id, {
-        nome: client.nome,
-        telefone: client.telefone,
-        email: client.email,
-        empresa: client.empresa,
-        setor: client.setor,
-        status: sel.value
-      });
-      // opcional: feedback visual
+      await API.update(client.id, payload);
+      // atualiza local e UI sem reload
+      client.status = neu;
+      sel.classList.remove(old);
+      sel.classList.add(neu);
     } catch (e) {
       console.error('Erro ao atualizar status', e);
       alert('Não rolou mudar status');
+      sel.value = old; // volta no erro
     }
   });
-  
-  // adiciona listeners em vez de inline onclick
+
+  // editar/excluir
   tr.querySelector('.edit-btn')
-    .addEventListener('click', () => fillFields(client));
+    .addEventListener('click',  () => fillFields(client));
   tr.querySelector('.delete-btn')
     .addEventListener('click', () => deleteClient(client.id));
 
@@ -158,24 +169,15 @@ async function updateTable() {
   clients.forEach(createRow);
 }
 
+// Setup listeners e máscara
 document.addEventListener('DOMContentLoaded', () => {
   // máscara de telefone
-  const telefoneInput = document.getElementById('telefone');
-  telefoneInput.addEventListener('input', (e) => {
-    let digits = e.target.value.replace(/\D/g, '');
-    if (digits.length > 11) digits = digits.slice(0, 11);
-    if (digits.length <= 10) {
-      digits = digits.replace(
-        /^(\d{0,2})(\d{0,4})(\d{0,4}).*/,
-        (m, ddd, p1, p2) => `${ddd?`(${ddd}) `:''}${p1||''}${p2?`-${p2}`:''}`
-      );
-    } else {
-      digits = digits.replace(
-        /^(\d{0,2})(\d{0,5})(\d{0,4}).*/,
-        (m, ddd, p1, p2) => `${ddd?`(${ddd}) `:''}${p1||''}${p2?`-${p2}`:''}`
-      );
-    }
-    e.target.value = digits;
+  telFld.addEventListener('input', e => {
+    let d = e.target.value.replace(/\D/g, '');
+    if (d.length > 11) d = d.slice(0, 11);
+    e.target.value = d.length <= 10
+      ? d.replace(/^(\d{0,2})(\d{0,4})(\d{0,4}).*/, (m, a,b,c) => `${a?`(${a}) `:''}${b||''}${c?`-${c}`:''}`)
+      : d.replace(/^(\d{0,2})(\d{0,5})(\d{0,4}).*/, (m, a,b,c) => `${a?`(${a}) `:''}${b||''}${c?`-${c}`:''}`);
   });
 
   // CRUD listeners
@@ -183,10 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('click', openModal);
   document.getElementById('modalClose')
     .addEventListener('click', closeModal);
-  document.getElementById('btnSalvar')
-    .addEventListener('click', saveClient);
+  saveBtn.addEventListener('click', saveClient);
 
   // render inicial
   updateTable();
 });
-
