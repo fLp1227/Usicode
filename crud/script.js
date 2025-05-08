@@ -167,6 +167,7 @@ function createRow(client) {
 async function updateTable() {
   document.querySelectorAll('#tableClient>tbody tr')
     .forEach(tr => tr.remove());
+
   const clients = await API.list();
   clients.forEach(createRow);
 }

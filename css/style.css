@@ -1369,6 +1369,7 @@ blockquote footer {
 
 #cookie-banner.hidden {
   opacity: 0;
+  display: none;
   pointer-events: none;
   transform: translateY(100%);
 }
@@ -1414,6 +1415,9 @@ blockquote footer {
   background-color: #be312e;
 }
 
+.hide-cookie-banner #cookie-banner {
+  display: none !important;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
