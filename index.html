@@ -34,6 +34,14 @@
     <style type="text/css">
     </style>
 
+    <script>
+      if (!localStorage.getItem('cookies-choice')) {
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('cookie-banner').classList.remove('hidden');
+        });
+      }
+    </script>
+
 </head>
 
 
@@ -70,7 +78,7 @@
         </nav>
     </div>
 
-    <div id="cookie-banner">
+    <div id="cookie-banner" class="hidden">
         <p>Usamos cookies para melhorar sua experiência. Saiba mais em nossa <a href="politica.html">Política de privacidade.</a> <br>Aceita o uso de cookies?</p>
         <div class="cookie-buttons">
           <button id="accept-cookies">Aceitar</button>

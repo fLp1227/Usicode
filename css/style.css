@@ -1415,6 +1415,10 @@ blockquote footer {
   background-color: #be312e;
 }
 
+.hide-cookie-banner #cookie-banner {
+  display: none !important;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 

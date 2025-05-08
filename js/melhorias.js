@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieChoice = localStorage.getItem('cookies-choice');
 
       if (cookieChoice === 'accepted' || cookieChoice === 'rejected') {
-        banner.style.display = 'none';
+        banner.classList.add('hidden');
         return;
       }
 
