@@ -283,3 +283,8 @@ td button i {
   background-color: #e8f8f5;
   color: #2ecc71;
 }
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
